@@ -15,7 +15,7 @@ sudo git stash
 sudo git fetch
 
 # checkout develop
-sudo git checkout deve
+sudo git checkout dev
 
 # #pull the changes
 sudo git pull origin dev
