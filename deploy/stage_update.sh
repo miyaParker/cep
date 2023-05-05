@@ -17,7 +17,7 @@ sudo git fetch
 # checkout develop
 sudo git checkout deve
 
-# # pull the changes
+# pull the changes
 sudo git pull origin dev
 
 
