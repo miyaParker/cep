@@ -4,9 +4,9 @@
 set -e
 ################## Backend update ###############################
 # Change directory to where the project is stored
-# cd /var/www/html/itunu-dashboard/
+# cd /var/www/html/re-learn/
 
-cd /var/www/html/itunu-dashboard/
+cd /var/www/html/re-learn/
 
 # sudo git stash - incase of any local changes
 sudo git stash
