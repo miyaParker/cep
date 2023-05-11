@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.hero {
+    background-x-position: 10%;
+}
+
+.learn-more:hover p {
+    font-weight: 500;
+    transition: font-weight 350ms;
+
+}
+
+.learn-more:hover img {
+    left: 8px;
+    transition: left 350ms;
+}
+
+@keyframes hideButton {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes hideForm {
+    0% {
+        transform: translateY(0px);
+    }
+    80%{
+        transform: translateY(-342px);
+    }
+    100%{
+        transform: translateY(-335px);
+    }
+}
+
+@keyframes showForm {
+    from {
+        transform: translateY(-335px);
+    }
+    to {
+        transform: translateY(0px);
+    }
+}
+
+.submitted {
+    animation: hideButton 350ms;
+}
+
+.show-form {
+    animation: showForm 600ms ease-in;
+    animation-fill-mode: both;
+}
+
+.hide-form {
+    animation: hideForm 800ms ease-out;
+    animation-fill-mode: both;
+}
+.filtered{
+    filter: grayscale(100%);
+}
+.filtered:hover{
+    filter: grayscale(0);
+}
