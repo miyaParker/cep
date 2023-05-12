@@ -32,7 +32,6 @@ docker --version
 docker build -t relearn .
 
 # # Run application using docker 
-
 docker run -p 3000:3000 relearn
 
 #echo "****************************************************************"
