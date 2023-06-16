@@ -3,7 +3,7 @@ import Button from '@/components/Generic/Button';
 
 const SubscribeForm = () => {
     return (
-        <div className='mx-auto w-[100%] mt-[164px] max-w-[2560px] px-[20px] lg:px-[80px] xl:px-[120px] 2xl:px-[160px] 3xl:px-[280px] 4xl:px-[420px] '>
+        <div className='pb-[5rem] lg:pb-[10rem] mx-auto w-[100%] mt-[164px] max-w-[2560px] px-[20px] lg:px-[80px] xl:px-[120px] 2xl:px-[160px] 3xl:px-[280px] 4xl:px-[420px] '>
             <div className='px-[28px] md:px-[56px] bg-[#E23F27] text-white flex-col lg:flex-row flex lg:items-center justify-between py-[47px] lg:py-[2rem]  xl:py-[3rem] 2xl:py-[3.5rem] rounded-[12px] lg:px-[2rem] xl:px-[4rem] 2xl:px-[4.5rem] xl:gap-x-[43px] 2xl:gap-x-[53px]'>
                 <div className='lg:mx-[20px] flex flex-col items-start xl:max-w-[407px] 2xl:max-w-[480px]'>
                     <Image

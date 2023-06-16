@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import Organizations from '@/components/LandingPage/Organizations';
 import FeedbackForm from '@/components/LandingPage/FeedbackForm';
 import Hero from '@/components/LandingPage/Hero';
