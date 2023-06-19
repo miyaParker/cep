@@ -7,7 +7,7 @@ export const getCertificate = async (payload: any) => {
         try {
             const res = await axios({
                 method: "get",
-                url: `${BASE_URL}/certificate?name=${payload.name}&program=${payload.programme}&year=${payload.year}`
+                url: `${BASE_URL}/api/certificate?name=${payload.name}&program=${payload.programme}&year=${payload.year}`
             })
             return res
         } catch (err: any) {

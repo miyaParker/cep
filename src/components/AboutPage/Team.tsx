@@ -6,22 +6,25 @@ const Team = () => {
             <h2 className='text-[30px] font-neue font-bold text-center mb-[3rem]'>
                 Meet the re:learn team
             </h2>
-            <div className='lg:grid lg:grid-cols-2 xl:grid-cols-[repeat(3,minmax(320px,373px))] flex flex-col lg:justify-center items-center gap-y-[40px] lg:gap-x-[24px]'>
-                <div className='w-[320px] h-max lg:w-[373px] rounded-[4px] relative mx-auto px-[10px] lg:px-0'>
+            <div
+                className='lg:grid lg:grid-cols-2 xl:grid-cols-[repeat(3,minmax(320px,373px))] flex flex-col lg:justify-center items-center gap-y-[40px] lg:gap-x-[24px]'>
+                <div className='w-full h-max max-w-[373px] rounded-[4px] relative mx-auto px-[10px] lg:px-0'>
                     <Image
                         src='/aderonke.svg'
                         alt='Aderonke Adeniran Community Support Associate '
                         width={373}
                         height={412}
-                        className='w-[320px] h-max lg:w-[373px] rounded-[4px]'
+                        className='w-full h-max max-w-[373px] rounded-[4px]'
                     />
-                    <Image
-                        src='/linkedin.svg'
-                        alt='linkedin profile'
-                        width={40}
-                        height={40}
-                        className='absolute top-[12px] right-[12px] filtered'
-                    />
+                    <div className="w-[40px] rounded-[4px] h-[40px] bg-[#0E0E10]/10 absolute top-[12px] right-[12px] filtered">
+                        <Image
+                            src='/linkedin.svg'
+                            alt='linkedin profile'
+                            width={40}
+                            height={40}
+                            className=''
+                        />
+                    </div>
                     <p className='mt-[20px] text-[22px] font-bold font-neue text-center'>
                         Aderonke Adeniran
                     </p>
@@ -29,21 +32,23 @@ const Team = () => {
                         Community Support Associate
                     </p>
                 </div>
-                <div className='w-[320px] h-max lg:w-[373px] rounded-[4px] relative mx-auto px-[10px] lg:px-0'>
+                <div className='w-full h-max max-w-[373px] rounded-[4px] relative mx-auto px-[10px] lg:px-0'>
                     <Image
                         src='/abigael.svg'
                         alt='Abigael Anaza-Mark Programmes Associate '
                         width={373}
                         height={412}
-                        className='w-[320px] h-max lg:w-[373px] rounded-[4px]'
+                        className='w-full h-max rounded-[4px]'
                     />
-                    <Image
-                        src='/linkedin.svg'
-                        alt='linkedin profile'
-                        width={40}
-                        height={40}
-                        className='absolute top-[12px] right-[12px] filtered'
-                    />
+                    <div className="w-[40px] rounded-[4px] h-[40px] bg-[#0E0E10]/10 absolute top-[12px] right-[12px] filtered">
+                        <Image
+                            src='/linkedin.svg'
+                            alt='linkedin profile'
+                            width={40}
+                            height={40}
+                            className=''
+                        />
+                    </div>
                     <p className='mt-[20px] text-[22px] font-bold font-neue text-center'>
                         Abigael Anaza-Mark
                     </p>
@@ -51,21 +56,23 @@ const Team = () => {
                         Programmes Associate
                     </p>
                 </div>
-                <div className='w-[320px] h-max lg:w-[373px] rounded-[4px] relative mx-auto px-[10px] lg:px-0'>
+                <div className='w-full h-max max-w-[373px] rounded-[4px] relative mx-auto px-[10px] lg:px-0'>
                     <Image
                         src='/chinyelu.svg'
                         alt='Chinyelu Udeh Practice Lead '
                         width={373}
                         height={412}
-                        className='w-[320px] h-max lg:w-[373px] rounded-[4px]'
+                        className='w-full h-max rounded-[4px]'
                     />
-                    <Image
-                        src='/linkedin.svg'
-                        alt='linkedin profile'
-                        width={40}
-                        height={40}
-                        className='absolute top-[12px] right-[12px] filtered'
-                    />
+                    <div className="w-[40px] rounded-[4px] h-[40px] bg-[#0E0E10]/10 absolute top-[12px] right-[12px] filtered">
+                        <Image
+                            src='/linkedin.svg'
+                            alt='linkedin profile'
+                            width={40}
+                            height={40}
+                            className=''
+                        />
+                    </div>
                     <p className='mt-[20px] text-[22px] font-bold font-neue text-center'>
                         Chinyelu Udeh
                     </p>
@@ -73,21 +80,23 @@ const Team = () => {
                         Practice Lead
                     </p>
                 </div>
-                <div className='w-[320px] h-max lg:w-[373px] rounded-[4px] relative mx-auto px-[10px] lg:px-0'>
+                <div className='w-full h-max max-w-[373px] rounded-[4px] relative mx-auto px-[10px] lg:px-0'>
                     <Image
                         src='/famous.svg'
                         alt='Famous Ogaga Learning Development Lead '
                         width={373}
                         height={412}
-                        className='w-[320px] h-max lg:w-[373px] rounded-[4px]'
+                        className='w-full h-max rounded-[4px]'
                     />
-                    <Image
-                        src='/linkedin.svg'
-                        alt='linkedin profile'
-                        width={40}
-                        height={40}
-                        className='absolute top-[12px] right-[12px] filtered'
-                    />
+                    <div className="w-[40px] rounded-[4px] h-[40px] bg-[#0E0E10]/10 absolute top-[12px] right-[12px] filtered">
+                        <Image
+                            src='/linkedin.svg'
+                            alt='linkedin profile'
+                            width={40}
+                            height={40}
+                            className=''
+                        />
+                    </div>
                     <p className='mt-[20px] text-[22px] font-bold font-neue text-center'>
                         Famous Ogaga
                     </p>
@@ -95,21 +104,23 @@ const Team = () => {
                         Learning Development Lead
                     </p>
                 </div>
-                <div className='w-[320px] h-max lg:w-[373px] rounded-[4px] relative mx-auto px-[10px] lg:px-0'>
+                <div className='w-full h-max max-w-[373px] rounded-[4px] relative mx-auto px-[10px] lg:px-0'>
                     <Image
                         src='/shalom.svg'
                         alt='Shalom Anurigwo Learning Development Associate '
                         width={373}
                         height={412}
-                        className='w-[320px] h-max lg:w-[373px] rounded-[4px]'
+                        className='w-full h-max rounded-[4px]'
                     />
-                    <Image
-                        src='/linkedin.svg'
-                        alt='linkedin profile'
-                        width={40}
-                        height={40}
-                        className='absolute top-[12px] right-[12px] filtered'
-                    />
+                    <div className="w-[40px] rounded-[4px] h-[40px] bg-[#0E0E10]/10 absolute top-[12px] right-[12px] filtered">
+                        <Image
+                            src='/linkedin.svg'
+                            alt='linkedin profile'
+                            width={40}
+                            height={40}
+                            className=''
+                        />
+                    </div>
                     <p className='mt-[20px] text-[22px] font-bold font-neue text-center'>
                         Shalom Anurigwo
                     </p>
@@ -117,21 +128,23 @@ const Team = () => {
                         Learning Development Associate
                     </p>
                 </div>
-                <div className='w-[320px] h-max lg:w-[373px] rounded-[4px] relative mx-auto px-[10px] lg:px-0'>
+                <div className='w-full h-max max-w-[373px] rounded-[4px] relative mx-auto px-[10px] lg:px-0'>
                     <Image
                         src='/yetunde.svg'
                         alt='Yetunde Omotosho Monitoring & Evaluation Associate'
                         width={373}
                         height={412}
-                        className='w-[320px] h-max lg:w-[373px] rounded-[4px]'
+                        className='w-full h-max rounded-[4px]'
                     />
-                    <Image
-                        src='/linkedin.svg'
-                        alt='linkedin profile'
-                        width={40}
-                        height={40}
-                        className='absolute top-[12px] right-[12px] filtered'
-                    />
+                    <div className="w-[40px] rounded-[4px] h-[40px] bg-[#0E0E10]/10 absolute top-[12px] right-[12px] filtered">
+                        <Image
+                            src='/linkedin.svg'
+                            alt='linkedin profile'
+                            width={40}
+                            height={40}
+                            className=''
+                        />
+                    </div>
                     <p className='mt-[20px] text-[22px] font-bold font-neue text-center'>
                         Yetunde Omotosho
                     </p>

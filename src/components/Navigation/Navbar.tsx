@@ -2,10 +2,10 @@ import Image from 'next/image';
 import { navbarItems } from '@/constants';
 import Link from 'next/link';
 
-const Navbar = ({isModalOpen}:{isModalOpen:boolean}) => {
+const Navbar = () => {
     return (
-        <div className={`${isModalOpen ? "bg-[#111111]/25" : ""}`}>
-            <nav className='border-b w-full border-black-100/[0.05] hidden  z-50 fixed top-0 bg-white lg:flex h-[8rem] font-matter font-normal items-center justify-between'>
+        <div>
+            <nav className='border-b w-full border-black-100/[0.05] hidden z-20 fixed top-0 bg-white lg:flex h-[8rem] font-matter font-normal items-center justify-between'>
                 <div className='mx-auto relative flex  justify-between w-[100%] max-w-[2560px] lg:px-[80px] xl:px-[120px] 2xl:px-[160px] 3xl:px-[280px] 4xl:px-[420px]'>
                     <Link href='/'>
                         <Image

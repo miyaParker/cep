@@ -1,8 +1,8 @@
 import Image from 'next/image';
 
-const Footer = ({isModalOpen}: { isModalOpen: boolean }) => {
+const Footer = () => {
     return (
-        <div className={`${isModalOpen ? "bg-[#111111]/25" : ""}`}>
+        <div>
             <div className='bg-[#0E0E10] w-screen'>
                 <footer
                     className='font-matter lg:flex-row lg:gap-x-[150px] xl:gap-x-[270px] 2xl:gap-x-[420px] 3xl:gap-x-[520px] lg:items-start lg:justify-start lg:text-[17px] text-white py-[72px] lg:py-[64px] max-w-[2560px] mx-auto flex flex-col px-[20px] lg:px-[80px] xl:px-[120px] 2xl:px-[160px] 3xl:px-[280px] 4xl:px-[420px]'>
