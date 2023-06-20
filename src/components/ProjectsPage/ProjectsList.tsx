@@ -14,7 +14,7 @@ const ProjectsList = () => {
                 </div>
                 <div
                     className="justify-center mt-[80px] gap-x-[26px] gap-y-[68px] grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
-                    {projects.map(project => <Project project={project}/>)}
+                    {projects.map((project, index) => <Project key={index} project={project}/>)}
                 </div>
             </div>
         </div>

@@ -1,7 +1,13 @@
 "use client"
 import Image from "next/image";
-import ProjectDetails from "@/components/ProjectsPage/ProjectDetails";
-import {Dispatch, SetStateAction, useState} from "react";
+// import ProjectDetails from "@/components/ProjectsPage/ProjectDetails";
+import {useState} from "react";
+import dynamic from "next/dynamic";
+
+const ProjectDetails = dynamic(() => import("./ProjectDetails"), {
+    ssr: false,
+})
+
 
 const Project = ({project}: { project: any }) => {
     const [show, setShow] = useState(false)

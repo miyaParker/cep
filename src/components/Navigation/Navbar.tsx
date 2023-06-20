@@ -24,42 +24,44 @@ const Navbar = () => {
                         />
                     </Link>
                     <ul className='flex justify-between items-center gap-x-[32px]'>
-                        {navbarItems.main.map((item, id) => {
+                        {navbarItems.main.map((item, index) => {
                             if (item?.link) {
                                 return (
-                                    <Link href={item.link} key={id}>
+                                    <Link href={item.link} key={index}>
                                         <li className='block capitalize font-normal text-[1.1rem] text-[#333438]'>
                                             {item.name}
                                         </li>
                                     </Link>)
                             }
-                            return (<div>
-                                <div className='relative flex items-center'>
-                                    <li className='block capitalize font-normal text-[1.1rem] text-[#333438] mr-[6px]'>
-                                        {item.name}
-                                    </li>
-                                    <Image onClick={toggleDropdown} src='/chevron-down.svg' alt='get involved'
-                                           className='cursor-pointer'
-                                           width={24}
-                                           height={24}/>
-                                </div>
-                                <div onClick={toggleDropdown}
-                                     className={`${showDropdown ? 'nav-dropdown' : 'opacity-0 transition-opacity duration-500'} absolute bg-white  rounded-[4px] px-[20px] py-[30px]`}>
-                                    <div className='flex items-center gap-x-[8px] mb-[24px]'>
-                                        <Image src='/partner-icon.svg' alt='get involved'
-                                               width={28}
-                                               height={28}/>
-                                        <Link href='/get-involved/become-a-partner'
-                                              className='font-sans text-[16px] tracking-[0.5&]'>Become a Partner</Link>
+                            return (
+                                <div key={index}>
+                                    <div className='relative flex items-center'>
+                                        <li className='block capitalize font-normal text-[1.1rem] text-[#333438] mr-[6px]'>
+                                            {item.name}
+                                        </li>
+                                        <Image onClick={toggleDropdown} src='/chevron-down.svg' alt='get involved'
+                                               className='cursor-pointer'
+                                               width={24}
+                                               height={24}/>
                                     </div>
-                                    <div className='flex items-center gap-x-[8px]' onClick={toggleDropdown}>
-                                        <Image src='/educator-icon.svg' alt='get involved'
-                                               width={28}
-                                               height={28}/>
-                                        <Link href='/get-involved/educators-network'>Educator’s Network</Link>
+                                    <div onClick={toggleDropdown}
+                                         className={`${showDropdown ? 'nav-dropdown' : 'opacity-0 transition-opacity duration-500'} absolute bg-white  rounded-[4px] px-[20px] py-[30px]`}>
+                                        <div className='flex items-center gap-x-[8px] mb-[24px]'>
+                                            <Image src='/partner-icon.svg' alt='get involved'
+                                                   width={28}
+                                                   height={28}/>
+                                            <Link href='/get-involved/become-a-partner'
+                                                  className='font-sans text-[16px] tracking-[0.5&]'>Become a
+                                                Partner</Link>
+                                        </div>
+                                        <div className='flex items-center gap-x-[8px]' onClick={toggleDropdown}>
+                                            <Image src='/educator-icon.svg' alt='get involved'
+                                                   width={28}
+                                                   height={28}/>
+                                            <Link href='/get-involved/educators-network'>Educator’s Network</Link>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>)
+                                </div>)
                         })}
 
                     </ul>
