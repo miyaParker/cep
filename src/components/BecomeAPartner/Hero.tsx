@@ -16,7 +16,7 @@ const Hero = () => {
                         whilst integrating the use of technology to solve the
                         most pressing challenges in education.
                     </p>
-                    <button className='bg-[#E23F27] px-[36px] py-[23.5px] font-matter font-[500] text-[17px] text-center rounded-[40px]'>
+                    <button className='block mb-[64px] lg:b-0 mx-auto lg:mx-0 bg-[#E23F27] px-[36px] py-[23.5px] font-matter font-[500] text-[17px] text-white text-center rounded-[40px]'>
                         Become a Partner
                     </button>
                 </div>

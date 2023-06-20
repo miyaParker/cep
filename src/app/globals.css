@@ -119,6 +119,13 @@ select:required:invalid {
     transition-delay: 300ms;
 }
 
+.nav-dropdown {
+    transform: translateY(20px);
+    box-shadow: 0px 3px 12px 0px #B8B8B833;
+    transition-duration: 300ms;
+    transition: transform 200ms;
+}
+
 @media screen and (max-width: 1023px) {
     .input-error {
         border: 1px solid #EF061D;
