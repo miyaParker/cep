@@ -22,18 +22,24 @@ sudo git pull origin dev
 
 
 # # install
-# sudo yarn install
+sudo yarn
+
+## build
+sudo yarn build
+
+## start
+sudo pm2 restart default
 
 # # Check for docker version
-docker --version
+# docker --version
 
 # # Build the application using docker
 # sudo yarn build
-sudo docker build -t relearn .
+# sudo docker build -t relearn .
 
 # # Run application using docker 
-sudo docker run -p 3000:3000 relearn
+# sudo docker run -dp 3000:3000 relearn
 
-#echo "****************************************************************"
-#echo "--- Frontend update complete"
-#echo "****************************************************************"
+echo "****************************************************************"
+echo "--- Frontend update complete"
+echo "****************************************************************"
