@@ -23,6 +23,16 @@
     transition: left 350ms;
 }
 
+.certificate-form {
+    box-shadow: 0px 3px 9px 0px #BCB4B326;
+
+}
+
+select:required:invalid {
+    color: #333438;
+    opacity: 40%;
+}
+
 @keyframes hideButton {
     from {
         opacity: 1;
@@ -36,10 +46,10 @@
     0% {
         transform: translateY(0px);
     }
-    80%{
+    80% {
         transform: translateY(-342px);
     }
-    100%{
+    100% {
         transform: translateY(-335px);
     }
 }
@@ -66,9 +76,64 @@
     animation: hideForm 800ms ease-out;
     animation-fill-mode: both;
 }
-.filtered{
-    filter: grayscale(100%);
+
+.filtered {
+    transition-duration: 300ms;
 }
-.filtered:hover{
-    filter: grayscale(0);
+
+.filtered:hover {
+    transition: background-color 300ms;
+    transition-delay: 50ms;
+    background-color: #2670DF;
+}
+
+.certificate-form {
+
+}
+
+@keyframes showVerifyModal {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+.verify-modal {
+    transition: showVerifyModal 350ms;
+}
+
+@keyframes showModal {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+.modal {
+    transition: showModal 2s;
+    transition-duration: 350ms;
+    transition-delay: 300ms;
+}
+
+.nav-dropdown {
+    transform: translateY(20px);
+    box-shadow: 0px 3px 12px 0px #B8B8B833;
+    transition-duration: 300ms;
+    transition: transform 200ms;
+}
+
+@media screen and (max-width: 1023px) {
+    .input-error {
+        border: 1px solid #EF061D;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .form-error {
+        border: 1px solid #EF061D;
+    }
 }

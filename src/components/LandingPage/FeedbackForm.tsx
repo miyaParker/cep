@@ -21,7 +21,7 @@ const FeedbackForm = () => {
         } else setClasses('show-form');
     }, [submitted]);
     return (
-        <>
+        <div className="mb-[5rem] lg:mb-[10rem]">
             <div className='z-10'>
                 <h2 className='text-center font-neue font-bold text-[3rem] mt-[120px] mb-[20px] mx-auto max-w-max'>
                     We’ll love to hear from you!
@@ -97,7 +97,7 @@ const FeedbackForm = () => {
                     </div>
                 </form>
             </div>
-        </>
+        </div>
     );
 };
 export default FeedbackForm;

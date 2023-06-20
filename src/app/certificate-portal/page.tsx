@@ -1,6 +1,165 @@
+"use client"
+import {ChangeEvent, FormEvent, useEffect, useReducer, useState} from "react";
+import Image from "next/image";
+import {getCertificate} from "@/api";
+import {years, programmes} from "@/app/constants";
+export interface formData {
+    name: string,
+    programme: string,
+    year: string
+}
+
+
+const formReducer = (state: formData, action: any) => {
+    const {name, value} = action
+    if (name === "reset") return ({
+        name: "",
+        programme: "",
+        year: ""
+    })
+    state = {...state, [name]: value}
+    return state
+}
 const CertificatePortal = () => {
-  return (
-    <h1>Certificate Portal page</h1>
-  );
+    const initialForm = {
+        name: "",
+        programme: "",
+        year: ""
+    }
+    const [state, dispatch] = useReducer(formReducer, initialForm)
+    const [error, setError] = useState<any>({})
+    const [verified, setVerified] = useState(false)
+    const [verificationData, setVerificationData] = useState<any>({})
+
+    useEffect(() => {
+        console.log(error)
+    }, [error])
+
+
+    const handleErrors = (data: formData) => {
+        let isValid = false
+        for (const [key, value] of Object.entries(data)) {
+            if (!value.length) {
+                console.log(key)
+                setError({[key]: "Please, complete all input fields",message:"Please, complete all input fields"})
+                return isValid
+            }
+        }
+        return true;
+    }
+    const handleVerification = (event: FormEvent<HTMLButtonElement>) => {
+        event.preventDefault()
+        const isFormValid = handleErrors(state)
+        if (isFormValid) {
+            getCertificate(state).then(res => {
+                if (res.error) {
+                    setError({serverError: res.error})
+                } else {
+                    setVerified(true)
+                    setVerificationData(res.data)
+                }
+                dispatch({name: "reset"})
+
+            })
+        }
+    }
+    const handleDownload = (event: FormEvent<HTMLButtonElement>) => {
+        event.preventDefault()
+        handleErrors(state)
+
+    }
+    const handleChange = (e: ChangeEvent<HTMLSelectElement> | ChangeEvent<HTMLInputElement>) => {
+        setError({})
+        dispatch({name: e.target.name, value: e.target.value})
+    }
+    return (
+        <div
+            className='overflow-hidden bg-[#F0F1F4] h-full mx-auto w-full pt-[160px] lg:pt-[256px] px-[20px] lg:px-[80px] xl:px-[120px] 2xl:px-[160px] 3xl:px-[280px] 4xl:px-[420px] pb-[120px] lg:pb-[370px]'>
+            <h1 className="mb-[20px] lg:mb-[24px] mx-auto leading-[120%] text-center w-full max-w-[300px] md:max-w-[347px] lg:max-w-[487px] font-bold font-neue text-[37px] md:text-[42px] lg:text-[60px]">Certificate
+                Verification Portal</h1>
+            <p className="text-center mx-auto text-[20px] lg:text-[22px] leading-[140%] max-w-[284px] md:max-w-[504px] text-[#333438]/90 font-matter lg:max-w-[636px]">
+                Verification is essential. Confirm that You, an Employee or a Job Applicant completed a Programme at
+                re:learn
+            </p>
+            <form
+                className={` ${Object.keys(error).length ? "form-error" : "border-[#333438]"} ${error.serverError ? "input-error" : "border-[#333438]"} mx-auto mt-[68px] rounded-[8px] bg-[#FFFFFF] px-[20px] max-w-[539px] lg:max-w-[939px] pt-[64px] pb-[40px] lg:px-[24px] lg:py-[16px] flex flex-col lg:flex-row lg:items-center`}>
+                <div
+                    className={`${error.name ? "input-error" : ""} flex flex-col pt-[12px] pb-[14px] rounded-[5px] lg:rounded-none  lg:border-[#E4E4E7] lg:border-r mb-[16px] lg:m-0 bg-[#F4F4F5] lg:bg-[#FFFFFF] px-[20px] lg:pr-[28px] lg:pl-0`}>
+                    <label className="text-[14px] lg:text-[15px] text-[#333438]/80 font-sans">Name</label>
+                    <input onChange={handleChange} value={state.name} name="name"
+                           placeholder="Participant’s full name"
+                           className="bg-[#F4F4F5] lg:bg-[#FFFFFF] text-[#333438] font-sans outline-none text-[16px] lg:text-[17px]  placeholder:text-[#333438]/40 placeholder:text-[16px]"/>
+                </div>
+                <div
+                    className={`${error.programme ? "input-error" : ""} flex flex-col pt-[12px] pb-[14px] lg:pr-[28px] lg:rounded-none lg:border-[#E4E4E7] lg:border-r lg:bg-[#FFFFFF] rounded-[5px] mb-[16px] lg:m-0 bg-[#F4F4F5] px-[20px]`}>
+                    <label className="text-[14px] lg:text-[15px] text-[#333438]/80 font-sans">Programme</label>
+                    <select required={true} onChange={handleChange} value={state.programme} name="programme"
+                            className="text-[16px]  lg:text-[17px] bg-[#F4F4F5] lg:bg-[#FFFFFF] text-[#333438] ml-[-4px] font-sans outline-none text-[16px] placeholder:text-[#333438]/40 placeholder:text-[16px]">
+                        <option value="" className="text-[#333438]/40" disabled={true} hidden={true}>Select Programme
+                        </option>
+                        {programmes.map((programme) => <option value={programme} key={programme}>{programme}</option>)}
+                    </select>
+                </div>
+                <div className={`flex flex-col pt-[12px] pb-[14px] rounded-[5px] bg-[#F4F4F5] lg:bg-[#FFFFFF] px-[20px] ${error.year ? "input-error" : ""}`}>
+                    <label className="text-[14px] lg:text-[15px] text-[#333438]/80 font-sans">Year</label>
+                    <select onChange={handleChange}
+                            required={true}
+                            value={state.year}
+                            name="year"
+                            className="text-[16px] lg:text-[17px] bg-[#F4F4F5] lg:bg-[#FFFFFF] text-[#333438] ml-[-4px] font-sans outline-none text-[16px] placeholder:text-[#333438]/40 placeholder:text-[16px]">
+                        <option value="" className="text-[#333438]/40" disabled={true}
+                                hidden={true}>Year
+                        </option>
+                        {years.map((year) => <option value={year} key={year}>{year}</option>)}
+                    </select>
+                </div>
+                {Object.keys(error).length ?
+                    <div className=" mt-[12px] flex lg:hidden max-w-[356px]"><Image className="mr-[8px]"
+                                                                                           src="/error.svg"
+                                                                                           alt="Form error"
+                                                                                           width={20}
+                                                                                           height={20}/><p
+                        className="font-sans text-[15px] text-[#EF061D]">{error.serverError || error.message}</p>
+                    </div> : null}
+                <button
+                    onClick={handleDownload}
+                    className="outline-none text-[#FFF] mt-[68px] lg:mt-0 mx-auto w-max font-matter text-[17px] lg:text-[16px] font-[500] py-[20px] px-[42px] lg:px-[40px] bg-[#E23F27] rounded-[40px] tracking-[0.17px] lg:hidden">Download
+                </button>
+                <button
+
+                    onClick={handleVerification}
+                    className="outline-none text-[#43434C] mt-[20px] lg:mt-0 mx-auto w-max font-sans text-[17px] lg:text-[16px] font-[500] py-[20px] px-[58px] bg-[#F1F2F3] rounded-[40px] tracking-[0.17px] lg:mr-[20px] lg:px-[32px]">Verify
+                </button>
+                <button
+                    onClick={handleDownload}
+                    style={{opacity: error ? "60%" : "100%"}}
+                    className="outline-none text-[#FFF] mt-[68px] lg:mt-0 mx-auto w-max font-sans text-[17px] lg:text-[16px] font-[500] py-[20px] px-[42px] lg:px-[40px] bg-[#E23F27] rounded-[40px] tracking-[0.17px] lg:m-0 hidden lg:block">Download
+                </button>
+            </form>
+            {Object.keys(error).length ?
+                <div className="mx-auto mt-[19px] max-w-[939px] hidden lg:flex"><Image className="mr-[8px]"
+                                                                                       src="/error.svg"
+                                                                                       alt="Form error" width={20}
+                                                                                       height={20}/><p
+                    className="font-sans text-[15px] text-[#EF061D]">{error.serverError || error.message}</p>
+                </div> : null}
+
+            {verified ? <div style={{
+                height: "800vh",
+                maxHeight: "100%",
+                top: 0,
+                bottom: 0,
+                width: "100vw",
+                left: 0,
+                backgroundColor: verified ? "rgba(17, 17, 17, 0.25)" : "white",
+                zIndex: 50
+            }} className="pb-[120px] lg:pb-[370px] verify-modal-container absolute flex justify-center items-center">
+                <div style={{opacity: "100%"}}
+                     className="w-[345px] px-[24px] verify-modal bg-white flex items-center justify-center absolute text-black">
+                    <p className="text-[#0E0E10] font-neue font-bold text-center">Verified</p>
+                </div>
+            </div> : null}
+        </div>
+    );
 };
 export default CertificatePortal;
