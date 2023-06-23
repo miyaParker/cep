@@ -1,6 +1,6 @@
-import Hero from '@/components/BecomeAPartner/Hero';
+import Hero from '@/components/GetInvolved/BecomeAPartner/Hero';
 import Organizations from '@/components/LandingPage/Organizations';
-import Benefits from '@/components/BecomeAPartner/Benefits';
+import Benefits from '@/components/GetInvolved/BecomeAPartner/Benefits';
 
 const BecomeAPartner = () => {
     return (
@@ -8,6 +8,7 @@ const BecomeAPartner = () => {
             <Hero />
             <Benefits />
             <Organizations />
+            <div className='mb-[160px]'></div>
         </>
     );
 };

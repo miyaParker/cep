@@ -3,7 +3,7 @@ import Image from 'next/image';
 const AffiliateCenter = () => {
     return (
         <div className='bg-[#0E0E10] text-white py-[80px] mt-[80px]'>
-            <div className='font-neue font-bold flex flex-col items-center lg:justify-center lg:gap-x-[180px] lg:flex-row  lg:gap-x-[165px] lg:px-[80px] xl:px-[120px] 2xl:px-[160px] 3xl:px-[280px] 4xl:px-[420px]'>
+            <div className='font-neue font-bold flex flex-col items-center lg:justify-center lg:gap-x-[180px] lg:flex-row  lg:gap-x-[165px] lg:px-[80px] xl:px-[140px] 2xl:px-[160px] 3xl:px-[280px] 4xl:px-[420px]'>
                 <div>
                     <h2 className='max-w-[485px] mx-auto lg:mx-0 px-[38px] lg:px-0 text-[30px] lg:text-[3rem] text-center lg:text-left leading-[120%] mt-[28px] mb-[20px]'>
                         You get interesting benefits when you partner with

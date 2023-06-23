@@ -5,10 +5,15 @@ export const navbarItems = {
         {name: 'news & updates', link: '/news-and-updates'},
         {
             name: 'get involved', children: [
-                {name: 'become a partner', link: '/become-a-partner'},
                 {
-                    name: "educator's network",
-                    link: '/educators-network'
+                    name: 'Become a Partner',
+                    link: '/get-involved/become-a-partner-at-relearn',
+                    icon: '/partner-icon.svg'
+                },
+                {
+                    name: "Educator's Network",
+                    link: '/get-involved/educators-network',
+                    icon: '/educator-icon.svg'
                 }
             ]
         },

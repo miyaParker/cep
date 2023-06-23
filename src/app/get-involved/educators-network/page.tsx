@@ -1,7 +1,12 @@
-const EducatorsNetwork = () => {
+import Hero from '@/components/GetInvolved/EducatorsNetwork/Hero';
+import FAQ from "@/components/GetInvolved/EducatorsNetwork/FAQ";
+
+const BecomeAPartner = () => {
     return (
-        // eslint-disable-next-line react/no-unescaped-entities
-        <h1>Educator's Network page</h1>
+        <>
+            <Hero/>
+            <FAQ/>
+        </>
     );
 };
-export default EducatorsNetwork;
+export default BecomeAPartner;

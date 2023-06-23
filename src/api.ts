@@ -1,4 +1,4 @@
-import axios, {AxiosError} from "axios"
+import axios from "axios"
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL
 
@@ -8,6 +8,21 @@ export const getCertificate = async (payload: any) => {
             const res = await axios({
                 method: "get",
                 url: `${BASE_URL}/api/certificate?name=${payload.name}&program=${payload.programme}&year=${payload.year}`
+            })
+            return res
+        } catch (err: any) {
+            if (err.response)
+                return err.response.data
+        }
+    }
+}
+export const createPartner = async (payload: any) => {
+    if (BASE_URL) {
+        try {
+            const res = await axios({
+                method: "post",
+                data:payload,
+                url: `${BASE_URL}/api/partner`,
             })
             return res
         } catch (err: any) {

@@ -1,6 +1,5 @@
 "use client"
 import Image from "next/image";
-// import ProjectDetails from "@/components/ProjectsPage/ProjectDetails";
 import {useState} from "react";
 import dynamic from "next/dynamic";
 
