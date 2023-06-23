@@ -4,23 +4,23 @@ import FAQItem from "@/components/GetInvolved/EducatorsNetwork/FAQItem";
 const FAQ = () => {
     const faqItems = [{
         q: 'How do I become part of the network?',
-        a: 'To get started, fill out the online application form here. The Educators’ Network is currently open to residents'
+        a: 'To get started, fill out the online application form here. The Educators’ Network is currently open to residents.'
     }, {
         q: 'Do I need to know how to code?',
-        a: 'To get started, fill out the online application form here. The Educators’ Network is currently open to residents'
+        a: 'No. If you have a passion for education and are comfortable using a computer then you have enough to get started.'
     },
         {
             q: 'What is STEM?',
-            a: 'To get started, fill out the online application form here. The Educators’ Network is currently open to residents'
+            a: 'STEM stands for Science, Technology, Engineering and Mathematics. Our goal is to enhance te delivery of STEM lessons in schools across Nigeria.'
         }, {
             q: 'Do I need to have an education background?',
-            a: 'To get started, fill out the online application form here. The Educators’ Network is currently open to residents'
+            a: 'No, classroom experience is not a requirement. The Educators’ Network is open to people from different backgrounds.'
         }, {
             q: 'What will I teach?',
-            a: 'To get started, fill out the online application form here. The Educators’ Network is currently open to residents'
-        },{
+            a: 'Educators are provided with content and extensive training on delivering the content in the classroom.'
+        }, {
             q: 'Is this a full time role?',
-            a: 'To get started, fill out the online application form here. The Educators’ Network is currently open to residents'
+            a: 'Yes. Being an Educator is a full time role that comes with a monthly and lots of benefits.'
         }]
     return (
         <div
