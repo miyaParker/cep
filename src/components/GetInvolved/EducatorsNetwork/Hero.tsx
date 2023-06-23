@@ -26,7 +26,7 @@ const Hero = () => {
                 </div>
 
                 <Image
-                    src='/partnerships.svg'
+                    src='/educators-network.svg'
                     alt='re:learn is driven by partnerships'
                     width={620}
                     height={490}
