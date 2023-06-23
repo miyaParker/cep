@@ -3,7 +3,7 @@ import Image from 'next/image';
 const AffiliateCenter = () => {
     return (
         <div className='bg-[#0E0E10] text-white py-[80px] mt-[80px]'>
-            <div className='font-neue font-bold flex flex-col items-center lg:justify-center lg:gap-x-[180px] lg:flex-row  lg:gap-x-[165px] lg:px-[80px] xl:px-[120px] 2xl:px-[160px] 3xl:px-[280px] 4xl:px-[420px]'>
+            <div className='font-neue font-bold flex flex-col items-center lg:justify-center lg:gap-x-[180px] lg:flex-row  lg:gap-x-[165px] lg:px-[80px] xl:px-[140px] 2xl:px-[160px] 3xl:px-[280px] 4xl:px-[420px]'>
                 <div>
                     <div className='w-max px-[16px] py-[6px] mb-[24px] rounded-[24px] border border-[#43434C] bg-[#29292E] border-1 mx-auto lg:mx-0'>
                         <p className='text-center text-white/84 tracking-[0.2px] font-matter font-[500]'>

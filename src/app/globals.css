@@ -137,3 +137,22 @@ select:required:invalid {
         border: 1px solid #EF061D;
     }
 }
+
+
+.paper-clip {
+    width: 32px;
+    height: 32px;
+}
+@keyframes showModal {
+    from {
+        transform: translateY(-5px);
+    }
+    to {
+        transform: translateY(0px);
+    }
+}
+.faq-item {
+    animation-duration: 300ms;
+    animation: showModal 400ms;
+}
+

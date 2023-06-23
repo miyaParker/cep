@@ -11,8 +11,6 @@ const ProjectDetails = ({
                         }: { project: any, showModal: boolean, closeModal: () => void }) => {
 
     const modalRoot = document.getElementById('modal-root')!
-
-
     return createPortal(
         <div
             className="modal bg-gray-200/50 w-screen h-[100vh] fixed top-0 z-50 left-0 flex items-center justify-center"

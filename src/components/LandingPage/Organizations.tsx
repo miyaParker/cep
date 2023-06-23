@@ -6,7 +6,7 @@ const Organizations = () => {
             <h2 className='text-center text-[3rem] font-bold mb-[3rem] w-[100%] max-w-[624px] mx-auto font-neue'>
                 World-trusted organizations believe in what we do
             </h2>
-            <div className='w-[100%] max-w-[2560px] px-[20px] lg:px-[80px] xl:px-[120px] 2xl:px-[160px] 3xl:px-[280px] 4xl:px-[420px] grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 mx-[140px] mx-auto'>
+            <div className='w-[100%] max-w-[2560px] px-[20px] lg:px-[80px] xl:px-[140px] 2xl:px-[160px] 3xl:px-[280px] 4xl:px-[420px] grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 mx-[140px] mx-auto'>
                 <div className='rounded-tl-[6px] lg:rounded-tl-[4px] flex items-center justify-center border-2 border-gray-100 h-[102px] md:h-[120px] lg:h-[144px] '>
                     <Image
                         src='/google-logo.svg'
@@ -108,18 +108,6 @@ const Organizations = () => {
                     />
                 </div>
                 <div className='rounded-br-[6px] lg:rounded-br-[4px] border-2 border-t-0 border-l-0 border-gray-100 flex items-center justify-center h-[102px] md:h-[120px] lg:h-[144px] '></div>
-            </div>
-            <div className='cursor-pointer flex items-center justify-center learn-more w-[100%] mt-[50px] text-[#E23F27]'>
-                <p className='tracking-[1%] font-matter text duration-500'>
-                    Learn more about our partnerships
-                </p>
-                <Image
-                    src='/arrow-left-orange.svg'
-                    alt='view more partnerships'
-                    width={26}
-                    height={24}
-                    className='relative left-[4px] duration-500'
-                />
             </div>
         </div>
     );
