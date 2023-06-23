@@ -1,7 +1,7 @@
 'use client';
-import {useEffect, useState} from 'react';
+import {useState} from 'react';
 import Image from 'next/image';
-import {createPartner} from "@/api";
+import {createPartner, sendPartnerMail} from "@/api";
 import FormData from "form-data";
 
 interface IForm {
@@ -26,12 +26,12 @@ const PartnerForm = () => {
     const handleErrors = (data: IForm) => {
         let isValid = false
         for (const [key, value] of Object.entries(data)) {
-            console.log(key, value)
-            if (key === 'file' && value === undefined) {
-                console.log()
-                setError({[key]: "Please, complete all input fields", message: "Please, complete all input fields"})
-                return isValid
-            }
+            if (key === 'file') continue
+            // if (key === 'file' && value === undefined) {
+            //     console.log()
+            //     setError({[key]: "Please, complete all input fields", message: "Please, complete all input fields"})
+            //     return isValid
+            // }
             if (key !== 'file' && !value.length) {
                 setError({[key]: "Please, complete all input fields", message: "Please, complete all input fields"})
                 return isValid
@@ -44,16 +44,16 @@ const PartnerForm = () => {
         e.preventDefault();
         const isFormValid = handleErrors(data)
         if (isFormValid) {
-            const formData = new FormData()
-            for (const [key, value] of Object.entries(data)) {
-                formData.append(key, value)
-            }
-            createPartner(formData).then(res => {
-                console.log("RESPONSE", res)
+            // const formData = new FormData()
+            // for (const [key, value] of Object.entries(data)) {
+            //     formData.append(key, value)
+            // }
+            createPartner(data).then(res => {
                 if (res?.error) {
                     setError({serverError: res.error})
                 }
             })
+            sendPartnerMail(data).then(res=>console.log(res))
             setSubmitted(true)
             window.scrollTo({top: 10, behavior: 'smooth'})
         }

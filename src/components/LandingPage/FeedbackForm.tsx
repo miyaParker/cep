@@ -1,21 +1,40 @@
 'use client';
-import Button from '@/components/Generic/Button';
 import {useEffect, useState} from 'react';
 import Image from 'next/image';
+import {sendFeedback} from "@/api";
 
 const FeedbackForm = () => {
     const [submitted, setSubmitted] = useState(false);
     const [classes, setClasses] = useState('show-form');
+    const [data, setData] = useState<any>({email: '', message: ''})
+    const [error, setError] = useState<any>({})
+
+    const handleErrors = (data: { email: string, message: string }) => {
+        let isValid = false
+        for (const [key, value] of Object.entries(data)) {
+            if (!value.length) {
+                setError({[key]: "Please, complete all input fields", message: "Please, complete all input fields"})
+                return isValid
+            }
+        }
+        return true;
+    }
 
     const handleSubmit = (e: any) => {
         e.preventDefault();
-        setSubmitted(!submitted);
-    };
-    const showForm = () => {
-        setSubmitted(!submitted);
-    };
+        if(classes==='hide-form') return
+        const isFormValid = handleErrors(data)
+        if (isFormValid) {
+            setSubmitted(true)
+            setData({email: '', message: ''})
+            setError({})
+            sendFeedback(data).then(res => {
+                console.log(res)
+            })
+        }
+    }
+
     useEffect(() => {
-        console.log(submitted);
         if (submitted) {
             setClasses('hide-form');
         } else setClasses('show-form');
@@ -45,6 +64,11 @@ const FeedbackForm = () => {
                             placeholder='Enter your email'
                             id='email'
                             type='text'
+                            value={data.email}
+                            onChange={(e) => {
+                                setError({})
+                                setData({...data, email: e.target.value})
+                            }}
                             className='rounded-b-[5px] placeholder:text-gray-200/50 placeholder:text-[18px] outline-0 font-matter block w-[100%] bg-gray-400 pb-3 px-5'
                         />
                     </div>
@@ -57,6 +81,11 @@ const FeedbackForm = () => {
                             Message
                         </label>
                         <textarea
+                            value={data.message}
+                            onChange={(e) => {
+                                setError({})
+                                setData({...data, message: e.target.value})
+                            }}
                             placeholder='Leave a message'
                             id='message'
                             className='font-matter resize-none rounded-b-[5px] placeholder:text-gray-200/50 placeholder:text-[18px] outline-0 block w-[100%] lg:w-[30rem] bg-gray-400 px-5'
@@ -64,7 +93,21 @@ const FeedbackForm = () => {
                         />
                     </div>
                     <div className='mx-auto max-w-[30rem]'>
+                        {Object.keys(error).length ?
+                            <div className="mx-auto max-w-[939px] flex"><Image className="mr-[8px]"
+                                                                               src="/error.svg"
+                                                                               alt="Form error"
+                                                                               width={20}
+                                                                               height={20}/><p
+                                className="font-sans text-[15px] text-[#EF061D]">{error.serverError || error.message}</p>
+                            </div> : null}
                         <button
+                            onClick={()=>{
+                              if(submitted) {
+                                  setSubmitted(false)
+                                  setError({})
+                              }
+                            }}
                             className={`${
                                 submitted
                                     ? 'bg-[#1BC645] relative top-0 justify-between'

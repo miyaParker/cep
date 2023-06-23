@@ -45,7 +45,7 @@ const Navbar = () => {
                                                    height={24}/>
                                         </div>
                                         {item?.children ? <div onClick={toggleDropdown}
-                                                               className={`${showDropdown ? 'nav-dropdown' : 'opacity-0 transition-opacity duration-500'} absolute bg-white  rounded-[4px] px-[20px] py-[30px]`}>
+                                                               className={`${showDropdown ? 'nav-dropdown' : 'opacity-0 transition-opacity duration-500'} absolute bg-white  rounded-[4px] px-[20px] pt-[30px]`}>
 
                                             {item?.children.map((child, index) => (<div key={index}
                                                                                         className='flex items-center gap-x-[8px] mb-[24px]'>
