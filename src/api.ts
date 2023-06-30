@@ -4,6 +4,33 @@ import {feedbackEmailTemplate, partnerEmailTemplate} from "@/constants";
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL
 
+export const subscribe = async (payload: any) => {
+    const AUDIENCE_ID = process.env.NEXT_PUBLIC_MAILCHIMP_AUDIENCE_ID
+    const API_KEY = process.env.NEXT_PUBLIC_MAILCHIMP_API_KEY
+    const API_SERVER = process.env.NEXT_PUBLIC_MAILCHIMP_API_SERVER
+    const USERNAME = process.env.NEXT_PUBLIC_MAILCHIMP_USERNAME
+
+    if (AUDIENCE_ID && API_SERVER && API_KEY && USERNAME) {
+        try {
+            const res = await axios.post(
+                `https://${API_SERVER}.api.mailchimp.com/3.0/lists/${AUDIENCE_ID}/members`,
+                {
+                    email_address: payload.email,
+                },
+                {
+                    auth: {
+                        username: USERNAME,
+                        password: API_KEY
+                    }
+                })
+            console.log(res)
+        } catch (err: any) {
+            if (err.response)
+                return err.response.data
+        }
+    }
+}
+
 export const getCertificate = async (payload: any) => {
     if (BASE_URL) {
         try {
@@ -64,7 +91,7 @@ export const sendPartnerMail = async (payload: { fullName: string, organization:
     const TO_EMAIL = process.env.NEXT_PUBLIC_TO_EMAIL
 
     if (API_KEY && TO_EMAIL) {
-        console.log("API key and to email",API_KEY && TO_EMAIL)
+        console.log("API key and to email", API_KEY && TO_EMAIL)
         let msg;
         if (payload.file !== undefined) {
             const reader = new FileReader();

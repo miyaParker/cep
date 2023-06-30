@@ -2,29 +2,13 @@
 import Image from 'next/image';
 import Button from '@/components/Generic/Button';
 import {useState} from "react";
-import axios from "axios";
 import {subscribe} from "@/api";
 
 const SubscribeForm = () => {
     const [email, setEmail] = useState('')
     const handleSubmit = (e: any) => {
         e.preventDefault()
-        console.log(email)
         subscribe({email}).then(res => console.log(res))
-        // axios.post(
-        //     'https://us15.api.mailchimp.com/3.0/lists/d1b19d1fd2/members',
-        //     {
-        //         email_address: email,
-        //         status: 'subscribed'
-        //     },
-        //     {
-        //         auth: {
-        //             username: 're:learn subscription',
-        //             password: 'b83fe7fb9e0bd937345bbe1d7a6b84b3-us15'
-        //         }
-        //     }
-        // ).then(res => console.log(res))
-
     }
     return (
         <div

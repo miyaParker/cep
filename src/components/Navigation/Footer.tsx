@@ -89,7 +89,9 @@ const Footer = () => {
                             Educator Network
                         </p>
                         </Link>
-                        <p className='tracking-[1.5%]'>EdTech CoE</p>
+                        <Link href='/about#COE'>
+                            <p className='tracking-[1.5%]'>EdTech CoE</p>
+                        </Link>
                     </div>
                 </footer>
             </div>
