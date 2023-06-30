@@ -7,7 +7,7 @@ const Article = ({article, index}: { article: any, index: number }) => {
             <div className={`justify-items-start`}>
                 <Image className="w-full mb-[28px] rounded-[4px]" src={article.img}
                        alt={article.name} width={378} height={252}/>
-                <div className='flex items-center gap-x-[12px] mb-[24px]'>
+                <div className='flex items-center gap-x-[12px] mb-[24px] flex-wrap'>
                     <p className='rounded-[3px] text-[17px] font-medium font-matter px-[16px] py-[8px] bg-[#FBF2EA] text-[#E58A1F]'>{article.category}</p>
                     <p>{article.datePublished}</p>
                 </div>

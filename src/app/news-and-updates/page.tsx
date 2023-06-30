@@ -5,7 +5,7 @@ import Button from "@/components/Generic/Button";
 
 const NewsAndUpdates = () => {
     return (
-        <div className='w-full pt-[160px] lg:pt-[284px] lg:pt-0'>
+        <div className='w-full pt-[160px] lg:pt-[284px] lg:pt-0 overflow-scroll'>
             <div
                 className="mx-auto max-w-[2560px] px-[20px] lg:px-[80px] xl:px-[130px] 2xl:px-[160px] 3xl:px-[280px] 4xl:px-[420px]">
                 <div>
