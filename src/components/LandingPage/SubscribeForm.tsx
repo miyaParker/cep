@@ -1,10 +1,20 @@
+'use client'
 import Image from 'next/image';
 import Button from '@/components/Generic/Button';
+import {useState} from "react";
+import {subscribe} from "@/api";
 
 const SubscribeForm = () => {
+    const [email, setEmail] = useState('')
+    const handleSubmit = (e: any) => {
+        e.preventDefault()
+        subscribe({email}).then(res => console.log(res))
+    }
     return (
-        <div className='mx-auto w-[100%] mt-[164px] mb-[160px] max-w-[2560px] px-[20px] lg:px-[80px] xl:px-[140px] 2xl:px-[160px] 3xl:px-[280px] 4xl:px-[420px] '>
-            <div className='px-[28px] md:px-[56px] bg-[#E23F27] text-white flex-col lg:flex-row flex lg:items-center justify-between py-[47px] lg:py-[2rem]  xl:py-[3rem] 2xl:py-[3.5rem] rounded-[12px] lg:px-[2rem] xl:px-[4rem] 2xl:px-[4.5rem] xl:gap-x-[43px] 2xl:gap-x-[53px]'>
+        <div
+            className='mx-auto w-[100%] mt-[164px] mb-[160px] max-w-[2560px] px-[20px] lg:px-[80px] xl:px-[140px] 2xl:px-[160px] 3xl:px-[280px] 4xl:px-[420px] '>
+            <div
+                className='px-[28px] md:px-[56px] bg-[#E23F27] text-white flex-col lg:flex-row flex lg:items-center justify-between py-[47px] lg:py-[2rem]  xl:py-[3rem] 2xl:py-[3.5rem] rounded-[12px] lg:px-[2rem] xl:px-[4rem] 2xl:px-[4.5rem] xl:gap-x-[43px] 2xl:gap-x-[53px]'>
                 <div className='lg:mx-[20px] flex flex-col items-start xl:max-w-[407px] 2xl:max-w-[480px]'>
                     <Image
                         src='mail.svg'
@@ -18,8 +28,11 @@ const SubscribeForm = () => {
                     </p>
                 </div>
 
-                <form className='w-[100%] flex-col lg:flex-row lg:bg-[#B82D19] py-[36px] flex justify-between items-center rounded-[6px] lg:px-[28px]'>
+                <form onSubmit={handleSubmit}
+                      className='w-[100%] flex-col lg:flex-row lg:bg-[#B82D19] py-[36px] flex justify-between items-center rounded-[6px] lg:px-[28px]'>
                     <input
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
                         type='email'
                         placeholder='Enter your email'
                         required
