@@ -1,3 +1,5 @@
+'use client'
+import {useRef} from "react";
 import Organizations from '@/components/LandingPage/Organizations';
 import FeedbackForm from '@/components/LandingPage/FeedbackForm';
 import Hero from '@/components/LandingPage/Hero';
@@ -7,10 +9,11 @@ import SubscribeForm from '@/components/LandingPage/SubscribeForm';
 import Image from "next/image";
 
 const Home = () => {
+    const hWWRef = useRef<HTMLDivElement>(null);
     return (
         <>
-            <Hero/>
-            <HowWeWork/>
+            <Hero href={hWWRef}/>
+            <HowWeWork ref={hWWRef}/>
             <Numbers/>
             <Organizations/>
             <div

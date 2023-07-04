@@ -7,7 +7,7 @@ const NewsAndUpdates = () => {
     return (
         <div className='w-full pt-[160px] lg:pt-[284px] lg:pt-0 overflow-scroll'>
             <div
-                className="mx-auto max-w-[2560px] px-[20px] lg:px-[80px] xl:px-[130px] 2xl:px-[160px] 3xl:px-[280px] 4xl:px-[420px]">
+                className="mx-auto max-w-[1440px] px-[20px] lg:px-[80px] xl:px-[130px]">
                 <div>
                     <h1 className="text-[#0E0E10] font-neue text-[37px] md:text-[42px] lg:text-[60px] font-bold">Latest
                         Update</h1>
@@ -15,24 +15,24 @@ const NewsAndUpdates = () => {
                         See what we have been up to</p>
                 </div>
                 <div
-                    className='hidden w-full lg:flex lg:flex-row mt-[80px] gap-x-[68px]'>
+                    className='hidden w-full lg:flex lg:flex-row mt-[80px] gap-x-[38px] xl:gap-x-[68px]'>
                     <Image
                         src='/news-latest.svg'
                         alt='re:learn is driven by partnerships'
                         width={624}
-                        height={408}
-                        className='lg:w-[480px] xl:w-[624px] xl:h-[408px] mx-auto lg:mx-0'
+                        height={450}
+                        className='object-cover rounded-[6px] lg:w-[60%] lg:h-[408px] mx-auto lg:mx-0'
                     />
                     <div>
                         <div
-                            className='justify-center lg:justify-start lg:mx-0 flex items-center gap-x-[12px] mb-[24px]'>
+                            className='mt-[20px] justify-center lg:justify-start lg:mx-0 flex items-center gap-x-[12px] mb-[24px]'>
                             <p className='rounded-[3px] text-[17px] font-medium font-matter px-[16px] py-[8px] bg-[#FBF2EA] text-[#E58A1F]'>Event</p>
                             <p>3 hours ago</p>
                         </div>
-                        <h1 className='max-w-[205px] lg:max-w-[406px] font-bold mx-auto lg:mx-0 leading-[120%] text-center lg:text-left font-neue text-[#0E0E10] text-[37px] lg:text-[40px]'>
+                        <h1 className='w-full font-bold mx-auto lg:mx-0 leading-[120%] text-center lg:text-left font-neue text-[#0E0E10] text-[37px] xl:text-[40px]'>
                             Teachers’ Day celebration: Teachers’ Lounge
                         </h1>
-                        <p className='mt-[20px] mb-[47.5px] leading-[140%] max-w-[402px] mx-auto tracking-[0.1px] lg:tracking-[0.11px] font-matter lg:text-[20px] text-center lg:text-left text-[#333438] text-[20px] lg:mx-0'>
+                        <p className='mt-[20px] mb-[25px] xl:mb-[47.5px] leading-[140%] max-w-[402px] mx-auto tracking-[0.1px] lg:tracking-[0.11px] font-matter lg:text-[20px] text-center lg:text-left text-[#333438] text-[20px] lg:mx-0'>
                             We trained 21 fellows in Lagos and Kenya in
                             the application of technology for teaching,
                             learning and education management.
@@ -41,7 +41,8 @@ const NewsAndUpdates = () => {
                             <p className='text-[17px] font-matter text-red-100 font-medium tracking-[0.255px]'>Read
                                 More</p>
                             <div className='rounded-full bg-red-100 w-[32px] h-[32px] flex items-center justify-center'>
-                                <Image src='/arrow-down.svg' alt='why you should join us' width={24} height={24}/></div>
+                                <Image src='/arrow-down.svg' className='rotate-[-90deg]' alt='why you should join us'
+                                       width={24} height={24}/></div>
                         </div>
                     </div>
 
@@ -51,7 +52,7 @@ const NewsAndUpdates = () => {
                     News & Updates
                 </p>
                 <div
-                    className="justify-center mt-[64px] lg:mt-[57px] mb-[48px] gap-x-[26px] gap-y-[68px] grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
+                    className="justify-center mt-[64px] lg:mt-[57px] mb-[48px] gap-x-[26px] gap-y-[68px] grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3">
                     {articles.map((article, index) => {
                         if (index === 0) {
                             return <Article key={index} article={article} index={index}/>

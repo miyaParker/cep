@@ -4,9 +4,9 @@ import Link from "next/link";
 const Footer = () => {
     return (
         <div>
-            <div className='bg-[#0E0E10] w-screen'>
+            <div className='bg-[#0E0E10] w-screen text-white'>
                 <footer
-                    className='font-matter lg:flex-row lg:gap-x-[150px] xl:gap-x-[270px] 2xl:gap-x-[420px] 3xl:gap-x-[520px] lg:items-start lg:justify-start lg:text-[17px] text-white py-[72px] lg:py-[64px] max-w-[2560px] mx-auto flex flex-col px-[20px] lg:px-[80px] xl:px-[130px] 2xl:px-[160px] 3xl:px-[280px] 4xl:px-[420px]'>
+                    className='font-matter lg:flex-row lg:gap-x-[150px] xl:gap-x-[270px] lg:items-start lg:justify-start lg:text-[17px] text-white py-[72px] lg:py-[64px] max-w-[1500px] mx-auto flex flex-col px-[20px] lg:px-[80px] xl:px-[130px]'>
                     <div className='mb-[4rem] self-start'>
                         <div className='flex flex-col mb-[56px]'>
                             <Image
@@ -89,7 +89,7 @@ const Footer = () => {
                             Educator Network
                         </p>
                         </Link>
-                        <Link href='/about#COE'>
+                        <Link href='/about/#COE'>
                             <p className='tracking-[1.5%]'>EdTech CoE</p>
                         </Link>
                     </div>

@@ -12,17 +12,17 @@ const SubscribeForm = () => {
     }
     return (
         <div
-            className='mx-auto w-[100%] mt-[164px] mb-[160px] max-w-[2560px] px-[20px] lg:px-[80px] xl:px-[140px] 2xl:px-[160px] 3xl:px-[280px] 4xl:px-[420px] '>
+            className='mx-auto w-[100%] mt-[163px] mb-[160px] max-w-[1440px] px-[20px] lg:px-[80px] xl:px-[140px]'>
             <div
-                className='px-[28px] md:px-[56px] bg-[#E23F27] text-white flex-col lg:flex-row flex lg:items-center justify-between py-[47px] lg:py-[2rem]  xl:py-[3rem] 2xl:py-[3.5rem] rounded-[12px] lg:px-[2rem] xl:px-[4rem] 2xl:px-[4.5rem] xl:gap-x-[43px] 2xl:gap-x-[53px]'>
-                <div className='lg:mx-[20px] flex flex-col items-start xl:max-w-[407px] 2xl:max-w-[480px]'>
+                className='px-[28px] md:px-[56px] bg-[#E23F27] text-white flex-col lg:flex-row flex lg:items-center justify-between py-[47px] lg:py-[2rem]  xl:py-[3rem] rounded-[12px] lg:px-[2rem] xl:px-[4rem] xl:gap-x-[43px]'>
+                <div className='lg:mx-[20px] flex flex-col items-start xl:max-w-[407px]'>
                     <Image
                         src='mail.svg'
                         alt='subscribe to Relearn newsletter'
                         width={32}
                         height={32}
                     />
-                    <p className='leading-[25px] mt-[15px] font-neue font-bold lg:leading-[35px] text-[22px] lg:text-[25px] 2xl:text-[30px] lg:tracking-[1%]'>
+                    <p className='leading-[25px] mt-[15px] font-neue font-bold lg:leading-[35px] text-[22px] lg:text-[25px] lg:tracking-[1%]'>
                         Subscribe to our newsletter and get the latest updates
                         mailed to you.
                     </p>
