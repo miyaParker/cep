@@ -2,12 +2,12 @@ import Image from 'next/image';
 
 const Team = () => {
     return (
-        <div className='mt-[120px] lg:px-[80px] xl:px-[140px] 2xl:px-[160px] 3xl:px-[280px] 4xl:px-[420px]'>
+        <div className='mt-[120px] lg:px-[80px] xl:px-[140px]'>
             <h2 className='text-[30px] font-neue font-bold text-center mb-[3rem]'>
                 Meet the re:learn team
             </h2>
             <div
-                className='lg:grid lg:grid-cols-2 xl:grid-cols-[repeat(3,minmax(320px,373px))] flex flex-col lg:justify-center items-center gap-y-[40px] lg:gap-x-[24px]'>
+                className='lg:grid lg:grid-cols-2 xl:grid-cols-[repeat(3,minmax(320px,373px))] flex flex-col lg:justify-center items-center gap-y-[80px] lg:gap-x-[24px]'>
                 <div className='w-full h-max max-w-[373px] rounded-[4px] relative mx-auto px-[10px] lg:px-0'>
                     <Image
                         src='/aderonke.svg'
@@ -29,10 +29,10 @@ const Team = () => {
                             />
                         </div>
                     </a>
-                    <p className='mt-[20px] text-[22px] font-bold font-neue text-center'>
+                    <p className='mt-[24px] text-[22px] font-bold font-neue text-center'>
                         Aderonke Adeniran
                     </p>
-                    <p className='text-[1rem] text-center font-matter tracking-[0.16px] mt-[10px]'>
+                    <p className='text-[1rem] text-center font-matter tracking-[0.16px] mt-[12px]'>
                         Community Support Associate
                     </p>
                 </div>
@@ -57,10 +57,10 @@ const Team = () => {
                             />
                         </div>
                     </a>
-                    <p className='mt-[20px] text-[22px] font-bold font-neue text-center'>
+                    <p className='mt-[24px] text-[22px] font-bold font-neue text-center'>
                         Abigael Anaza-Mark
                     </p>
-                    <p className='text-[1rem] text-center font-matter tracking-[0.16px] mt-[10px]'>
+                    <p className='text-[1rem] text-center font-matter tracking-[0.16px] mt-[12px]'>
                         Programmes Associate
                     </p>
                 </div>
@@ -84,10 +84,10 @@ const Team = () => {
                             />
                         </div>
                     </a>
-                    <p className='mt-[20px] text-[22px] font-bold font-neue text-center'>
+                    <p className='mt-[24px] text-[22px] font-bold font-neue text-center'>
                         Chinyelu Udeh
                     </p>
-                    <p className='text-[1rem] text-center font-matter tracking-[0.16px] mt-[10px]'>
+                    <p className='text-[1rem] text-center font-matter tracking-[0.16px] mt-[12px]'>
                         Practice Lead
                     </p>
                 </div>
@@ -112,10 +112,10 @@ const Team = () => {
                             />
                         </div>
                     </a>
-                    <p className='mt-[20px] text-[22px] font-bold font-neue text-center'>
+                    <p className='mt-[24px] text-[22px] font-bold font-neue text-center'>
                         Famous Ogaga
                     </p>
-                    <p className='text-[1rem] text-center font-matter tracking-[0.16px] mt-[10px]'>
+                    <p className='text-[1rem] text-center font-matter tracking-[0.16px] mt-[12px]'>
                         Learning Development Lead
                     </p>
                 </div>
@@ -139,10 +139,10 @@ const Team = () => {
                             />
                         </div>
                     </a>
-                    <p className='mt-[20px] text-[22px] font-bold font-neue text-center'>
+                    <p className='mt-[24px] text-[22px] font-bold font-neue text-center'>
                         Shalom Anurigwo
                     </p>
-                    <p className='text-[1rem] text-center font-matter tracking-[0.16px] mt-[10px]'>
+                    <p className='text-[1rem] text-center font-matter tracking-[0.16px] mt-[12px]'>
                         Learning Development Associate
                     </p>
                 </div>
@@ -167,10 +167,10 @@ const Team = () => {
                         />
                     </div>
                     </a>
-                    <p className='mt-[20px] text-[22px] font-bold font-neue text-center'>
+                    <p className='mt-[24px] text-[22px] font-bold font-neue text-center'>
                         Yetunde Omotosho
                     </p>
-                    <p className='text-[1rem] text-center font-matter tracking-[0.16px] mt-[10px]'>
+                    <p className='text-[1rem] text-center font-matter tracking-[0.16px] mt-[12px]'>
                         Monitoring & Evaluation Associate
                     </p>
                 </div>

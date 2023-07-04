@@ -1,50 +1,45 @@
-
 import Image from 'next/image';
+import Button from "@/components/Generic/Button";
 
 const AffiliateCenter = () => {
     return (
         <div className='bg-[#0E0E10] text-white py-[80px] mt-[80px]' id='COE'>
-            <div className='font-neue font-bold flex flex-col items-center lg:justify-center lg:gap-x-[180px] lg:flex-row  lg:gap-x-[165px] lg:px-[80px] xl:px-[140px] 2xl:px-[160px] 3xl:px-[280px] 4xl:px-[420px]'>
-                <div>
-                    <div className='w-max px-[16px] py-[6px] mb-[24px] rounded-[24px] border border-[#43434C] bg-[#29292E] border-1 mx-auto lg:mx-0'>
+            <div
+                className='max-w-[1440px] mx-auto font-neue font-bold flex flex-col items-start lg:justify-between px-[20px] lg:flex-row lg:px-[80px] xl:px-[140px]'>
+                <div className='mx-auto lg:mx-0'>
+                    <div
+                        className='w-max px-[16px] py-[6px] mb-[24px] rounded-[24px] border border-[#43434C] bg-[#29292E] border-1 mx-auto lg:mx-0'>
                         <p className='text-center text-white/84 tracking-[0.2px] font-matter font-[500]'>
                             Our Affiliate Centre
                         </p>
                     </div>
-                    <h2 className='max-w-[485px] mx-auto lg:mx-0 px-[38px] lg:px-0 text-[30px] lg:text-[3rem] text-center lg:text-left leading-[120%] mt-[28px] mb-[20px]'>
+                    <h2 className='max-w-[485px] mx-auto lg:mx-0 lg:px-0 text-[30px] lg:text-[3rem] text-center lg:text-left leading-[120%] mt-[28px] mb-[20px]'>
                         The Ed-Tech Centre of Excellence, TASUED
                     </h2>
-                    <p className='font-matter text-[17px] lg:text-[20px] px-[30px] lg:px-0 mb-[3rem] max-w-[450px] font-normal mx-auto lg:mx-0  text-center lg:text-left text-white/90 tracking-[0.085px] leading-[150%]'>
+                    <p className='font-matter text-[17px] lg:text-[20px] lg:px-0 mb-[3rem] max-w-[450px] font-normal mx-auto lg:mx-0  text-center lg:text-left text-white/90 tracking-[0.085px] leading-[150%]'>
                         The Ed-Tech CoE, created in partnership with the Tai
                         Solarin University of Education Ijebu Ode and
                         Co-Creation Hub Limited, aims to accelerate research and
                         development in the application of technology for
                         teaching, learning & management of education in Africa.
                     </p>
-                    <p className='font-matter text-[17px] lg:text-[20px] px-[30px] lg:px-0 mb-[3rem] max-w-[450px] font-normal mx-auto lg:mx-0  text-center lg:text-left text-white/90 tracking-[0.085px] leading-[150%] hidden lg:block'>
+                    <p className='font-matter text-[17px] lg:text-[20px] lg:px-0 mb-[3rem] max-w-[450px] font-normal mx-auto lg:mx-0  text-center lg:text-left text-white/90 tracking-[0.085px] leading-[150%] hidden lg:block'>
                         The centre through academic research, a community of
                         ed-tech enthusiasts, incubation of early-stage
                         businesses, and a research fellowship programme, will
                         make a significant contribution to e-learning and
                         technology application in schools & classrooms
                     </p>
-                    <button className='bg-[#E23F27] px-[36px] py-[23.5px] font-matter font-[500] text-[17px] rounded-[40px] hidden lg:flex'>
-                        <span className='mr-[.5rem]'>Learn More</span>
-                        <Image
-                            src='/arrow-up.svg'
-                            alt='Learn More'
-                            width={24}
-                            height={24}
-                        />
-                    </button>
+                    <Button btnText='Learn More' rightIcon='/arrow-up.svg' animate={true}
+                            styles='bg-[#E23F27] px-[36px] py-[23.5px] font-matter font-[500] text-[17px] rounded-[40px] hidden lg:flex'/>
                 </div>
-                <div className='relative max-w-[464px] max-h-[483px] mx-auto lg:mx-0 lg:mr-[36px]'>
+                <div className='relative mx-auto lg:mx-0 lg:w-[420px] xl:w-[504px]'>
                     <Image
                         src='/tasued.svg'
                         alt='The Ed-Tech Centre of Excellence, TASUED'
                         width={504}
                         height={503}
-                        className='mx-auto mx-[20px] lg:mx-0'
+                        className='w-full mx-auto mx-[20px] lg:mx-0'
                     />
                     <Image
                         src='/about-ellipse.svg'

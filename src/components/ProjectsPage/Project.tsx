@@ -13,7 +13,7 @@ const Project = ({project}: { project: any }) => {
     return (
         <div>
             <div className="justify-items-start">
-                <Image className="w-full mb-[28px] rounded-[4px]" src={project.img}
+                <Image className="w-full mb-[24px] rounded-[4px]" src={project.img}
                        alt={project.name} width={378} height={252}/>
                 <p className="max-w-[260px] font-neue text-[22px] lg:text-[25px] text-[#0E0E10] font-bold mb-[12px] leading-[120%]">{project.name}</p>
                 <p onClick={() => setShow(true)}

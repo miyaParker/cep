@@ -1,10 +1,14 @@
 import Image from 'next/image';
+import Button from "@/components/Generic/Button";
 
-const Hero = () => {
+const Hero = ({faqRef}: { faqRef: any }) => {
+    const handleClick = () => {
+        faqRef.current?.scrollIntoView({behavior: 'smooth'});
+    };
     return (
         <>
             <div
-                className='w-full pt-[136px] lg:pt-0 flex flex-col lg:flex-row lg:justify-between max-w-[2560px] px-[20px] lg:px-[80px] xl:px-[140px] 2xl:px-[160px] 3xl:px-[280px] 4xl:px-[420px]'>
+                className='w-full pt-[136px] lg:gap-[44px] xl:gap-[74px] lg:pt-0 flex flex-col lg:flex-row lg:justify-between max-w-[1440px] px-[20px] lg:px-[80px] xl:px-[140px] mx-auto'>
                 <div>
                     <h1 className='max-w-[205px] lg:max-w-[436px] lg:mt-[312px] font-bold mx-auto lg:mx-0 leading-[120%] text-center lg:text-left font-neue text-[#0E0E10] text-[37px] lg:text-[60px]'>
                         Join a{' '}<span className='text-[#ED7636]'>new wave</span>{' '}
@@ -17,10 +21,16 @@ const Hero = () => {
                         celebrating excellence in teaching, mentoring
                         and networking
                     </p>
-                    <div className='flex items-center gap-x-[16px]'>
+                    <a href="/get-involved/become-a-partner-at-relearn/apply" className='block lg:hidden'>
+                        <Button
+                            animate={true}
+                            btnText={'Join our Network'}
+                            styles='block mb-[64px] lg:b-0 mx-auto lg:mx-0 bg-[#E23F27] px-[36px] py-[23.5px] font-matter font-[500] text-[17px] text-white text-center rounded-[40px]'/></a>
+                    <div onClick={handleClick} className='cursor-pointer items-center gap-x-[16px] hidden lg:flex'>
                         <p className='text-[17px] font-matter text-red-100 font-medium tracking-[0.255px]'>See why you
                             should join us</p>
-                        <div className='rounded-full bg-red-100 w-[32px] h-[32px] flex items-center justify-center'><Image src='/arrow-down.svg' alt='why you should join us' width={24} height={24}/></div>
+                        <div className='rounded-full bg-red-100 w-[32px] h-[32px] flex items-center justify-center'>
+                            <Image src='/arrow-down.svg' alt='why you should join us' width={24} height={24}/></div>
                     </div>
 
                 </div>
@@ -28,9 +38,9 @@ const Hero = () => {
                 <Image
                     src='/educators-network.svg'
                     alt='re:learn is driven by partnerships'
-                    width={620}
-                    height={490}
-                    className='lg:w-[620px] lg:h-[490px] mx-auto lg:mx-0 lg:mt-[264px]'
+                    width={520}
+                    height={390}
+                    className='lg:w-[420px] xl:w-[620px] xl:h-[490px] mx-auto lg:mx-0 lg:mt-[264px]'
                 />
 
 
@@ -39,3 +49,4 @@ const Hero = () => {
     );
 };
 export default Hero;
+Hero.displayName = 'Hero';

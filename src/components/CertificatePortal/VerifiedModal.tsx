@@ -2,6 +2,7 @@ import {createPortal} from "react-dom";
 import Image from "next/image";
 
 const VerifiedModal = ({data, closeModal}: { data: any, closeModal:()=>void }) => {
+    console.log(data)
     const modalRoot = document.getElementById('modal-root')!
     return createPortal(
         <div

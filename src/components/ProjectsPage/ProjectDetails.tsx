@@ -1,3 +1,5 @@
+import Button from "@/components/Generic/Button";
+
 'use-client'
 
 import {createPortal} from "react-dom";
@@ -92,6 +94,13 @@ const ProjectDetails = ({
                         )
                     }
                 })}
+                {project?.cta ?
+                    <Button
+                        styles='relative z-20 font-matter block mx-auto mt-[40px] text-white bg-red-100 text-[1.125rem] mb-[68px]'
+                        btnText={project.cta}
+                        animate={true}
+                    /> : null
+                }
             </div>
         </div>, modalRoot
     )
