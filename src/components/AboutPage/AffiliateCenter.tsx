@@ -1,9 +1,21 @@
+'use client'
 import Image from 'next/image';
 import Button from "@/components/Generic/Button";
+import {usePathname, useSearchParams} from "next/navigation";
+import {useEffect, useRef} from "react";
 
 const AffiliateCenter = () => {
+    const ref = useRef<HTMLDivElement | null>(null)
+    const searchParams = useSearchParams()
+    const id = searchParams.get('id')
+    useEffect(() => {
+        if (searchParams.get('id') === 'COE') {
+            ref.current?.scrollIntoView({behavior: 'smooth'})
+        }
+    }, [id])
+
     return (
-        <div className='bg-[#0E0E10] text-white py-[80px] mt-[80px]' id='COE'>
+        <div className='bg-[#0E0E10] text-white py-[80px] mt-[80px]' ref={ref} id='COE'>
             <div
                 className='max-w-[1440px] mx-auto font-neue font-bold flex flex-col items-start lg:justify-between px-[20px] lg:flex-row lg:px-[80px] xl:px-[140px]'>
                 <div className='mx-auto lg:mx-0'>
@@ -30,8 +42,10 @@ const AffiliateCenter = () => {
                         make a significant contribution to e-learning and
                         technology application in schools & classrooms
                     </p>
-                    <Button btnText='Learn More' rightIcon='/arrow-up.svg' animate={true}
-                            styles='bg-[#E23F27] px-[36px] py-[23.5px] font-matter font-[500] text-[17px] rounded-[40px] hidden lg:flex'/>
+                    <a href='https://edtechcoe.com/' target='_blank'>
+                        <Button btnText='Learn More' rightIcon='/arrow-up.svg' animate={true}
+                                styles='bg-[#E23F27] px-[36px] py-[23.5px] font-matter font-[500] text-[17px] rounded-[40px] hidden lg:flex'/>
+                    </a>
                 </div>
                 <div className='relative mx-auto lg:mx-0 lg:w-[420px] xl:w-[504px]'>
                     <Image

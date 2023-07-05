@@ -11,7 +11,7 @@ interface CardProps {
 const Card = ({ icon, title, text, textColor, styles }: CardProps) => {
     return (
         <div
-            className={`card-container max-w-[374px] lg:w-[374px] lg:h-[352px] text-[1.1rem] font-matter border-2 rounded-[6px] border-alabaster border ${styles}`}
+            className={`card-container max-w-[374px] lg:w-[374px] lg:h-[352px] text-[1.1rem] font-matter border-[2px] rounded-[6px] border-[#E7E6EA] border ${styles}`}
         >
             <div className='w-[100%] card rounded-[6px] h-full px-[1.8rem] xl:px-[2.5rem] py-[30px] xl:py-[53px]'>
                 <Image

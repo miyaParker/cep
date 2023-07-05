@@ -3,13 +3,13 @@ module.exports = {
     content: ['./src/**/*.{js,ts,jsx,tsx}'],
     theme: {
         screens: {
-            sm: '640px',
+            sm: '375px',
             md: '768px',
             lg: '1024px',
-            xl: '1440px',
-            '2xl': '1720px',
-            '3xl': '2140px',
-            '4xl': '2560px'
+            xl: '1260px',
+            // '2xl': '1720px',
+            // '3xl': '2140px',
+            // '4xl': '2560px'
         },
         extend: {
             colors: {

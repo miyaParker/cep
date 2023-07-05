@@ -14,9 +14,9 @@ const Button = ({styles, btnText, rightIcon, handleClick, animate, disabled}: Bu
         <button
             disabled={disabled}
             onClick={handleClick}
-            className={`btn relative overflow-hidden rounded-[2.5rem] flex justify-center items-center px-[36px] py-[20px] w-max font-sans font-medium ${styles}`}
+            className={`btn relative overflow-hidden rounded-[2.5rem] flex justify-center items-center py-[10px] px-[16px] sm:px-[36px] sm:py-[20px] sm:w-max font-sans font-medium ${styles}`}
         >
-            {animate ? <div className='btn-bg w-[250px] h-[250px] rounded-full absolute top-[80px]'></div> : null}
+            {animate ? <div className='btn-bg w-[350px] h-[350px] rounded-full absolute top-[80px]'></div> : null}
             <span className='capitalize'>{btnText}</span>
             {rightIcon && (
                 <Image

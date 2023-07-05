@@ -195,3 +195,10 @@ select:required:invalid {
     display: block;
     top: -120px
 }
+
+@media screen and( max-width: 375px) {
+    * {
+        word-break: break-all;
+        word-wrap: break-word;
+    }
+}
