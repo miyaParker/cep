@@ -6,7 +6,7 @@ const Hero = () => {
         <>
             <div
                 className='w-full pt-[136px] lg:pt-0 flex flex-col lg:flex-row items-start lg:justify-between max-w-[1440px] mx-auto px-[20px] lg:px-[80px] xl:px-[140px]'>
-                <div>
+                <div className='mx-auto lg:mx-0'>
                     <h1 className='max-w-[205px] lg:max-w-[337px] lg:mt-[312px] font-bold mx-auto lg:mx-0 leading-[120%] text-center lg:text-left font-neue text-[#0E0E10] text-[37px] lg:text-[60px]'>
                         re:learn is driven by{' '}
                         <span className='text-[#ED7636]'>partnerships</span>
@@ -29,7 +29,7 @@ const Hero = () => {
                     alt='re:learn is driven by partnerships'
                     width={506}
                     height={520}
-                    className='w-full lg:w-[420px] xl:w-[620px] xl:h-[490px] mx-auto lg:mx-0 lg:mt-[264px]'
+                    className='w-full max-w-[420px] xl:max-w-[620px] lg:w-[420px] xl:w-[620px] xl:h-[490px] mx-auto lg:mx-0 lg:mt-[264px]'
                 />
 
 

@@ -26,35 +26,42 @@ const Footer = () => {
                         <div>
                             <a
                                 className='mb-[24px] block tracking-[1.5%]'
-                                href='mailto:info@relearn.ng'
+                                href='mailto:info@relearn.ng' target='_blank'
                             >
                                 info@relearn.ng
                             </a>
                             <div className='flex gap-x-[1rem]'>
-                                <Image
-                                    src='/instagram.svg'
-                                    alt='relearn instagram'
-                                    width={32}
-                                    height={32}
-                                />
-                                <Image
-                                    src='/facebook.svg'
-                                    alt='relearn facebook'
-                                    width={32}
-                                    height={32}
-                                />
-                                <Image
-                                    src='/twitter.svg'
-                                    alt='relearn twitter'
-                                    width={32}
-                                    height={32}
-                                />
-                                <Image
-                                    src='/youtube.svg'
-                                    alt='relearn youtube'
-                                    width={32}
-                                    height={32}
-                                />
+                                <a href='https://instagram.com/relearnafrica?igshid=Y2IzZGU1MTFhOQ==' target='_blank'>
+                                    <Image
+                                        src='/instagram.svg'
+                                        alt='relearn instagram'
+                                        width={32}
+                                        height={32}/>
+                                </a>
+                                <a href='https://facebook.com/CcHUBnigeria' target='_blank'>
+                                    <Image
+                                        src='/facebook.svg'
+                                        alt='relearn facebook'
+                                        width={32}
+                                        height={32}
+                                    />
+                                </a>
+                                <a href='https://twitter.com/relearnNG?t=Hxou-GmPMa967uZRZEC6tA&s=09' target='_blank'>
+                                    <Image
+                                        src='/twitter.svg'
+                                        alt='relearn twitter'
+                                        width={32}
+                                        height={32}
+                                    />
+                                </a>
+                                <a href='https://www.youtube.com/CcHubNigeria' target='_blank'>
+                                    <Image
+                                        src='/youtube.svg'
+                                        alt='relearn youtube'
+                                        width={32}
+                                        height={32}
+                                    />
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -89,7 +96,7 @@ const Footer = () => {
                             Educator Network
                         </p>
                         </Link>
-                        <Link href='/about/#COE'>
+                        <Link href='/about?id=COE'>
                             <p className='tracking-[1.5%]'>EdTech CoE</p>
                         </Link>
                     </div>
@@ -97,6 +104,7 @@ const Footer = () => {
             </div>
         </div>
 
-    );
+    )
+        ;
 };
 export default Footer;

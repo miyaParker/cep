@@ -30,7 +30,7 @@ export const projects = [
             location: "kenya",
             info: [{number: 99, description: "Teachers"}, {number: 2970, description: "Students"}]
         }],
-        cta: "Join the Teachers’ Lounge"
+        cta: {text: "Join the Teachers’ Lounge", link: 'http://bit.ly/TEACHERSLOUNGE'}
     },
     {
         name: "Lagos STEM Cells",
@@ -239,4 +239,4 @@ export const articles = [
         description: "The Safe online programme is designed" +
             "to introduce teenagers to digital ..."
 
-    }, ]
+    },]

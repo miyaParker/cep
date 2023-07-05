@@ -55,7 +55,7 @@ const FAQ = forwardRef<HTMLDivElement>((props, ref) => {
                             about building thriving careers in the EdTech space.</p>
                     </div>
                 </div>
-                <a href="/get-involved/become-a-partner-at-relearn/apply">
+                <a href="https://forms.gle/BJXEvk9jrkMhW7LH6" target='_blank'>
                     <Button
                         btnText='Join our Network'
                         animate={true}

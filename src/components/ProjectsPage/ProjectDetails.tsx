@@ -95,11 +95,12 @@ const ProjectDetails = ({
                     }
                 })}
                 {project?.cta ?
-                    <Button
-                        styles='relative z-20 font-matter block mx-auto mt-[40px] text-white bg-red-100 text-[1.125rem] mb-[68px]'
-                        btnText={project.cta}
-                        animate={true}
-                    /> : null
+                    <a href={project?.cta?.link} target='_blank'>
+                        <Button
+                            styles='relative z-20 font-matter block mx-auto mt-[40px] text-white bg-red-100 text-[1.125rem] mb-[68px]'
+                            btnText={project.cta.text}
+                            animate={true}
+                        /></a> : null
                 }
             </div>
         </div>, modalRoot

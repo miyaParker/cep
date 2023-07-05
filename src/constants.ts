@@ -28,7 +28,7 @@ export const mobileNavItems = [
 ];
 export const faqs = [{
     q: 'How do I become part of the network?',
-    a: 'To get started, fill out the online application form here. The Educators’ Network is currently open to residents.'
+    a: 'To get started, fill out the online application form, here. The Educators’ Network is currently open to residents'
 }, {
     q: 'Do I need to know how to code?',
     a: 'No. If you have a passion for education and are comfortable using a computer then you have enough to get started.'
@@ -48,20 +48,6 @@ export const faqs = [{
     }]
 export const partnerEmailTemplate = (data: { fullName: string, organization: string, proposal: string, email: string }) =>
     `<html>
-                    <style>
-                        .container{
-                        width: 100%;
-                        max-width: 600px;
-                        margin: 0 auto;
-                        background-color: #FFF;
-                        color: #333438;
-                        font-size: 20px;
-                        padding: 48px 24px;
-                        }
-                        .salutation, .message{
-                            margin-bottom: 10px;
-                        }
-                    </style>
                     <body>
                         <div class="container">
                             <p class='salutation'>Hello Admin,</p>
@@ -77,20 +63,6 @@ export const partnerEmailTemplate = (data: { fullName: string, organization: str
 
 export const feedbackEmailTemplate = (data: { email: string, message: string }) =>
     `<html>
-                    <style>
-                        .container{
-                        width: 100%;
-                        max-width: 600px;
-                        margin: 0 auto;
-                        background-color: #FFF;
-                        color: #333438;
-                        font-size: 20px;
-                        padding: 48px 24px;
-                        }
-                        .salutation, .message{
-                            margin-bottom: 24px;
-                        }
-                    </style>
                     <body>
                         <div class="container">
                             <p class='salutation'>Hello Admin,</p>

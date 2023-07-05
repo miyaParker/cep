@@ -8,7 +8,7 @@ const Hero = ({faqRef}: { faqRef: any }) => {
     return (
         <>
             <div
-                className='w-full pt-[136px] lg:gap-[44px] xl:gap-[74px] lg:pt-0 flex flex-col lg:flex-row lg:justify-between max-w-[1440px] px-[20px] lg:px-[80px] xl:px-[140px] mx-auto'>
+                className='w-full pt-[136px] lg:pt-0 flex flex-col lg:flex-row lg:justify-between max-w-[1440px] px-[20px] lg:px-[80px] xl:px-[140px] mx-auto'>
                 <div>
                     <h1 className='max-w-[205px] lg:max-w-[436px] lg:mt-[312px] font-bold mx-auto lg:mx-0 leading-[120%] text-center lg:text-left font-neue text-[#0E0E10] text-[37px] lg:text-[60px]'>
                         Join a{' '}<span className='text-[#ED7636]'>new wave</span>{' '}
@@ -21,7 +21,7 @@ const Hero = ({faqRef}: { faqRef: any }) => {
                         celebrating excellence in teaching, mentoring
                         and networking
                     </p>
-                    <a href="/get-involved/become-a-partner-at-relearn/apply" className='block lg:hidden'>
+                    <a href="https://forms.gle/BJXEvk9jrkMhW7LH6" className='block lg:hidden'>
                         <Button
                             animate={true}
                             btnText={'Join our Network'}

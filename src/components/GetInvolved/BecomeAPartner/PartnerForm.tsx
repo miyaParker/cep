@@ -26,6 +26,10 @@ const PartnerForm = () => {
     const handleErrors = (data: IForm) => {
         let isValid = false
         for (const [key, value] of Object.entries(data)) {
+            if(key ==='file' && value.size >5000000){
+                setError({[key]: "Exceeded file size limit of 5MB", message: "Exceeded file size limit of 5MB"})
+                return isValid
+            }
             if (key === 'file' && value === undefined) {
                 setError({[key]: "Please, complete all input fields", message: "Please, complete all input fields"})
                 return isValid
@@ -180,7 +184,8 @@ const PartnerForm = () => {
                             htmlFor='file'
                             className='text-[#333438] tracking-[0.85%] font-matter cursor-pointer border-0 text-[17px] pb-0 mb-0 w-max flex-1'
                         >
-                            {data.file === undefined ? <><span className='font-medium opacity-70'>Attach files here </span>
+                            {data.file === undefined ? <><span
+                                className='font-medium opacity-70'>Attach files here </span>
                                 <span className='opacity-60'>(size limit: 5MB)</span></> : data.file.name}
                         </label>
                         <input

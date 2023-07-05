@@ -1,5 +1,5 @@
+'use client'
 import Image from "next/image";
-import {useState} from "react";
 
 const FAQItem = ({
                      data,
@@ -14,9 +14,15 @@ const FAQItem = ({
                        alt='read more' width={24}
                        height={24}/>
             </div>
-            <p className={`${currentIndex === index ? 'block pl-[8px]' : 'hidden'}  w-full text-[17px] text-[#13131699]/60 tracking-[0.17px] leading-[150%] pb-[30px] max-w-[429px]`}>
-                {data.a}
-            </p>
+            {currentIndex > 1 ?
+                <p className={`${currentIndex === index ? 'block pl-[8px]' : 'hidden'}  w-full text-[17px] text-[#13131699]/60 tracking-[0.17px] leading-[150%] pb-[30px] max-w-[429px]`}>
+                    {data.a}
+                </p> :
+                <p className={`${currentIndex === index ? 'block pl-[8px]' : 'hidden'}  w-full text-[17px] text-[#13131699]/60 tracking-[0.17px] leading-[150%] pb-[30px] max-w-[429px]`}>
+                    To get started, fill out the online application form <a
+                    className='inline-block leading-[150%] text-red-100 underline' href='https://forms.gle/BJXEvk9jrkMhW7LH6' target='_blank'>here</a>. The Educators’
+                    Network is currently open to residents
+                </p>}
         </div>
     )
 }
