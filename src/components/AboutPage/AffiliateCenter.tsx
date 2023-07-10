@@ -49,7 +49,7 @@ const AffiliateCenter = () => {
                 </div>
                 <div className='relative mx-auto lg:mx-0 lg:w-[420px] xl:w-[504px]'>
                     <Image
-                        src='/tasued.svg'
+                        src='/tasued.jpg'
                         alt='The Ed-Tech Centre of Excellence, TASUED'
                         width={504}
                         height={503}

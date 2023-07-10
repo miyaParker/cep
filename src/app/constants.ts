@@ -14,7 +14,7 @@ export const programmes = ["Summer of Code",
 export const projects = [
     {
         name: "Teachers' Lounge",
-        img: "/teachers-lounge.svg",
+        img: "/teachers-lounge.jpg",
         details: {
             summary: ["A state-of-the-art community that offers teachers access to qualified trainers, teaching resources and devices, to support their professional growth and meet the needs of 21st century learners."],
             info: {
@@ -33,8 +33,8 @@ export const projects = [
         cta: {text: "Join the Teachers’ Lounge", link: 'http://bit.ly/TEACHERSLOUNGE'}
     },
     {
-        name: "Lagos STEM Cells",
-        img: "/stem.svg",
+        name: "Lagos State STEM Cells Project",
+        img: "/stem.jpg",
         details: {
             summary: ["The role of Science, Technology, Engineering and Mathematics(STEM) education in bringing about national development and global competitiveness cannot be overemphasized.",
                 "However, the current education system in Nigeria does not equip students with the skills required to bring about scientific discoveries that are capable of being translated into technological developments at the national and international levels.",
@@ -55,8 +55,8 @@ export const projects = [
         }, {number: 5342, description: "Students"}],
     },
     {
-        name: "Safe Online",
-        img: "/safe-online.svg",
+        name: "Safe Online with Meta",
+        img: "/safe-online.jpg",
         details: {
             summary: ["The Safe Online with Facebook Digital campaign is a Facebook advocacy programme designed to help internet users develop the right skills required to stay safe as they explore the internet"],
             info: {
@@ -70,8 +70,8 @@ export const projects = [
         }, {number: 2000, description: "parents and Teachers"}],
     },
     {
-        name: "EdTech Fellowship",
-        img: "/edtech.svg",
+        name: "CcHUB / ACT Foundation Edtech Fellowship",
+        img: "/edtech.jpg",
         details: {
             summary: ["In partnership with the ACT Foundation, we organised The EdTech Fellowship were we empowered 41 fellows with the knowledge and skills required to become Instructional Designers and build a career in the EdTech space",
                 "The key result from the fellowship is the creation of 6 digital EdTech Prototypes from 21 fellows across Nairobi, Lagos and Ijebu"],
@@ -87,7 +87,7 @@ export const projects = [
     },
     {
         name: "Lagos East Teachers’s Fellowship (LETF)",
-        img: "/letf.svg",
+        img: "/letf.jpg",
         details: {
             summary: ["The Lagos East Teachers’ Fellowship is a pipeline for continuing professional development training for teachers across the five local governments in Lagos East Senatorial District.",
                 "The Fellowship is being organized by the Tokunbo Abiru Campaign Team (TACT) of Senator Abiru Innovation Lab (SAIL) in partnership with re:learn the Education practice at Co-creation Hub."],
@@ -103,7 +103,7 @@ export const projects = [
     },
     {
         name: "GO-GA",
-        img: "/goga.svg",
+        img: "/goga.jpg",
         details: {
             summary: ["The GO-GA project is a European Union-funded project which seeks to accelerate the adoption of richer learning environments and learning outcomes for STEM in Africa.",
 
@@ -120,7 +120,7 @@ export const projects = [
     },
     {
         name: "Innovative Teachers’ Fellowship",
-        img: "/itf.svg",
+        img: "/itf.jpg",
         details: {
             summary: ["TThis fellowship was a 6 week training program designed to empower STEM and Non-STEM teachers across Nigeria. The training focused on leveraging technology to deliver 21st century learning, content creation, lesson delivery & assessments.",
 
@@ -132,8 +132,8 @@ export const projects = [
         }],
     },
     {
-        name: "McArthur Foundation",
-        img: "/mcarthur.svg",
+        name: "STEM Extra",
+        img: "/mcarthur.jpg",
         details: {
             summary: ["Funded by the Mac-Arthur Foundation in Nigeria, this project ran as a pilot in 3 Nigerian states (Lagos, Jigawa and Kano) with 20 schools and over 800 students in SS1. We designed digital labs that mirrored the curriculum for physics, chemistry, and biology and trained the teachers to tutor their students using the digital labs as opposed to traditional methods.",
 
@@ -170,7 +170,7 @@ export const projects = [
         },]
     }, {
         name: "Virtual STEM Hub",
-        img: "/stem-club.svg",
+        img: "/stem-club.jpg",
         details: {
             summary: ["Designed as a COVID-19 intervention to provide a learning and support platform for STEM teachers in Nigeria and Kenya during the shut down of schools as a result of the pandemic.",
                 "The training sessions held on WhatsApp, recorded over 500 teachers in its 2 cohorts that took place during the lockdown."],
@@ -181,7 +181,7 @@ export const projects = [
         }],
     },
     {
-        name: "Next Gen Teachers’ Fellowship",
+        name: "NextGen Teachers Fellowship",
         img: "/nextgen.svg",
         details: {
             summary: ["The NextGen Teachers Fellowship was designed to provide a learning and support platform for pre-service teachers in Kenya and Nigeria during COVID 19 shut down of schools."],
@@ -210,14 +210,14 @@ export const articles = [
     {
         name: "Teachers’ Day celebration: Teachers’" +
             "Lounge",
-        img: "/news-latest.svg",
+        img: "/news-latest.jpg",
         category: 'Events',
         datePublished: '3 hours ago',
         description: "We trained 21 fellows in Lagos and Kenya in the application of technology for teaching, learning and education management."
     },
     {
         name: "EdTech Festival 2021",
-        img: "/sample1.svg",
+        img: "/sample1.jpg",
         category: 'Events',
         datePublished: '2 days ago',
         description: "A STEM exploration festival organized to" +
@@ -225,7 +225,7 @@ export const articles = [
 
     }, {
         name: "Introducing Viable",
-        img: "/sample2.svg",
+        img: "/sample2.jpg",
         category: 'Community',
         datePublished: '2 weeks ago',
         description: "Viable is the first community for EdTech" +
@@ -233,7 +233,7 @@ export const articles = [
 
     }, {
         name: "Safe Online by Meta",
-        img: "/sample3.svg",
+        img: "/sample3.jpg",
         category: 'Programme Update',
         datePublished: 'November 11, 2022',
         description: "The Safe online programme is designed" +

@@ -17,7 +17,7 @@ const NewsAndUpdates = () => {
                 <div
                     className='hidden w-full lg:flex lg:flex-row mt-[80px] gap-x-[38px] xl:gap-x-[68px]'>
                     <Image
-                        src='/news-latest.svg'
+                        src='/news-latest.jpg'
                         alt='re:learn is driven by partnerships'
                         width={624}
                         height={450}
