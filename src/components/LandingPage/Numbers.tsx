@@ -8,7 +8,7 @@ const Numbers = () => {
     const {value: students} = useCounter({ref, limit: 100285, step: 647, interval: 10})
     const {value: partners} = useCounter({ref, limit: 12, step: 1, interval: 10})
     const {value: projects} = useCounter({ref, limit: 12, step: 1, interval: 10})
-    const {value: schools} = useCounter({ref, limit: 100, step: 1, interval: 10})
+    const {value: schools} = useCounter({ref, limit: 95, step: 1, interval: 5})
 
     return (
         <div className='bg-black-100' ref={ref}>
@@ -55,7 +55,7 @@ const Numbers = () => {
                             {projects}+
                         </p>
                         <p className='font-matter text-[1.1rem] text-gray-300 tracking-[0.015em]'>
-                            Projects Completed
+                            Learning Hours
                         </p>
                     </div>
                     <div className='flex flex-col items-center justify-center w-max'>

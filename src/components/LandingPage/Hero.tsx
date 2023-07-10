@@ -25,10 +25,10 @@ const Hero = ({href}: { href: any }) => {
                 />
                 <div className='relative z-20'>
                     <Image
-                        src='/hero-image.svg'
+                        src='/hero.jpg'
                         alt='hero image'
-                        width={818}
-                        height={475}
+                        width={868}
+                        height={477}
                         className='mx-auto px-[20px] lg:px-0 w-[818px] xl:w-[872px] h-auto my-[62px]'
                     />
                 </div>

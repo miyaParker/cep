@@ -3,8 +3,8 @@ import Image from 'next/image';
 const Hero = () => {
     return (
         <>
-            <div className='mx-auto w-full pt-[136px] lg:pt-0 flex flex-col lg:flex-row lg:justify-between max-w-[1440px] px-[20px] lg:px-[80px] xl:px-[140px]'>
-                <div>
+            <div className='mx-auto gap-x-[20px] w-full pt-[136px] lg:pt-0 flex flex-col lg:flex-row lg:justify-between max-w-[1440px] px-[20px] lg:px-[80px] xl:px-[140px]'>
+                <div className='w-full'>
                     <h1 className='max-w-[205px] lg:max-w-[337px] lg:mt-[312px] font-bold mx-auto lg:mx-0 leading-[120%] text-center lg:text-left font-neue text-[#0E0E10] text-[37px] lg:text-[60px]'>
                         Our Focus is{' '}
                         <span className='text-[#ED7636]'>Education</span>
@@ -18,11 +18,11 @@ const Hero = () => {
                 </div>
 
                 <Image
-                    src='/about-image.svg'
+                    src='/about-image.jpg'
                     alt='Our Focus is Education'
-                    width={584}
+                    width={562}
                     height={496}
-                    className='w-full max-w-[400px] xl:max-w-[584px] lg:w-[400px] xl:w-[584px] mx-auto lg:mx-0 lg:mt-[264px]'
+                    className='w-full lg:w-[500px] lg:h-[383px] max-w-[500px] xl:max-w-[562px] xl:w-[562px] xl:h-[536px] mx-auto lg:mx-0 lg:mt-[264px]'
                 />
             </div>
             <div className='mt-[80px] lg:mt-[124px] text-center font-neue'>
