@@ -5,7 +5,7 @@ const Hero = () => {
     return (
         <>
             <div
-                className='w-full pt-[136px] lg:pt-0 flex flex-col lg:flex-row items-start lg:justify-between max-w-[1440px] mx-auto px-[20px] lg:px-[80px] xl:px-[140px]'>
+                className='w-full gap-x-[40px] pt-[136px] lg:pt-0 flex flex-col lg:flex-row items-start lg:justify-between max-w-[1440px] mx-auto px-[20px] lg:px-[80px] xl:px-[140px]'>
                 <div className='w-full mx-auto lg:mx-0'>
                     <h1 className='max-w-[205px] lg:max-w-[337px] lg:mt-[312px] font-bold mx-auto lg:mx-0 leading-[120%] text-center lg:text-left font-neue text-[#0E0E10] text-[37px] lg:text-[60px]'>
                         re:learn is driven by{' '}
@@ -29,7 +29,7 @@ const Hero = () => {
                     alt='re:learn is driven by partnerships'
                     width={584}
                     height={496}
-                    className='w-full lg:w-[500px] lg:h-[383px] max-w-[500px] xl:max-w-[562px] xl:w-[562px] xl:h-[536px] mx-auto lg:mx-0 lg:mt-[264px]'
+                    className='w-full lg:w-[500px] lg:h-[383px] max-w-[500px] xl:max-w-[620px] xl:w-[620px] xl:h-[536px] mx-auto lg:mx-0 lg:mt-[264px]'
                 />
 
 

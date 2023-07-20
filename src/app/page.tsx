@@ -18,9 +18,11 @@ const Home = () => {
             <Organizations/>
             <div
                 className='cursor-pointer flex items-center justify-center learn-more w-[100%] mt-[50px] text-[#E23F27]'>
-                <p className='tracking-[1%] font-matter text duration-500'>
-                    Learn more about our partnerships
-                </p>
+                <a href='/get-involved/become-a-partner-at-relearn'>
+                    <p className='tracking-[1%] font-matter text duration-500'>
+                        Learn more about our partnerships
+                    </p>
+                </a>
                 <Image
                     src='/arrow-right-orange.svg'
                     alt='view more partnerships'
