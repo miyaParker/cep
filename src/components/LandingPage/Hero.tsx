@@ -29,7 +29,7 @@ const Hero = ({href}: { href: any }) => {
                         alt='hero image'
                         width={868}
                         height={477}
-                        className='mx-auto px-[20px] lg:px-0 w-[818px] xl:w-[872px] h-auto my-[62px]'
+                        className='mx-auto px-[20px] lg:px-0 w-[720px] xl:w-[868px] h-auto my-[62px]'
                     />
                 </div>
             </div>

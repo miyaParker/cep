@@ -120,7 +120,7 @@ const FeedbackForm = () => {
                                 {' '}
                                 {submitted ? (
                                     <Image
-                                        src='/check.svg'
+                                        src='/check-white.svg'
                                         alt='message sent'
                                         width={24}
                                         height={24}

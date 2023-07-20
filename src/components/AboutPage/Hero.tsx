@@ -22,7 +22,7 @@ const Hero = () => {
                     alt='Our Focus is Education'
                     width={562}
                     height={496}
-                    className='w-full lg:w-[500px] lg:h-[383px] max-w-[500px] xl:max-w-[562px] xl:w-[562px] xl:h-[536px] mx-auto lg:mx-0 lg:mt-[264px]'
+                    className='w-full aspect-[5/4] h-auto mx-auto lg:mx-0 lg:mt-[264px]'
                 />
             </div>
             <div className='mt-[80px] lg:mt-[124px] text-center font-neue'>
