@@ -6,10 +6,8 @@ module.exports = {
             sm: '420px',
             md: '768px',
             lg: '1024px',
-            xl: '1440px',
-            '2xl': '1720px',
-            // '3xl': '2560px',
-            // '4xl': '2560px'
+            xl: '1280px',
+            '2xl': '1440px',
         },
         extend: {
             colors: {

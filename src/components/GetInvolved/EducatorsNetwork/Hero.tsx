@@ -8,7 +8,7 @@ const Hero = ({faqRef}: { faqRef: any }) => {
     return (
         <>
             <div
-                className='w-full gap-x-[20px] pt-[136px] lg:pt-0 flex flex-col lg:flex-row lg:justify-between max-w-[1440px] px-[20px] lg:px-[80px] xl:px-[140px] mx-auto'>
+                className='w-full gap-x-[40px] pt-[136px] lg:pt-0 flex flex-col lg:flex-row lg:justify-between max-w-[1440px] px-[20px] lg:px-[80px] xl:px-[140px] mx-auto'>
                 <div className='w-full'>
                     <h1 className='max-w-[205px] lg:max-w-[436px] lg:mt-[312px] font-bold mx-auto lg:mx-0 leading-[120%] text-center lg:text-left font-neue text-[#0E0E10] text-[37px] lg:text-[60px]'>
                         Join a{' '}<span className='text-[#ED7636]'>new wave</span>{' '}
@@ -38,9 +38,9 @@ const Hero = ({faqRef}: { faqRef: any }) => {
                 <Image
                     src='/educators-network.jpg'
                     alt='re:learn is driven by partnerships'
-                    width={520}
-                    height={390}
-                    className='w-full lg:w-[500px] lg:h-[383px] max-w-[500px] xl:max-w-[620px] xl:w-[620px] xl:h-[536px] mx-auto lg:mx-0 lg:mt-[264px]'
+                    width={584}
+                    height={496}
+                    className='w-full lg:w-[500px] lg:h-[383px] max-w-[500px] lg: max-w-[584px] xl:w-[540px] xl:h-[445px] 2xl:w-[584px] 2xl:h-[496px] mx-auto lg:mx-0 lg:mt-[264px]'
                 />
 
 

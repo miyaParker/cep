@@ -29,7 +29,7 @@ const Hero = () => {
                     alt='re:learn is driven by partnerships'
                     width={584}
                     height={496}
-                    className='w-full lg:w-[500px] lg:h-[383px] max-w-[500px] xl:max-w-[620px] xl:w-[620px] xl:h-[536px] mx-auto lg:mx-0 lg:mt-[264px]'
+                    className='w-full lg:w-[500px] lg:h-[383px] max-w-[500px] lg: max-w-[584px] xl:w-[540px] xl:h-[445px] 2xl:w-[584px] 2xl:h-[496px] mx-auto lg:mx-0 lg:mt-[264px]'
                 />
 
 

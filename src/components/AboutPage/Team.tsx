@@ -2,13 +2,13 @@ import Image from 'next/image';
 
 const Team = () => {
     return (
-        <div className='mt-[120px] lg:px-[80px] xl:px-[140px]'>
+        <div className='max-w-[1440px] mx-auto mt-[120px] lg:px-[80px] xl:px-[140px]'>
             <h2 className='text-[30px] font-neue font-bold text-center mb-[3rem]'>
                 Meet the re:learn team
             </h2>
 
             <div
-                className='lg:grid lg:grid-cols-2 xl:grid-cols-[repeat(3,minmax(320px,373px))] flex flex-col lg:justify-center items-center gap-y-[80px] lg:gap-x-[24px]'>
+                className='flex flex-col md:grid md:grid-cols-2 lg:grid-cols-[repeat(3,1fr)] md:justify-items-center items-center gap-y-[80px] lg:gap-x-[24px]'>
                 <div className='w-full h-max max-w-[373px] rounded-[4px] relative mx-auto px-[10px] lg:px-0'>
                     <Image
                         src='/chinyelu.jpg'
@@ -70,7 +70,7 @@ const Team = () => {
                         alt='Lilian'
                         width={373}
                         height={412}
-                        className='w-full h-[412px] rounded-[4px]'
+                        className='w-full h-max rounded-[4px]'
                     />
                     <a href='https://www.linkedin.com/in/liliankibagendi/' target='_blank'>
 
@@ -208,7 +208,7 @@ const Team = () => {
                         alt='Busayo Ademuyiwa'
                         width={373}
                         height={412}
-                        className='w-full h-[412px] rounded-[4px]'
+                        className='w-full h-max rounded-[4px]'
                     />
                     <a href='https://www.linkedin.com/in/busayo-ademuyiwa-571373112/' target='_blank'>
 

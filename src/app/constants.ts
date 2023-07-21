@@ -1,15 +1,8 @@
-export const programmes = ["Summer of Code",
-    "McArthur Foundation",
-    "GO-GA",
-    "EdTech Fellowship",
-    "Safe Online",
-    "Teachers' Lounge",
-    "LETF",
-    "Lagos STEM Cells",
-    "Innovative Teachers' Fellowship",
-    "Virtual STEM Hub",
-    "Next Gen Teachers' Fellowship",
-    "Lagos East Teachers' Fellowship"
+export const programmes = [
+    "Virtual STEM Hub (VSH)",
+    "Innovative Teachers Fellowship (ITF)",
+    "Lagos East Teachers Fellowship",
+    "Teachers Lounge",
 ]
 export const projects = [
     {
@@ -205,7 +198,7 @@ export const projects = [
         }],
     },
 ]
-export const years = [2020, 2021, 2022, 2023]
+export const years = [2020, 2021, 2022]
 export const articles = [
     {
         name: "Teachers’ Day celebration: Teachers’" +
