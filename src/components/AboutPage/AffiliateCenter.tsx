@@ -17,7 +17,7 @@ const AffiliateCenter = () => {
     return (
         <div className='bg-[#0E0E10] text-white py-[80px] mt-[80px]' ref={ref} id='COE'>
             <div
-                className='max-w-[1440px] mx-auto font-neue font-bold flex flex-col items-start lg:justify-between px-[20px] lg:flex-row lg:px-[80px] xl:px-[140px]'>
+                className='max-w-[1440px] gap-x-[20px] mx-auto font-neue font-bold flex flex-col items-start lg:justify-between px-[20px] lg:flex-row lg:px-[80px] xl:px-[140px]'>
                 <div className='mx-auto lg:mx-0'>
                     <div
                         className='w-max px-[16px] py-[6px] mb-[24px] rounded-[24px] border border-[#43434C] bg-[#29292E] border-1 mx-auto lg:mx-0'>
@@ -47,20 +47,20 @@ const AffiliateCenter = () => {
                                 styles='bg-[#E23F27] px-[36px] py-[23.5px] font-matter font-[500] text-[17px] rounded-[40px] hidden lg:flex'/>
                     </a>
                 </div>
-                <div className='relative mx-auto lg:mx-0 lg:w-[420px] xl:w-[504px]'>
+                <div className='relative mx-auto lg:mx-0 w-full max-w-[440px] lg:w-[440px] xl:w-[545px]'>
                     <Image
                         src='/tasued.jpg'
                         alt='The Ed-Tech Centre of Excellence, TASUED'
-                        width={504}
-                        height={503}
-                        className='w-full mx-auto mx-[20px] lg:mx-0'
+                        width={545}
+                        height={553}
+                        className='w-full max-w-[440px] lg:max-w-[545px] md:w-[440px] xl:w-[510px] 2xl:w-[545px] mx-auto mx-[20px] lg:mx-0'
                     />
                     <Image
                         src='/about-ellipse.svg'
                         alt='The Ed-Tech Centre of Excellence, TASUED'
                         width={268}
                         height={138}
-                        className='w-[128px] h-[66px] lg:w-[268px] lg:h-[138px] max-w-[268px] max-h-[138px] absolute bottom-[-33px] lg:bottom-[-70px] right-0 lg:right-[-60px]'
+                        className='w-[128px] h-[66px] lg:w-[268px] lg:h-[138px] max-w-[268px] max-h-[138px] absolute bottom-[-20px] lg:bottom-[-45px] right-0 lg:right-[-60px] 2xl:right-[-140px]'
                     />
                 </div>
                 <p className='font-matter mt-[73px]  text-[17px] lg:text-[20px] px-[30px] lg:px-0 mb-[3rem] max-w-[450px] font-normal mx-auto lg:mx-0  text-center lg:text-left text-white/90 tracking-[0.085px] leading-[150%] block lg:hidden'>

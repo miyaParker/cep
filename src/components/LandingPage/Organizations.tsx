@@ -13,7 +13,7 @@ const Organizations = () => {
                         alt='google logo'
                         width={104}
                         height={35}
-                        className='w-[70px] h-[23px] lg:h-[35px] lg:w-[104px]'
+                        className='w-[70px] h-[23px] md:h-[35px] md:w-[104px]'
                     />
                 </div>
                 <div className='grayscale hover:grayscale-0 border-2 border-l-0 border-gray-100 flex items-center justify-center h-[102px] md:h-[120px] lg:h-[144px] '>
@@ -22,7 +22,7 @@ const Organizations = () => {
                         alt='google logo'
                         width={120}
                         height={33}
-                        className='w-[81px] h-[22px] lg:h-[33px] lg:w-[120px] transition-all delay-50 ease-in'
+                        className='w-[81px] h-[22px] md:h-[33px] md:w-[120px] transition-all delay-50 ease-in'
                     />
                 </div>
                 <div className='grayscale hover:grayscale-0 rounded-tr-[6px] md:rounded-tr-none border-2 border-l-0 border-gray-100 flex items-center justify-center h-[102px] md:h-[120px] lg:h-[144px] '>
@@ -31,7 +31,7 @@ const Organizations = () => {
                         alt='google logo'
                         width={81}
                         height={19}
-                        className='w-[81px] h-[29px] lg:h-[42px] lg:w-[120px] transition-all delay-50'
+                        className='w-[81px] h-[29px] md:h-[42px] md:w-[120px] transition-all delay-50'
                     />
                 </div>
                 <div className='grayscale hover:grayscale-0 md:rounded-tr-[6px] lg:rounded-none border-l-2 border-b-2 md:border-2 md:border-l-0 border-gray-100 flex items-center justify-center h-[102px] md:h-[120px] lg:h-[144px] '>
@@ -40,7 +40,7 @@ const Organizations = () => {
                         alt='google logo'
                         width={104}
                         height={35}
-                        className='w-[70px] h-[49px] lg:h-[72px] lg:w-[104px] transition-all delay-50'
+                        className='w-[70px] h-[49px] md:h-[72px] md:w-[104px] transition-all delay-50'
                     />
                 </div>
                 <div className='grayscale hover:grayscale-0 border-2 border-t-0 lg:border-t-2 lg:border-l-0 border-gray-100 flex items-center justify-center h-[102px] md:h-[120px] lg:h-[144px] '>
@@ -59,7 +59,7 @@ const Organizations = () => {
                         alt='google logo'
                         width={104}
                         height={35}
-                        className='w-[51px] h-[49px] lg:h-[72px] lg:w-[76px] transition-all delay-50'
+                        className='w-[51px] h-[49px] md:h-[72px] md:w-[76px] transition-all delay-50'
                     />
                 </div>
                 <div className='grayscale hover:grayscale-0 lg:rounded-bl-[4px] border-2 border-t-0 border-gray-100 flex items-center justify-center h-[102px] md:h-[120px] lg:h-[144px] '>
@@ -68,7 +68,7 @@ const Organizations = () => {
                         alt='google logo'
                         width={104}
                         height={35}
-                        className='w-[81px] h-[32px] lg:h-[48px] lg:w-[120px] transition-all delay-50'
+                        className='w-[81px] h-[32px] md:h-[48px] md:w-[120px] transition-all delay-50'
                     />
                 </div>
                 <div className='grayscale hover:grayscale-0 border-2 border-t-0 border-l-0 border-gray-100 flex items-center justify-center h-[102px] md:h-[120px] lg:h-[144px] '>
@@ -77,7 +77,7 @@ const Organizations = () => {
                         alt='google logo'
                         width={104}
                         height={35}
-                        className='w-[81px] h-[29px] lg:h-[42px] lg:w-[120px] transition-all delay-50'
+                        className='w-[81px] h-[29px] md:h-[42px] md:w-[120px] transition-all delay-50'
                     />
                 </div>
                 <div className='grayscale hover:grayscale-0 md:rounded-bl-[6px] lg:rounded-none border-l-0 md:border-l-2 border-2 border-t-0 lg:border-l-0 md:border-l-2   border-gray-100 flex items-center justify-center h-[]102px  md:h-[120px]lg:h-[144px]'>
@@ -86,7 +86,7 @@ const Organizations = () => {
                         alt='google logo'
                         width={104}
                         height={35}
-                        className='w-[63px] h-[49px] lg:h-[72px] lg:w-[93px] transition-all delay-50'
+                        className='w-[63px] h-[49px] md:h-[72px] md:w-[93px] transition-all delay-50'
                     />
                 </div>
                 <div className='grayscale hover:grayscale-0 rounded-bl-[6px] md:rounded-none border-2 border-t-0 md:border-l-0  border-gray-100 flex items-center justify-center h-[102px] md:h-[120px] lg:h-[144px] '>
@@ -95,7 +95,7 @@ const Organizations = () => {
                         alt='google logo'
                         width={104}
                         height={35}
-                        className='w-[52px] h-[45px] lg:h-[66px] lg:w-[76px] transition-all delay-50'
+                        className='w-[52px] h-[45px] md:h-[66px] md:w-[76px] transition-all delay-50'
                     />
                 </div>
                 <div className='grayscale hover:grayscale-0 border-2 border-t-0 border-l-0  border-gray-100 flex items-center justify-center h-[102px] md:h-[120px] lg:h-[144px] '>
@@ -104,7 +104,7 @@ const Organizations = () => {
                         alt='google logo'
                         width={104}
                         height={35}
-                        className='w-[81px] h-[42px] lg:h-[48px] lg:w-[120px] transition-all delay-50'
+                        className='w-[81px] h-[42px] md:h-[48px] md:w-[120px] transition-all delay-50'
                     />
                 </div>
                 <div className='rounded-br-[6px] lg:rounded-br-[4px] border-2 border-t-0 border-l-0 border-gray-100 flex items-center justify-center h-[102px] md:h-[120px] lg:h-[144px] '></div>
