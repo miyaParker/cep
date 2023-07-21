@@ -1,0 +1,204 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.hero {
+    background-x-position: 10%;
+}
+
+.learn-more:hover p {
+    font-weight: 500;
+    transition: font-weight 350ms;
+
+}
+
+.learn-more:hover img {
+    left: 8px;
+    transition: left 350ms;
+}
+
+.certificate-form {
+    box-shadow: 0px 3px 9px 0px #BCB4B326;
+
+}
+
+select:required:invalid {
+    color: #333438;
+    opacity: 40%;
+}
+
+@keyframes hideButton {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes hideForm {
+    0% {
+        transform: translateY(0px);
+    }
+    80% {
+        transform: translateY(-342px);
+    }
+    100% {
+        transform: translateY(-335px);
+    }
+}
+
+@keyframes showForm {
+    from {
+        transform: translateY(-335px);
+    }
+    to {
+        transform: translateY(0px);
+    }
+}
+
+.submitted {
+    animation: hideButton 350ms;
+}
+
+.show-form {
+    animation: showForm 600ms ease-in;
+    animation-fill-mode: both;
+}
+
+.hide-form {
+    animation: hideForm 800ms ease-out;
+    animation-fill-mode: both;
+}
+
+.filtered {
+    transition-duration: 300ms;
+}
+
+.filtered:hover {
+    transition: background-color 300ms;
+    transition-delay: 50ms;
+    background-color: #2670DF;
+}
+
+.certificate-form {
+
+}
+
+@keyframes showVerifyModal {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+.verify-modal {
+    transition: showVerifyModal 350ms;
+}
+
+@keyframes showModal {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+.modal {
+    transition: showModal 2s;
+    transition-duration: 350ms;
+    transition-delay: 300ms;
+}
+
+.nav-dropdown {
+    transform: translateY(20px);
+    box-shadow: 0px 3px 12px 0px #B8B8B833;
+    transition-duration: 300ms;
+    transition: transform 200ms;
+}
+
+@media screen and (max-width: 1023px) {
+    .input-error {
+        border: 1px solid #EF061D;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .form-error {
+        border: 1px solid #EF061D;
+    }
+}
+
+
+.paper-clip {
+    width: 32px;
+    height: 32px;
+}
+
+@keyframes showModal {
+    from {
+        transform: translateY(-5px);
+    }
+    to {
+        transform: translateY(0px);
+    }
+}
+
+.faq-item {
+    animation-duration: 300ms;
+    animation: showModal 400ms;
+}
+
+.card-container, card {
+    transition: background-color 300ms ease-out, border-color 300ms ease-out;
+}
+
+.card {
+    filter: grayscale(100%);
+}
+
+.card:hover {
+    filter: grayscale(0%);
+    background-color: #FEEEEC;
+
+}
+
+.card-container:hover {
+    border-color: #E23F27;
+}
+
+.btn {
+    overflow: hidden;
+}
+
+.btn-bg, .btn-bg_lg {
+    background-color: rgba(0, 0, 0, 0.13);
+    transition: background-color 100ms ease-out, top 100ms ease-out;
+}
+
+.btn:hover .btn-bg {
+    display: block;
+    top: -60px
+}
+
+
+.btn:hover .btn-bg_lg {
+    display: block;
+    top: -120px
+}
+
+@media screen and( max-width: 375px) {
+    * {
+        word-break: break-all;
+        word-wrap: break-word;
+    }
+}

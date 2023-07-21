@@ -1,0 +1,48 @@
+image: node:18
+
+cache:
+  paths:
+    - node_modules/
+    - .yarn
+
+before_script:
+  - "which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )"
+  - apt-get update -qq && apt-get install
+
+stages:
+  - deploy-to-stage
+  - install
+  - build
+
+install:
+  stage: install
+  script:
+    - yarn
+  artifacts:
+    expire_in: 1 days
+    when: on_success
+    paths:
+      - node_modules/
+  only:
+    - merge_requests
+
+build:
+  stage: build
+  dependencies:
+    - install
+  script:
+    - yarn build
+  only:
+    - merge_requests
+
+deploy-to-stage:
+  stage: deploy-to-stage
+  before_script:
+    - mkdir -p ~/.ssh
+    - echo -e "$STAGE_PRIVATE_KEY" > ~/.ssh/id_rsa
+    - chmod 600 ~/.ssh/id_rsa
+    - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+  script:
+    - bash deploy/stage_deploy.sh
+  rules:
+    - if: $CI_COMMIT_BRANCH == "dev"
