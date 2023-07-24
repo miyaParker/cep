@@ -30,7 +30,7 @@ const Team = () => {
                         </div>
                     </a>
                     <p className='mt-[24px] text-[22px] font-bold font-neue text-center'>
-                        Chinyelu Udeh
+                        Chinyelu Akpa
                     </p>
                     <p className='text-[1rem] text-center font-matter tracking-[0.16px] mt-[12px]'>
                         Practice Lead
