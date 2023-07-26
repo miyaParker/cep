@@ -21,24 +21,17 @@ sudo git checkout main
 sudo git pull origin main
 
 
-# # install
-sudo yarn
+# Build docker image
+sudo docker build -t relearn .
 
-## build
-sudo yarn build
+## Stop relearn runing container
+sudo docker stop relearn
 
-## start
-sudo pm2 restart default
-
-# # Check for docker version
-# docker --version
-
-# # Build the application using docker
-# sudo yarn build
-# sudo docker build -t relearn .
+## Remove docker container
+sudo docker rm relearn
 
 # # Run application using docker 
-# sudo docker run -dp 3000:3000 relearn
+sudo docker run -d --name relearn -p 3000:3000 relearn
 
 echo "****************************************************************"
 echo "--- Frontend update complete"
