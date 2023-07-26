@@ -1,7 +1,7 @@
 "use client"
 import {ChangeEvent, FormEvent, useEffect, useReducer, useState} from "react";
 import Image from "next/image";
-import {getCertificate} from "@/api";
+import {getCertificate, getYears, getProgrammes} from "@/api";
 import {years, programmes} from "@/app/constants";
 import dynamic from "next/dynamic";
 import VerifiedModal from "@/components/CertificatePortal/VerifiedModal";
@@ -35,11 +35,12 @@ const CertificatePortal = () => {
         programme: "",
         year: ""
     }
+    const [programmes, setProgrammes] = useState([])
+    const [years, setYears] = useState([])
     const [active, setActive] = useState(false)
     const [loading, setLoading] = useState(false)
     const [state, dispatch] = useReducer(formReducer, initialForm)
     const [error, setError] = useState<any>({})
-    const [verified, setVerified] = useState(false)
     const [showModal, setShowModal] = useState(false)
     const [verificationData, setVerificationData] = useState<any>({})
 
@@ -95,6 +96,10 @@ const CertificatePortal = () => {
         setError({})
         dispatch({name: e.target.name, value: e.target.value})
     }
+    useEffect(() => {
+        getYears().then(res => setYears(res.data))
+        getProgrammes().then(res => setProgrammes(res.data))
+    }, [])
     return (
         <div
             className='overflow-hidden bg-[#F0F1F4] h-full mx-auto w-full  px-[20px] lg:px-[80px] xl:px-[140px]'>

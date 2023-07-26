@@ -29,6 +29,28 @@ export const getCertificate = async (payload: any) => {
         }
     }
 }
+export const getYears= async () => {
+    if (BASE_URL) {
+        try {
+            const res = await axios.get(`${BASE_URL}/api/years`)
+            return res.data
+        } catch (err: any) {
+            if (err.response)
+                return err.response.data
+        }
+    }
+}
+export const getProgrammes= async () => {
+    if (BASE_URL) {
+        try {
+            const res = await axios.get(`${BASE_URL}/api/programs`)
+            return res.data
+        } catch (err: any) {
+            if (err.response)
+                return err.response.data
+        }
+    }
+}
 export const createPartner = async (payload: any) => {
     if (BASE_URL) {
         try {

@@ -1,7 +1,7 @@
 'use client'
 import Image from 'next/image';
 import Button from "@/components/Generic/Button";
-import {usePathname, useSearchParams} from "next/navigation";
+import {useSearchParams} from "next/navigation";
 import {useEffect, useRef} from "react";
 
 const AffiliateCenter = () => {
