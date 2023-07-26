@@ -9,5 +9,5 @@ array=(${string//,/ })
 # Careful with the ; https://stackoverflow.com/a/20666248/1057052
 for i in "${!array[@]}"; do
   echo "Deploy project on server ${array[i]}"
-  ssh ubuntu@${array[i]} 'bash -s' < ./deploy/stage_update.sh 
+  ssh ubuntu@${array[i]} 'bash -s' < ./deploy/prod_update.sh 
 done
