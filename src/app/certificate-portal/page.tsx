@@ -2,7 +2,6 @@
 import {ChangeEvent, FormEvent, useEffect, useReducer, useState} from "react";
 import Image from "next/image";
 import {getCertificate, getYears, getProgrammes} from "@/api";
-import {years, programmes} from "@/app/constants";
 import dynamic from "next/dynamic";
 import VerifiedModal from "@/components/CertificatePortal/VerifiedModal";
 import {useRouter} from 'next/navigation'
