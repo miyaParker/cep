@@ -33,7 +33,7 @@ const useCounter = ({ref, limit, interval, step}: Icounterprops) => {
             }
         }
         if (!isIntersecting && value > 0) setValue(0)
-    });
+    },[value, limit, isIntersecting, interval, step]);
     return {value}
 }
 export default useCounter
