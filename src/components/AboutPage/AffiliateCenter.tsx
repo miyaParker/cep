@@ -12,7 +12,7 @@ const AffiliateCenter = () => {
         if (searchParams.get('id') === 'COE') {
             ref.current?.scrollIntoView({behavior: 'smooth'})
         }
-    }, [id])
+    }, [id, searchParams])
 
     return (
         <div className='bg-[#0E0E10] text-white py-[80px] mt-[80px]' ref={ref} id='COE'>
