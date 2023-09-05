@@ -10,6 +10,7 @@ const RootLayout = ({children}: { children: ReactNode }) => {
 
     const siteId = 3641494;
     const hotjarVersion = 6;
+
     useEffect(() => {
         Hotjar.init(siteId, hotjarVersion);
     }, []);
