@@ -19,7 +19,7 @@ stages:
 install:
   stage: install
   script:
-    - yarn
+    - yarn --frozen-lockfile --ignore-script --production=false
   artifacts:
     expire_in: 1 days
     when: on_success
