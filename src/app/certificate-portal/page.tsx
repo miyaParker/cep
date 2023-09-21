@@ -135,7 +135,7 @@ const CertificatePortal = () => {
                             className="text-[16px]  lg:text-[17px] bg-[#F4F4F5] lg:bg-[#FFFFFF] text-[#333438] ml-[-4px] font-sans outline-none text-[16px] placeholder:text-[#333438]/40 placeholder:text-[16px]">
                         <option value="" className="text-[#333438]/40" disabled={true} hidden={true}>Select Programme
                         </option>
-                        {programmes.map((programme) => <option value={programme} key={programme}>{programme}</option>)}
+                        {programmes?.map((programme) => <option value={programme} key={programme}>{programme}</option>)}
                     </select>
                 </div>
                 <div
@@ -151,7 +151,7 @@ const CertificatePortal = () => {
                         <option value="" className="text-[#333438]/40" disabled={true}
                                 hidden={true}>Year
                         </option>
-                        {years.map((year) => <option value={year} key={year}>{year}</option>)}
+                        {years?.map((year) => <option value={year} key={year}>{year}</option>)}
                     </select>
                 </div>
                 {Object.keys(error).length ?

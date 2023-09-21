@@ -13,6 +13,12 @@ export const navItems = [
                 name: "Educator's Network",
                 link: '/get-involved/educators-network',
                 icon: '/educator-icon.svg'
+            },
+            {
+                name: "Edtech Festival",
+                link: 'https://edtechfestival.relearn.ng/',
+                icon: '/edtech.svg',
+                target:'_blank'
             }
         ]
     },
