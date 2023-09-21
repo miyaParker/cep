@@ -96,7 +96,7 @@ const Navbar = () => {
         </nav>
         {pathname === "/" ? <>
           <div className={`${
-            visible ? "top-[80px] lg:top-[128px]" : "top-0"} hidden flex-wrap leading-[150%] lg:leading-[100%] tracking-[0.1px] transition-top duration-300 ease-out gap-x-[20px] gap-x-[20px] lg:flex justify-center items-center w-full z-40 fixed text-[#0E0E10] py-[32px] bg-[#F7BD06]`}>
+            visible ? "top-[80px] lg:top-[128px]" : "top-0"} hidden flex-wrap leading-[150%] lg:leading-[100%] tracking-[0.1px] transition-top duration-300 ease-out gap-x-[20px] gap-x-[20px] lg:flex justify-center items-center w-full z-40 fixed text-[#0E0E10] py-[20px] bg-[#F7BD06]`}>
             <p className="font-matter text-center opacity-90 text-[20px]">Explore innovative solutions at the EdTech
               Festival on <span
                 className="font-bold">Saturday, 23rd September 2023</span>
@@ -116,7 +116,7 @@ const Navbar = () => {
             <div onClick={(e) => {
               linkRef?.current && linkRef.current.click();
             }} className={`${
-              visible ? "top-[80px]" : "top-0"} flex lg:hidden w-full px-[20px] min-[375px]:px-[47px] flex-wrap leading-[150%] tracking-[0.1px] transition-top duration-300 ease-out  justify-center items-center w-full z-40 fixed text-[#0E0E10] py-[32px] bg-[#F7BD06]`}>
+              visible ? "top-[80px]" : "top-0"} flex lg:hidden w-full px-[20px] min-[375px]:px-[47px] flex-wrap leading-[150%] tracking-[0.1px] transition-top duration-300 ease-out  justify-center items-center w-full z-40 fixed text-[#0E0E10] py-[20px] bg-[#F7BD06]`}>
               <p className="font-matter opacity-90 text-center text-[18px]">Explore innovative solutions at the EdTech
                 Festival
                 on <span className="font-bold">Saturday, 23rd September 2023 <Image width={24} height={24}
