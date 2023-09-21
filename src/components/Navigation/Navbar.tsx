@@ -3,7 +3,7 @@ import Image from "next/image";
 import { navItems, mobileNavItems } from "@/constants";
 import Link from "next/link";
 import { useState, useEffect, useRef, useCallback, useContext } from "react";
-import { usePathname, useLocation } from "next/navigation";
+import { usePathname } from "next/navigation";
 import BannerContext from "@/app/contexts/BannerContext";
 
 const Navbar = () => {
@@ -75,7 +75,7 @@ const Navbar = () => {
                              height={24} />
                     </div>
                     {item?.children ? <div onClick={toggleDropdown}
-                                           className={`${showDropdown ? "nav-dropdown" : "invisible opacity-0 transition-opacity duration-500"} absolute bg-white  rounded-[4px] px-[20px] pt-[30px]`}>
+                                           className={`${showDropdown ? "nav-dropdown opacity-100" : "invisible opacity-0 transition-opacity transition-visibility duration-500"} absolute bg-white  rounded-[4px] px-[20px] pt-[30px]`}>
 
                       {item?.children.map((child, index) => (<div key={index}
                                                                   className="flex items-center gap-x-[8px] mb-[24px]">
