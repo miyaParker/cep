@@ -3,17 +3,16 @@ import Image from "next/image";
 import { navItems, mobileNavItems } from "@/constants";
 import Link from "next/link";
 import { useState, useEffect, useRef, useCallback, useContext } from "react";
-import { usePathname } from "next/navigation";
+import { usePathname, useLocation } from "next/navigation";
 import BannerContext from "@/app/contexts/BannerContext";
 
 const Navbar = () => {
-  const { visible:bannerVisible, toggleVisible } = useContext(BannerContext)
+    const { visible: bannerVisible, toggleVisible } = useContext(BannerContext);
     const linkRef = useRef<HTMLAnchorElement | null>(null);
     const pathname = usePathname();
     const [prevScrollPos, setPrevScrollPos] = useState(0);
     const [visible, setVisible] = useState(true);
     const [showDropdown, setShowDropdown] = useState(false);
-    // const [showBanner, setShowBanner] = useState(true);
     const [mobileMenuVisible, toggleMobileMenu] = useState(false);
     const toggleDropdown = () => {
       setShowDropdown(!showDropdown);
@@ -95,41 +94,44 @@ const Navbar = () => {
             </ul>
           </div>
         </nav>
-        <div className={`${
-          visible ? "top-[80px] lg:top-[128px]" : "top-0"} hidden flex-wrap leading-[150%] lg:leading-[100%] tracking-[0.1px] transition-top duration-300 ease-out gap-x-[20px] gap-x-[20px] lg:flex justify-center items-center w-full z-40 fixed text-[#0E0E10] py-[32px] bg-[#F7BD06]`}>
-          <p className="font-matter text-center opacity-90 text-[20px]">Explore innovative solutions at the EdTech Festival on <span
-            className="font-bold">Saturday, 23rd September 2023</span>
-          </p>
-          <Image width={24} height={24} src="/arrow-right-black.svg" alt="learn more about edtech festival"
-                 className="block lg:hidden" />
-
-          <a href="https://edtechfestival.relearn.ng" target="_blank" ref={linkRef}>
-
-            <button
-              className="tracking-[0.18px] hidden bg-[#D69A00] lg:flex items-center py-[8px] gap-[8px] pl-[20px] pr-[10px] text-white text-[18px] font-medium rounded-[5px]">
-              <span>Learn More </span><Image width={24} height={24} src="/arrow-right-white.svg"
-                                             alt="learn more about edtech festival" /></button>
-          </a>
-        </div>
-        {bannerVisible &&
-          <div onClick={(e) => {
-            linkRef?.current && linkRef.current.click();
-          }} className={`${
-            visible ? "top-[80px]" : "top-0"} flex lg:hidden w-full px-[20px] min-[375px]:px-[47px] flex-wrap leading-[150%] tracking-[0.1px] transition-top duration-300 ease-out  justify-center items-center w-full z-40 fixed text-[#0E0E10] py-[32px] bg-[#F7BD06]`}>
-            <p className="font-matter opacity-90 text-center text-[18px]">Explore innovative solutions at the EdTech Festival
-              on <span className="font-bold">Saturday, 23rd September 2023 <Image width={24} height={24}
-                                                                                                 src="/arrow-right-black.svg"
-                                                                                                 alt="learn more about edtech festival"
-                                                                                                 className=" inline-block lg:hidden" /></span>
+        {pathname === "/" ? <>
+          <div className={`${
+            visible ? "top-[80px] lg:top-[128px]" : "top-0"} hidden flex-wrap leading-[150%] lg:leading-[100%] tracking-[0.1px] transition-top duration-300 ease-out gap-x-[20px] gap-x-[20px] lg:flex justify-center items-center w-full z-40 fixed text-[#0E0E10] py-[32px] bg-[#F7BD06]`}>
+            <p className="font-matter text-center opacity-90 text-[20px]">Explore innovative solutions at the EdTech
+              Festival on <span
+                className="font-bold">Saturday, 23rd September 2023</span>
             </p>
-            <Image width={20} height={20}
-                   src="/close-yellow.svg"
-                   alt="learn more about edtech festival"
-                   className="absolute right-[14px] top-[14px]" onClick={(e) => {
-              e.stopPropagation();
-              toggleVisible(false);
-            }} />
-          </div>}
+            <Image width={24} height={24} src="/arrow-right-black.svg" alt="learn more about edtech festival"
+                   className="block lg:hidden" />
+
+            <a href="https://edtechfestival.relearn.ng" target="_blank" ref={linkRef}>
+
+              <button
+                className="tracking-[0.18px] hidden bg-[#D69A00] lg:flex items-center py-[8px] gap-[8px] pl-[20px] pr-[10px] text-white text-[18px] font-medium rounded-[5px]">
+                <span>Learn More </span><Image width={24} height={24} src="/arrow-right-white.svg"
+                                               alt="learn more about edtech festival" /></button>
+            </a>
+          </div>
+          {bannerVisible &&
+            <div onClick={(e) => {
+              linkRef?.current && linkRef.current.click();
+            }} className={`${
+              visible ? "top-[80px]" : "top-0"} flex lg:hidden w-full px-[20px] min-[375px]:px-[47px] flex-wrap leading-[150%] tracking-[0.1px] transition-top duration-300 ease-out  justify-center items-center w-full z-40 fixed text-[#0E0E10] py-[32px] bg-[#F7BD06]`}>
+              <p className="font-matter opacity-90 text-center text-[18px]">Explore innovative solutions at the EdTech
+                Festival
+                on <span className="font-bold">Saturday, 23rd September 2023 <Image width={24} height={24}
+                                                                                    src="/arrow-right-black.svg"
+                                                                                    alt="learn more about edtech festival"
+                                                                                    className=" inline-block lg:hidden" /></span>
+              </p>
+              <Image width={20} height={20}
+                     src="/close-yellow.svg"
+                     alt="learn more about edtech festival"
+                     className="absolute right-[14px] top-[14px]" onClick={(e) => {
+                e.stopPropagation();
+                toggleVisible(false);
+              }} />
+            </div>}</> : null}
         <nav
           className={`${
             visible || mobileMenuVisible ? "top-0" : "top-[-8rem]"} ${
