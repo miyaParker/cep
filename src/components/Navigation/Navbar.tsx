@@ -97,9 +97,8 @@ const Navbar = () => {
         {pathname === "/" ? <>
           <div className={`${
             visible ? "top-[80px] lg:top-[128px]" : "top-0"} hidden flex-wrap leading-[150%] lg:leading-[100%] tracking-[0.1px] transition-top duration-300 ease-out gap-x-[20px] gap-x-[20px] lg:flex justify-center items-center w-full z-40 fixed text-[#0E0E10] py-[20px] bg-[#F7BD06]`}>
-            <p className="font-matter text-center opacity-90 text-[20px]">Explore innovative solutions at the EdTech
-              Festival on <span
-                className="font-bold">Saturday, 23rd September 2023</span>
+            <p className="font-matter text-center opacity-90 text-[20px]">Explore innovative solutions at the EdTech Festival In Kenya on <span
+                className="font-bold"> Saturday, 25th November 2023</span>
             </p>
             <Image width={24} height={24} src="/arrow-right-black.svg" alt="learn more about edtech festival"
                    className="block lg:hidden" />
