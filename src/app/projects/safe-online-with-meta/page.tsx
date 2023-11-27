@@ -57,7 +57,7 @@ const SafeOnline = () => {
         </main>
         <p
           className="max-w-[698px] mx-auto text-[#313235] leading-[140%] tracking-[0.33px] font-matter text-[20px] lg:text-[22px]">
-          The Safe Online programme's design will move from the usual
+          The Safe Online programme&apos;s design will move from the usual
           approach of training students, school leaders, teachers and
           parents to a more community-of-practice approach. This year the
           focus will be on how to leverage the power of groups, networks and
