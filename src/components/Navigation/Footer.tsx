@@ -3,9 +3,9 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <div>
-      <div className="bg-[#0E0E10] w-screen text-white">
-        <footer
+    <div className="bg-[#0E0E10] w-screen text-white">
+      <footer>
+        <div
           className="font-matter lg:flex-row lg:gap-x-[150px] xl:gap-x-[270px] lg:items-start lg:justify-start lg:text-[17px] text-white py-[72px] lg:py-[64px] max-w-[1500px] mx-auto flex flex-col px-[20px] lg:px-[80px] xl:px-[130px]">
           <div className="self-start">
             <div className="flex flex-col gap-[24px]">
@@ -102,8 +102,37 @@ const Footer = () => {
               <p className="tracking-[1.5%]">EdTech CoE</p>
             </Link>
           </div>
-        </footer>
-      </div>
+        </div>
+        <div
+          className="gap-[10px] flex-col md:flex-row w-full text-[#313235] text-[20px] md:text-[22px] lg:text-[24px]  leading-[100%] tracking-[0.24px] bg-white flex items-center justify-center py-[36px]">
+          <div className="flex items-center gap-[10px]"><Image
+            src="/logo-dark.svg"
+            alt="relearn"
+            width={77}
+            height={20}
+            className=""
+          />
+            <p className='leading-[100%]'>by</p>
+          </div>
+          <Image
+            src="/cchub-logo.svg"
+            alt="relearn"
+            width={208}
+            height={48}
+            className=""
+          />
+          <div className="flex items-center gap-[10px]">
+            <p>and</p>
+            <Image
+              src="/ihub-logo.png"
+              alt="relearn"
+              width={61}
+              height={20}
+              className=""
+            />
+          </div>
+        </div>
+      </footer>
     </div>
 
   )
