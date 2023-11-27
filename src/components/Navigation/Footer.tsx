@@ -67,7 +67,7 @@ const Footer = () => {
               </a>
             </div>
           </div>
-          <div className="mb-[4rem] self-start">
+          <div className="my-[4rem] lg:my-0 self-start">
             <p
               className="text-[22px] lg:text-[20px] tracking-[0.8%] font-neue font-bold mb-[32px] lg:mb-[24px]">
               Learn
