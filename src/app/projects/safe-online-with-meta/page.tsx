@@ -2,6 +2,7 @@ import Button from "@/components/Generic/Button";
 
 import type { Metadata } from "next";
 import SafeOnlinePrograms from "@/components/Projects/SafeOnlinePrograms";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Safe Online with Meta",
@@ -16,6 +17,14 @@ const SafeOnline = () => {
         <main className="max-w-[698px] mx-auto">
           <h1 className="text-[#0E0E10] font-neue text-[38px] md:text-[48px] lg:text-[57px] font-bold">Safe Online with
             Meta</h1>
+          <div className="items-center mt-[28px] py-[14px] pl-[28px] pr-[38px] rounded-[8px] flex gap-[16px] bg-[#F1F2F3]">
+            <Image src="/safe-online/icon.svg" alt="Safe Online with
+            Meta" width={40} height={40} />
+            <p
+              className="text-[#0E0E10] font-neue font-medium leading-[140%] tracking-[0.35px] text-[21px] md:text-[23px] lg:text-[25px]">
+              We can be the catalyst for a better digital world
+            </p>
+          </div>
           <p
             className="mt-[36px] text-[#313235] leading-[140%] tracking-[0.33px] font-matter text-[20px] lg:text-[22px]">
             Safe Online with Meta Project is a <span
@@ -138,7 +147,8 @@ const SafeOnline = () => {
           <p
             className="text-[#0E0E10] mt-[120px] opacity-[84%] py-[8px] px-[18px] font-medium bg-[#F1F2F3] rounded-[20px] border border-[#E4E5E7] w-max">Gallery</p>
           <h2
-            className="font-neue mt-[20px] font-bold text-[25px] leading-[120%] tracking-[0.125px] text-[#0E0E10]">Images from some of our events</h2>
+            className="font-neue mt-[20px] font-bold text-[25px] leading-[120%] tracking-[0.125px] text-[#0E0E10]">Images
+            from some of our events</h2>
         </div>
         <div className="flex gap-[8px] mt-[32px] w-full max-w-[784px] mx-auto">
           <div className="flex shrink flex-col min-w-0 min-h-0 basis-auto gap-[8px]  ">
