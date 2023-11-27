@@ -65,7 +65,7 @@ const PartnerForm = () => {
         <div className='w-full'>
             <div className='w-full bg-[#0E0E10]'>
                 <div
-                    className='max-w-[1440px] mx-auto relative mt-[80px] lg:mt-[128px] bg-[#0E0E10] bg-[url("/ellipse-dark.svg")] bg-right-top bg-no-repeat'>
+                    className='max-w-[1440px] mx-auto relative mt-[80px] lg:mt-[128px] bg-[#0E0E10] before:absolute before:top-[-160px] lg:before:top-0 before:right-0 before:content-[url("/ellipse-dark.svg")]'>
                     <a href="/get-involved/become-a-partner-at-relearn">
                         <div
                             className='ml-[20px] lg:ml-[80px] mt-[2rem] xl:my-[96px] font-matter absolute w-max text-[17px] xl:ml-[140px] mr-[162px] pr-[18px] lg:pr-[24px] py-[13.5px] pl-[10px] lg:pl-[16px] flex items-center gap-x-[8px] font-matter bg-[#29292E] border border-1 border-[#43434C] rounded-[40px]'>
