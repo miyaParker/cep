@@ -20,18 +20,8 @@ sudo git checkout main
 # #pull the changes
 sudo git pull origin main
 
-
-# Build docker image
-sudo docker build -t relearn .
-
-## Stop relearn runing container
-sudo docker stop relearn
-
-## Remove docker container
-sudo docker rm relearn
-
-# # Run application using docker 
-sudo docker run -d --name relearn -p 3000:3000 relearn
+## build
+sudo docker-compose up -d --build
 
 echo "****************************************************************"
 echo "--- Frontend update complete"
