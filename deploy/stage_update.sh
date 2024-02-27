@@ -21,6 +21,7 @@ sudo git checkout dev
 sudo git pull origin dev
 
 ## build
+sudo docker-compose stop web
 sudo docker-compose up -d --build
 
 
