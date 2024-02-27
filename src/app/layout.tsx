@@ -5,7 +5,6 @@ import Navbar from "@/components/Navigation/Navbar";
 import Footer from "@/components/Navigation/Footer";
 import { matter, neue, dm_sans } from "@/app/fonts";
 import Hotjar from "@hotjar/browser";
-import BannerProvider from "@/app/contexts/BannerProvider";
 
 const RootLayout = ({ children }: { children: ReactNode }) => {
 
@@ -22,13 +21,11 @@ const RootLayout = ({ children }: { children: ReactNode }) => {
     >
     <body className="relative">
     <div>
-      <BannerProvider>
         <>
           <Navbar />
           {children}
           <Footer />
         </>
-      </BannerProvider>
     </div>
     <div id="modal-root"></div>
     </body>
