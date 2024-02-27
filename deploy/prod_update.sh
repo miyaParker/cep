@@ -15,14 +15,13 @@ sudo git stash
 sudo git fetch
 
 # checkout develop
-sudo git checkout dev
+sudo git checkout main
 
 # #pull the changes
-sudo git pull origin dev
+sudo git pull origin main
 
 ## build
 sudo docker-compose up -d --build
-
 
 echo "****************************************************************"
 echo "--- Frontend update complete"

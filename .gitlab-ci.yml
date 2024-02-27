@@ -13,11 +13,13 @@ stages:
   - deploy-to-stage
   - install
   - build
+  - deploy-to-stage
+  - deploy-to-prod
 
 install:
   stage: install
   script:
-    - yarn
+    - yarn --frozen-lockfile --ignore-script --production=false
   artifacts:
     expire_in: 1 days
     when: on_success
@@ -46,3 +48,15 @@ deploy-to-stage:
     - bash deploy/stage_deploy.sh
   rules:
     - if: $CI_COMMIT_BRANCH == "dev"
+
+deploy-to-prod:
+  stage: deploy-to-prod
+  before_script:
+    - mkdir -p ~/.ssh
+    - echo -e "$PROD_PRIVATE_KEY" > ~/.ssh/id_rsa
+    - chmod 600 ~/.ssh/id_rsa
+    - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+  script:
+    - bash deploy/prod_deploy.sh
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"    
