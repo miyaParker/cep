@@ -6,7 +6,7 @@ interface PillProps {
 
 const Pill = ({ text }: PillProps) => {
   return (
-    <div className="flex gap-[12px] lg:gap-[16px] items-center p-[10px] lg:p-[14px] bg-[#F4F5F5] rounded-[40px]">
+    <div className="flex gap-[12px] lg:gap-[16px] items-center p-[10px] lg:p-[14px] lg:pr-[28px] bg-[#F4F5F5] rounded-[40px]">
       <Image
         src="/check.svg"
         alt={text}

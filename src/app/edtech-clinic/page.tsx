@@ -162,7 +162,7 @@ const EdtechClinic = () => {
           you if you are a:
         </h2>
         <div
-          className="max-w-max mx-[140px] mx-auto flex flex-wrap max-w-[1112px] justify-center items-center gap-[28px]">
+          className="mx-[140px] mx-auto flex flex-wrap max-w-[1112px] justify-center items-center gap-[28px]">
           {beneficiaries.map((pill) =>
             <Pill key={pill} text={pill} />
           )}
