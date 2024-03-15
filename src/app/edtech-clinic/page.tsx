@@ -1,5 +1,4 @@
 "use client";
-import Button from "@/components/Generic/Button";
 import Image from "next/image";
 import { useRef, useState } from "react";
 import Pill from "@/components/EdtechClinic/Pill";
