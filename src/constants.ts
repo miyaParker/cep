@@ -15,6 +15,11 @@ export const navItems = [
         icon: "/educator-icon.svg"
       },
       {
+        name: "Edtech Clinic",
+        link: "/edtech-clinic",
+        icon: "/edtech-clinic.svg",
+      },
+      {
         name: "Edtech Festival",
         link: "https://edtechfestival.relearn.ng/",
         icon: "/edtech.svg",
