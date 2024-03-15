@@ -6,7 +6,6 @@ import { useState, useEffect, useRef, useCallback, useContext } from "react";
 import { usePathname } from "next/navigation";
 
 const Navbar = () => {
-    const linkRef = useRef<HTMLAnchorElement | null>(null);
     const pathname = usePathname();
     const [prevScrollPos, setPrevScrollPos] = useState(0);
     const [visible, setVisible] = useState(true);
