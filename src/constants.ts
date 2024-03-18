@@ -34,10 +34,12 @@ export const mobileNavItems = [
   { name: "projects", link: "/projects" },
   { name: "news & updates", link: "/news-and-updates" },
   { name: "Become a Partner", link: "/get-involved/become-a-partner-at-relearn" },
+  { name: "edtech clinic", link: "/edtech-clinic" },
   { name: "Educator's Network", link: "/get-involved/educators-network" },
   { name: "Certificate portal", link: "/certificate-portal" },
   { name: "edtech clinic", link: "/edtech-clinic" },
   { name: "edtech Festival", link: "https://edtechfestival.relearn.ng/",target: "_blank" },
+
 ];
 export const faqs = [{
   q: "How do I become part of the network?",
