@@ -23,10 +23,10 @@ const EdtechClinic = () => {
     setPaused(false);
   };
   return (
-    <section className="">
+    <section className="mx-auto pt-[136px] lg:pt-0 max-w-[1440px] px-[20px] lg:px-[80px] xl:px-[140px]">
       <div
-        className="mx-auto gap-x-[40px] w-full pt-[136px] lg:pt-0 flex flex-col lg:flex-row lg:justify-between max-w-[1440px] px-[20px] lg:px-[80px] xl:px-[140px]">
-        <div className="w-full mx-auto lg:mx-0">
+        className="mx-auto gap-x-[40px] w-full flex flex-col lg:flex-row lg:justify-between">
+        <div className="mx-auto lg:mx-0">
           <h1
             className="max-w-[205px] lg:max-w-[337px] lg:mt-[312px] font-bold mx-auto lg:mx-0 leading-[120%] text-center lg:text-left font-neue text-[#0E0E10] text-[37px] lg:text-[60px]">
             Empowering <span className="text-[#ED7636]">schools </span>
@@ -45,7 +45,7 @@ const EdtechClinic = () => {
           <BookSession />
         </div>
         <div
-          className="bg-[url('/frame.svg')] relative w-[90%] max-w-[584px] h-[476px] flex justify-center items-center mx-auto lg:mx-0 lg:mt-[264px]">
+          className="bg-[url('/frame.svg')] relative w-full max-w-[584px] px-[24px] pt-[44px] lg:w-[584px] h-[476px] flex justify-center items-center mx-auto lg:mx-0 lg:mt-[264px]">
           <video ref={videoRef}
                  poster="/ec-video-th.svg"
                  onPause={handlePause}
@@ -53,19 +53,19 @@ const EdtechClinic = () => {
                  width={536}
                  height={472}
                  controls={!isPaused}
-                 className="w-full max-w-[584px] h-[472px] bg-black-100 top-[34px] absolute rounded-t-[6px] top-0 left-[24px] z-20"
+                 className="w-full max-w-[536px] lg:w-[536px] h-[472px] bg-black-100  rounded-t-[6px] z-20"
                  src="/ec-video.mp4"
           ></video>
-          {isPaused ? <div className="flex gap-x-[10px] items-center absolute bottom-0 left-[44px] z-30">
+          {isPaused ? <div className="flex gap-x-[5px] lg:gap-x-[10px] items-center absolute bottom-0 left-[34px] lg:left-[44px] z-30">
             <Image
               onClick={playVideo}
               alt="video frame"
               src="/play.svg"
               width={60}
               height={60}
-              className="cursor-pointer hover:scale-[1.1] transition-all"
+              className="w-[40px] md:w-[60px] h-[40px] md:w-[60px]  cursor-pointer hover:scale-[1.1] transition-all"
             />
-            <p className="max-w-[171px] text-white font-matter text-[15px]">See what we offer at the
+            <p className="max-w-[171px] text-white font-matter text-[14px] lg:text-[15px]">See what we offer at the
               Schools Edtech Clinic</p>
           </div> : null}
         </div>
@@ -166,7 +166,9 @@ const EdtechClinic = () => {
           {beneficiaries.map((pill) =>
             <Pill key={pill} text={pill} />
           )}
-
+          <div className="mt-[44px] lg:mt-[64px]">
+            <BookSession/>
+          </div>
         </div>
       </div>
     </section>
