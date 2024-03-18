@@ -17,16 +17,16 @@ const BookSession = () => {
 
       {isLinksVisible ? <><a target="_blank" href="https://bit.ly/cchubedtechclinic"><Button
         btnText="I'm in Nigeria"
-        animate={true}
+        animate={false}
         disabled={false}
         rightIcon="/arrow-right-orange.svg"
-        styles="sm:w-[300px] block mb-[12px] lg:b-0 mx-auto lg:mx-0 px-[36px] py-[23.5px] font-matter font-[500] text-[15px] md:text-[17px] text-[#E23F27] text-center rounded-[40px] bg-white border border-[#E23F27]" /></a>
+        styles="min-w-[90vw] sm:min-w-[300px] block mb-[12px] lg:b-0 mx-auto lg:mx-0 px-[36px] py-[23.5px] font-matter font-[500] text-[15px] md:text-[17px] text-[#E23F27] text-center rounded-[40px] bg-white border border-[#E23F27]" /></a>
         <a target="_blank" href="http://bit.ly/ihubedtechclinic"><Button
           btnText="I'm in Kenya"
-          animate={true}
+          animate={false}
           disabled={false}
           rightIcon="/arrow-right-orange.svg"
-          styles="sm:w-[300px] block mb-[64px] lg:b-0 mx-auto lg:mx-0 px-[36px] py-[23.5px] font-matter font-[500] text-[15px] md:text-[17px] text-[#E23F27] text-center rounded-[40px] bg-white border border-[#E23F27]" /></a>
+          styles="min-w-[90vw] sm:min-w-[300px] block mb-[64px] lg:b-0 mx-auto lg:mx-0 px-[36px] py-[23.5px] font-matter font-[500] text-[15px] md:text-[17px] text-[#E23F27] text-center rounded-[40px] bg-white border border-[#E23F27]" /></a>
       </> : null
       }
     </div>
