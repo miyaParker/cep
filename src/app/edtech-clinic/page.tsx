@@ -23,12 +23,12 @@ const EdtechClinic = () => {
     setPaused(false);
   };
   return (
-    <section className="mx-auto pt-[136px] lg:pt-0 max-w-[1440px] px-[20px] lg:px-[80px] xl:px-[140px]">
+    <section className="">
       <div
-        className="mx-auto gap-x-[40px] w-full flex flex-col lg:flex-row lg:justify-between">
-        <div className="mx-auto lg:mx-0">
+        className="mx-auto gap-x-[40px] w-full flex flex-col lg:flex-row lg:justify-between mx-auto pt-[136px] lg:pt-0  lg:mt-[312px] max-w-[1440px] px-[20px] lg:px-[80px] xl:px-[140px]">
+        <div className="mx-auto lg:mx-0 lg:flex-1">
           <h1
-            className="max-w-[205px] lg:max-w-[337px] lg:mt-[312px] font-bold mx-auto lg:mx-0 leading-[120%] text-center lg:text-left font-neue text-[#0E0E10] text-[37px] lg:text-[60px]">
+            className="max-w-[205px] lg:max-w-[337px]  font-bold mx-auto lg:mx-0 leading-[120%] text-center lg:text-left font-neue text-[#0E0E10] text-[37px] lg:text-[60px]">
             Empowering <span className="text-[#ED7636]">schools </span>
             with
             EdTech Solutions{" "}
@@ -45,7 +45,7 @@ const EdtechClinic = () => {
           <BookSession />
         </div>
         <div
-          className="bg-[url('/frame.svg')] relative w-full max-w-[584px] px-[24px] pt-[44px] lg:w-[584px] h-[476px] flex justify-center items-center mx-auto lg:mx-0 lg:mt-[264px]">
+          className="bg-[url('/frame.svg')] bg-center bg-cover bg-no-repeat lg:flex-1 relative w-full h-[476px] max-w-[584px] rounded-t-[6px] px-[18px] lg:px-[24px] pt-[38px] lg:pt-[44px] flex justify-center items-center mx-auto lg:mx-0 ">
           <video ref={videoRef}
                  poster="/ec-video-th.svg"
                  onPause={handlePause}
@@ -53,7 +53,7 @@ const EdtechClinic = () => {
                  width={536}
                  height={472}
                  controls={!isPaused}
-                 className="w-full max-w-[536px] lg:w-[536px] h-[472px] bg-black-100  rounded-t-[6px] z-20"
+                 className="w-full max-w-[536px] h-[476px] bg-black-100  rounded-t-[6px] z-20"
                  src="/ec-video.mp4"
           ></video>
           {isPaused ? <div className="flex gap-x-[5px] lg:gap-x-[10px] items-center absolute bottom-0 left-[34px] lg:left-[44px] z-30">
@@ -73,14 +73,14 @@ const EdtechClinic = () => {
       </div>
       <div className="bg-[#0E0E10] text-white py-[80px] mt-[80px]">
         <div
-          className="max-w-[1440px] gap-x-[20px] mx-auto font-neue font-bold flex flex-col items-center lg:justify-between px-[20px] lg:flex-row lg:px-[80px] xl:px-[140px]">
-          <div className="mx-auto lg:mx-0">
+          className="max-w-[1440px] gap-x-[20px] mx-auto font-neue font-bold flex flex-col items-center xl:justify-between px-[20px] xl:flex-row lg:px-[80px] xl:px-[140px]">
+          <div className="mx-auto lg:mx-0 lg:flex-1">
             <h2
-              className="max-w-[583px] mx-auto lg:mx-0 lg:px-0 text-[30px] lg:text-[3rem] text-center lg:text-left leading-[120%] mt-[28px] mb-[40px]">
+              className="max-w-[583px] mx-auto xl:mx-0 xl:px-0 text-[30px] lg:text-[3rem] text-center xl:text-left leading-[120%] mt-[28px] mb-[40px]">
               We provide support for
               schools in these key areas:
             </h2>
-            <div className="flex flex-col items-center lg:items-start">
+            <div className="flex flex-col items-center xl:items-start">
               <Image
                 src="/key-area-1.svg"
                 alt="re:learn is driven by partnerships"
@@ -89,16 +89,16 @@ const EdtechClinic = () => {
                 className=""
               />
               <h3
-                className="max-w-[485px] mx-auto lg:mx-0 lg:px-0 text-[20px] lg:text-[24px] text-center lg:text-left leading-[120%] mt-[20px] mb-[20px]">
+                className="max-w-[485px] mx-auto xl:mx-0 lg:px-0 text-[20px] xl:text-[24px] text-center xl:text-left leading-[120%] mt-[20px] mb-[20px]">
                 Identifying gaps
               </h3>
               <p
-                className="font-matter text-[16px] lg:text-[18px] lg:px-0 mb-[3rem] max-w-[450px] font-normal mx-auto lg:mx-0  text-center lg:text-left text-white/90 tracking-[0.085px] leading-[150%]">
+                className="font-matter text-[16px] lg:text-[18px] lg:px-0 mb-[3rem] max-w-[450px] font-normal mx-auto lg:mx-0  text-center xl:text-left text-white/90 tracking-[0.085px] leading-[150%]">
                 Identify areas in the school system where there&apos;s a need
                 for Edtech solutions tailored to specific learning needs.
               </p>
             </div>
-            <div className="flex flex-col items-center lg:items-start">
+            <div className="flex flex-col items-center xl:items-start lg:flex-1">
               <Image
                 src="/key-area-2.svg"
                 alt="re:learn is driven by partnerships"
@@ -107,16 +107,16 @@ const EdtechClinic = () => {
                 className=""
               />
               <h3
-                className="max-w-[485px] mx-auto lg:mx-0 lg:px-0 text-[20px] lg:text-[24px] text-center lg:text-left leading-[120%] mt-[20px] mb-[20px]">
+                className="max-w-[485px] mx-auto xl:mx-0 xl:px-0 text-[20px] xl:text-[24px] text-center xl:text-left leading-[120%] mt-[20px] mb-[20px]">
                 Tailored solutions
               </h3>
               <p
-                className="font-matter text-[16px] lg:text-[18px] lg:px-0 mb-[3rem] max-w-[450px] font-normal mx-auto lg:mx-0  text-center lg:text-left text-white/90 tracking-[0.085px] leading-[150%]">
+                className="font-matter text-[16px] lg:text-[18px] lg:px-0 mb-[3rem] max-w-[450px] font-normal mx-auto lg:mx-0  text-center xl:text-left text-white/90 tracking-[0.085px] leading-[150%]">
                 Suggest appropriate tech-based teaching & learning
                 solutions to schools based on diagnoses made.
               </p>
             </div>
-            <div className="flex flex-col items-center lg:items-start">
+            <div className="flex flex-col items-center xl:items-start">
               <Image
                 src="/key-area-3.svg"
                 alt="re:learn is driven by partnerships"
@@ -125,11 +125,11 @@ const EdtechClinic = () => {
                 className=""
               />
               <h3
-                className="max-w-[485px] mx-auto lg:mx-0 lg:px-0 text-[20px] lg:text-[24px] text-center lg:text-left leading-[120%] mt-[20px] mb-[20px]">
+                className="max-w-[485px] mx-auto xl:mx-0 xl:px-0 text-[20px] xl:text-[24px] text-center xl:text-left leading-[120%] mt-[20px] mb-[20px]">
                 Providing support
               </h3>
               <p
-                className="font-matter text-[16px] lg:text-[18px] lg:px-0 mb-[3rem] max-w-[450px] font-normal mx-auto lg:mx-0  text-center lg:text-left text-white/90 tracking-[0.085px] leading-[150%]">
+                className="font-matter text-[16px] lg:text-[18px] lg:px-0 mb-[3rem] max-w-[450px] font-normal mx-auto lg:mx-0  text-center xl:text-left text-white/90 tracking-[0.085px] leading-[150%]">
                 Provide a holistic support for Edtech solutions and
                 supporting services such as devices, internet
                 connectivity and financing opportunities.
@@ -138,21 +138,24 @@ const EdtechClinic = () => {
 
 
           </div>
-          <div className="relative mx-auto lg:mx-0 w-full max-w-[440px] lg:w-[440px] xl:w-[545px]">
-            <Image
-              src="/ec-section2.png"
-              alt="The Ed-Tech Centre of Excellence, TASUED"
-              width={545}
-              height={553}
-              className="z-20 relative w-full max-w-[440px] lg:max-w-[545px] md:w-[440px] xl:w-[510px] 2xl:w-[545px] mx-auto mx-[20px] lg:mx-0"
-            />
-            <Image
-              src="/about-ellipse.svg"
-              alt="The Ed-Tech Centre of Excellence, TASUED"
-              width={268}
-              height={138}
-              className="w-[128px] h-[66px] lg:w-[268px] lg:h-[138px] max-w-[268px] max-h-[138px] absolute bottom-[-20px] lg:bottom-[-75px] right-0 lg:right-[-60px] 2xl:right-[-140px]"
-            />
+          <div className="lg:flex-1 relative">
+            <div className="relative w-max mx-auto lg:mx-0">
+              <Image
+                src="/ec-section2.png"
+                alt="The Ed-Tech Centre of Excellence, TASUED"
+                width={545}
+                height={553}
+                className="z-20 relative w-full max-w-[440px] lg:max-w-[545px] md:w-[440px] xl:w-[510px] 2xl:w-[545px] mx-auto mx-[20px] lg:mx-0"
+              />
+              <Image
+                src="/about-ellipse.svg"
+                alt="The Ed-Tech Centre of Excellence, TASUED"
+                width={268}
+                height={138}
+                className="w-[128px] h-[66px] md:w-[268px] md:h-[138px] max-w-[268px] max-h-[138px] absolute bottom-[-40px] md:bottom-[-75px] right-[-20px] md:right-[-70px]"
+              />
+            </div>
+
           </div>
         </div>
       </div>
@@ -166,11 +169,12 @@ const EdtechClinic = () => {
           {beneficiaries.map((pill) =>
             <Pill key={pill} text={pill} />
           )}
-          <div className="mt-[44px] lg:mt-[64px]">
-            <BookSession/>
-          </div>
+        </div>
+        <div className="mt-[44px] md:mt-[64px] mx-auto w-max">
+          <BookSession/>
         </div>
       </div>
+
     </section>
   );
 };
