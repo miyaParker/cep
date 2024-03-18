@@ -6,7 +6,6 @@ import { useState, useEffect, useRef, useCallback, useContext } from "react";
 import { usePathname } from "next/navigation";
 
 const Navbar = () => {
-    const linkRef = useRef<HTMLAnchorElement | null>(null);
     const pathname = usePathname();
     const [prevScrollPos, setPrevScrollPos] = useState(0);
     const [visible, setVisible] = useState(true);
@@ -119,7 +118,7 @@ const Navbar = () => {
             {mobileNavItems.map((item, index) => {
               if (item?.link) {
                 return (
-                  <Link href={item.link} key={index}>
+                  <Link href={item.link} key={index} target={item?.target}>
                     <li
                       className={`${pathname === item.link ? "text-red-100 font-semibold" : "text-[#333438]"} block capitalize font-normal text-[1.1rem] tracking-[0.1px]`}>
                       {item.name}
