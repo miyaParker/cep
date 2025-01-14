@@ -4,7 +4,7 @@ const Organizations = () => {
     return (
         <div className='mt-[10rem]'>
             <h2 className='text-center text-[3rem] font-bold mb-[3rem] w-[100%] max-w-[624px] mx-auto font-neue'>
-                World-trusted organizations believe in what we do
+                World-class organizations believe in what we do
             </h2>
             <div className='w-[100%] max-w-[1440px] px-[20px] lg:px-[80px] xl:px-[140px] grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 mx-[140px] mx-auto'>
                 <div className='grayscale hover:grayscale-0 rounded-tl-[6px] lg:rounded-tl-[4px] flex items-center justify-center border-2 border-gray-100 h-[102px] md:h-[120px] lg:h-[144px] '>

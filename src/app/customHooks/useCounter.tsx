@@ -26,14 +26,15 @@ const useCounter = ({ref, limit, interval, step}: Icounterprops) => {
     useEffect(() => {
         while (value < limit) {
             const intervalId = setInterval(() => {
-                setValue(value + step)
+                if (value + step > limit) setValue(limit)
+                else setValue(value + step)
             }, interval)
             return () => {
                 clearInterval(intervalId)
             }
         }
         if (!isIntersecting && value > 0) setValue(0)
-    },[value, limit, isIntersecting, interval, step]);
+    }, [value, limit, isIntersecting, interval, step]);
     return {value}
 }
 export default useCounter
