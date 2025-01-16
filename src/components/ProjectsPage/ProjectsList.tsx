@@ -3,20 +3,18 @@ import Project from "@/components/ProjectsPage/Project";
 import {PROJECTS_GROUPS} from "@/constants";
 import {useEffect, useRef, useState} from "react";
 import Tabs from "@/components/Projects/Tabs";
-
+import {GROUP_IDS} from "@/constants";
 const ProjectsList = () => {
-    const GROUP_ID = {
-        [PROJECTS_GROUPS["2021_CURRENT"]]: 1,
-        [PROJECTS_GROUPS["2018_2020"]]: 2,
-        [PROJECTS_GROUPS["2015_2017"]]: 3
-    }
-    const boxRefs = useRef<HTMLDivElement[]>([]);
-    const [inViewStates, setInViewStates] = useState([]);
+    const boxRefs = useRef<(HTMLDivElement | null)[]>([]);
+    const [inViewStates, setInViewStates] = useState<boolean[]>([]);
     const [scrollTop, setScrollTop] = useState(0);
     const [activeTab, setActiveTab] = useState(PROJECTS_GROUPS["2021_CURRENT"]);
     const onClickTab = (group: string) => {
-        boxRefs.current[GROUP_ID[group]].scrollIntoView({behavior: "smooth"});
         setActiveTab(group);
+        const box = boxRefs.current[GROUP_IDS[group]];
+        if (box) {
+            box.scrollIntoView({ behavior: "smooth" });
+        }
     }
 
     const concatList = (list: any, item: any) => {
@@ -32,7 +30,7 @@ const ProjectsList = () => {
 
     const projectsList = projects.reduce((projects, currentProject) => {
         const group = currentProject?.group;
-        if (Object.values(PROJECTS_GROUPS).includes(group)) {
+        if (Object.values(PROJECTS_GROUPS).includes(group as string)) {
             return concatList(projects, currentProject);
         }
         return projects;
@@ -72,7 +70,6 @@ const ProjectsList = () => {
         const updateObserver = () => {
             let currentPosition = window.pageYOffset;
             setScrollTop(currentPosition <= 0 ? 0 : currentPosition);
-
             boxRefs.current.forEach(box => {
                 if (box) {
                     observer.observe(box);
@@ -81,7 +78,6 @@ const ProjectsList = () => {
         };
 
         updateObserver();
-
         const handleScroll = () => {
             updateObserver();
         };
@@ -97,7 +93,6 @@ const ProjectsList = () => {
             });
         };
     }, [scrollTop]);
-
 
     const activeTabStyle = "font-medium lg:text-[20px] bg-gray-100"
     return (

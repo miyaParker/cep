@@ -1,6 +1,7 @@
 import React from 'react';
+import {TabProps} from "@/types";
 
-const Tab = ({label, isActive, onClick, activeTabStyle}) => {
+const Tab = ({label, isActive, onClick, activeTabStyle}:TabProps) => {
     return (
         <a href={`/projects#${label}`}>
             <div

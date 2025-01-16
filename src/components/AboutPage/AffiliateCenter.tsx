@@ -3,7 +3,6 @@ import Image from 'next/image';
 import Button from "@/components/Generic/Button";
 import {useSearchParams} from "next/navigation";
 import {useEffect, useRef} from "react";
-import EmblaCarousel from "@/app/about/EmblaCarousel";
 
 const AffiliateCenter = () => {
     const ref = useRef<HTMLDivElement | null>(null)
@@ -14,8 +13,7 @@ const AffiliateCenter = () => {
             ref.current?.scrollIntoView({behavior: 'smooth'})
         }
     }, [id, searchParams])
-    // const OPTIONS = {loop: false}
-    // const SLIDES = [AffiliateCenter, AffiliateCenter]
+
     return (
         <div className='bg-[#0E0E10] text-white py-[80px] mt-[80px]' ref={ref} id='COE'>
             <div
@@ -65,7 +63,6 @@ const AffiliateCenter = () => {
                         className='w-[128px] h-[66px] lg:w-[268px] lg:h-[138px] max-w-[268px] max-h-[138px] absolute bottom-[-20px] lg:bottom-[-45px] right-0 lg:right-[-60px] 2xl:right-[-140px]'
                     />
                 </div>
-                {/*<EmblaCarousel slides={SLIDES} options={OPTIONS}/>*/}
             </div>
         </div>
     );

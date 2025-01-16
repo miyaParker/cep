@@ -1,7 +1,8 @@
 import Tab from "./Tab"
 import {PROJECTS_GROUPS} from "@/constants";
+import {TabsProps} from "@/types";
 
-const Index = ({ activeTab, onClickTab, activeTabStyle }) => {
+const Index = ({ activeTab, onClickTab, activeTabStyle }:TabsProps) => {
     return (
         <div className="flex gap-[40px] flex-wrap mb-[80px] text-[#0E0E10]">
             {Object.values(PROJECTS_GROUPS).map((group, index) => (

@@ -5,7 +5,7 @@ const Footer = () => {
     return (
         <div className='bg-[#0E0E10] w-screen text-white'>
             <footer>
-                <div className='font-matter lg:flex-row lg:justify-between lg:items-start lg:justify-start lg:text-[17px] text-white py-[72px] lg:py-[64px] max-w-[1500px] mx-auto flex flex-col px-[20px] lg:px-[80px] xl:px-[130px]'>
+                <div className='font-matter lg:flex-row lg:items-start lg:justify-start lg:text-[17px] text-white py-[72px] lg:py-[64px] max-w-[1500px] mx-auto flex flex-col px-[20px] lg:px-[80px] xl:px-[130px]'>
                     <div className='self-start'>
                         <div className='flex flex-col gap-[24px]'>
                             <div className='relative left-[-60px] top-[-40px]'>
@@ -116,7 +116,7 @@ const Footer = () => {
                         </p>
                         <Link href='/get-involved/teachers-lounge'>
                             <p className='text-[17px] tracking-[1.5%] mb-[32px] lg:mb-[24px]'>
-                                Teachers' Lounge
+                                Teachers&apos; Lounge
                             </p>
                         </Link>
                         <Link href='/get-involved/viable'>
