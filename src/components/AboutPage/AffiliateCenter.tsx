@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Button from "@/components/Generic/Button";
 import {useSearchParams} from "next/navigation";
 import {useEffect, useRef} from "react";
+import EmblaCarousel from "@/app/about/EmblaCarousel";
 
 const AffiliateCenter = () => {
     const ref = useRef<HTMLDivElement | null>(null)
@@ -13,7 +14,8 @@ const AffiliateCenter = () => {
             ref.current?.scrollIntoView({behavior: 'smooth'})
         }
     }, [id, searchParams])
-
+    // const OPTIONS = {loop: false}
+    // const SLIDES = [AffiliateCenter, AffiliateCenter]
     return (
         <div className='bg-[#0E0E10] text-white py-[80px] mt-[80px]' ref={ref} id='COE'>
             <div
@@ -63,13 +65,7 @@ const AffiliateCenter = () => {
                         className='w-[128px] h-[66px] lg:w-[268px] lg:h-[138px] max-w-[268px] max-h-[138px] absolute bottom-[-20px] lg:bottom-[-45px] right-0 lg:right-[-60px] 2xl:right-[-140px]'
                     />
                 </div>
-                <p className='font-matter mt-[73px]  text-[17px] lg:text-[20px] px-[30px] lg:px-0 mb-[3rem] max-w-[450px] font-normal mx-auto lg:mx-0  text-center lg:text-left text-white/90 tracking-[0.085px] leading-[150%] block lg:hidden'>
-                    The centre through academic research, a community of ed-tech
-                    enthusiasts, incubation of early-stage businesses, and a
-                    research fellowship programme, will make a significant
-                    contribution to e-learning and technology application in
-                    schools & classrooms
-                </p>
+                {/*<EmblaCarousel slides={SLIDES} options={OPTIONS}/>*/}
             </div>
         </div>
     );

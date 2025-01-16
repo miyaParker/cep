@@ -127,3 +127,9 @@ export const feedbackEmailTemplate = (data: { email: string, message: string }) 
                         </div>
                     </body>
                     </html>`;
+
+export const PROJECTS_GROUPS = {
+  "2021_CURRENT": "2021 - till date Projects",
+  "2018_2020": "2018 - 2020 Projects",
+  "2015_2017": "2015 - 2017 Projects"
+}

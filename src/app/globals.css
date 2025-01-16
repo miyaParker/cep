@@ -1,7 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+html{
+    scroll-behavior: smooth;
+}
 * {
     box-sizing: border-box;
     padding: 0;
@@ -138,7 +140,6 @@ select:required:invalid {
     }
 }
 
-
 .paper-clip {
     width: 32px;
     height: 32px;
@@ -201,4 +202,14 @@ select:required:invalid {
         word-break: break-all;
         word-wrap: break-word;
     }
+}
+.box {
+    width: 1px;
+    opacity: 0;
+    transition: width 500ms ease-in 50ms, opacity 500ms ease-in 50ms;
+}
+
+.box.in-view {
+    width: 48px;
+    opacity: 1;
 }
