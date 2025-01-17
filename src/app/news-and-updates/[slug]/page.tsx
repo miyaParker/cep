@@ -11,9 +11,12 @@ const Post = () => {
     const slug = usePathname()
     const [loading, setLoading] = useState(true);
     const FRONTEND_URL = process.env.NEXT_PUBLIC_FRONTEND_URL;
+
     useEffect(() => {
         if (slug) {
+            console.log("slug", slug)
             fetchPost(slug.replace("/news-and-updates", "")).then(post => {
+                console.log(post.data);
                 setPost(post.data)
                 setLoading(false)
             });
@@ -24,8 +27,7 @@ const Post = () => {
         bgColor: "#FFFFFF", color: "#18191B", round: true, size: 27
     }
     return (
-        <div className='w-full pt-[160px] lg:pt-[218px] overflow-scroll'>
-
+        <div className='w-full pt-[20px] lg:pt-[40px] overflow-scroll'>
             <a href="/news-and-updates">
                 <div className="flex gap-[0.5px] items-center mx-auto max-w-[1440px] px-[20px] lg:px-[130px]">
                     <Image src="/chevron-down.svg" alt="back to news and updates" width={24} height={24}
@@ -42,7 +44,7 @@ const Post = () => {
                                 className='mt-[20px] justify-center lg:justify-start lg:mx-0 flex items-center gap-x-[12px] mb-[24px]'>
                                 <div className='flex items-center gap-x-[8px] mt-[8px] flex-wrap'>
                                     <div className='w-2 h-2 bg-black-100 rounded-full'></div>
-                                    <p className={"rounded-[3px] text-[17px] font-medium font-matter"}>{post?.terms[0]?.name}</p>
+                                    <p className={"rounded-[3px] text-[17px] font-medium font-matter"}>{post?.terms?.length && post?.terms[0]?.name}</p>
                                 </div>
                             </div>
                             <h1 className='w-full max-w-[798px] font-bold mx-auto lg:mx-0 leading-[120%] text-center lg:text-left font-neue text-[#0E0E10] text-[45px] xl:text-[56px]'>
