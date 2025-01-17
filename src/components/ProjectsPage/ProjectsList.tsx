@@ -4,6 +4,7 @@ import {PROJECTS_GROUPS} from "@/constants";
 import {useEffect, useRef, useState} from "react";
 import Tabs from "@/components/Projects/Tabs";
 import {GROUP_IDS} from "@/constants";
+
 const ProjectsList = () => {
     const boxRefs = useRef<(HTMLDivElement | null)[]>([]);
     const [inViewStates, setInViewStates] = useState<boolean[]>([]);
@@ -13,7 +14,12 @@ const ProjectsList = () => {
         setActiveTab(group);
         const box = boxRefs.current[GROUP_IDS[group]];
         if (box) {
-            box.scrollIntoView({ behavior: "smooth" });
+            window.scrollTo({
+                top: box.offsetTop - 170,
+                left: 0,
+                behavior: "smooth",
+            });
+            // box.scrollIntoView({behavior: "smooth"});
         }
     }
 
@@ -37,11 +43,15 @@ const ProjectsList = () => {
     }, {});
 
 
-    const projectGroup = (group: string, list: any, id: number) => <div
-        ref={(el: HTMLDivElement) => (boxRefs.current[id] = el)} className="pt-[60px]">
+    const projectGroup = (group: string, list: any, id: number) => <div key={group}
+                                                                        ref={(el: HTMLDivElement) => (boxRefs.current[id] = el)}
+                                                                        className={`pt-[100px]`}>
         <p className="mb-[10px] text-[16px] md:text-[18px] lg:text-[20px] font-matter tracking-[0.5%] leading-[112%]">{group}</p>
         <div
-            className={`h-[1px] mb-[32px] bg-[#E23F27] box ${inViewStates[id] ? 'in-view' : ''}`}
+            className={`hidden lg:block h-[1px] mb-[32px] bg-[#E23F27] box ${inViewStates[id] ? 'in-view ' : ''}`}
+        ></div>
+        <div
+            className={`block lg:hidden h-[1px] w-[48px] mb-[32px] bg-[#E23F27]`}
         ></div>
         <div
             className="justify-center gap-x-[36px] gap-y-[68px] grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3">
@@ -96,7 +106,7 @@ const ProjectsList = () => {
 
     const activeTabStyle = "font-medium lg:text-[20px] bg-gray-100"
     return (
-        <div className='mx-auto max-w-[1440px] w-full pt-[160px] lg:pt-[218px] px-[20px] lg:px-[80px] xl:px-[140px]'>
+        <div className='mx-auto max-w-[1440px] w-full pt-[80px] px-[20px] lg:px-[80px] xl:px-[140px]'>
             <Tabs
                 activeTab={activeTab}
                 onClickTab={onClickTab}

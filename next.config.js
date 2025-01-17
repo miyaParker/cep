@@ -2,21 +2,22 @@
 const nextConfig = {
     webpack5: true,
     webpack: (config) => {
-      config.resolve.fallback = { fs: false };
-      return config;
+        config.resolve.fallback = {fs: false};
+        return config;
     },
-  output: 'standalone',
-  experimental: {
-    appDir: true,
-  },
-  images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'drive.google.com',
-      },
-    ],
-  },
+    output: 'standalone',
+    experimental: {
+        appDir: true,
+    },
+    images: {
+        remotePatterns: [
+            {
+                protocol: 'https',
+                hostname: 'drive.google.com',
+            },
+            {protocol: "https", hostname: "blog.relearn.ng"},
+        ],
+    },
 }
 
 module.exports = nextConfig

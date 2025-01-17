@@ -247,38 +247,3 @@ export const projects = [
         }, {number: "2", description: "SCHOOLS"}, {number: "2", description: "STATES: LAGOS AND ABUJA"}]
     }, ,
 ];
-export const years = [2020, 2021, 2022];
-export const articles = [
-    {
-        name: "Teachers’ Day celebration: Teachers’" +
-            "Lounge",
-        img: "/news-latest.jpg",
-        category: "Events",
-        datePublished: "3 hours ago",
-        description: "We trained 21 fellows in Lagos and Kenya in the application of technology for teaching, learning and education management."
-    },
-    {
-        name: "EdTech Festival 2021",
-        img: "/sample1.jpg",
-        category: "Events",
-        datePublished: "2 days ago",
-        description: "A STEM exploration festival organized to" +
-            "provoke children’s interest in science ..."
-
-    }, {
-        name: "Introducing Viable",
-        img: "/sample2.jpg",
-        category: "Community",
-        datePublished: "2 weeks ago",
-        description: "Viable is the first community for EdTech" +
-            "product designers, developers ..."
-
-    }, {
-        name: "Safe Online by Meta",
-        img: "/sample3.jpg",
-        category: "Programme Update",
-        datePublished: "November 11, 2022",
-        description: "The Safe online programme is designed" +
-            "to introduce teenagers to digital ..."
-
-    }];

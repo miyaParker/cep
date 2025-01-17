@@ -35,10 +35,10 @@ const Navbar = () => {
         };
     }, [prevScrollPos, visible, handleScroll]);
     return (
-      <div>
+      <div className='sticky top-0'>
         <nav
           className={`${
-            visible ? "top-0" : "top-[-8rem]"} transition-top duration-300 ease-out border-b w-full border-black-100/[0.05] hidden z-50 fixed bg-white lg:flex h-[8rem] font-matter font-normal items-center justify-between`}>
+            visible ? "top-0" : "top-[-8rem]"} transition-top duration-300 ease-out border-b w-full border-black-100/[0.05] hidden z-50 bg-white lg:flex h-[8rem] font-matter font-normal items-center justify-between`}>
           <div
             className="mx-auto relative flex  justify-between w-[100%] max-w-[1500px] lg:px-[80px] xl:px-[130px]">
             <Link href="/">
@@ -94,7 +94,7 @@ const Navbar = () => {
         <nav
           className={`${
             visible || mobileMenuVisible ? "top-0" : "top-[-8rem]"} ${
-            mobileMenuVisible ? "h-screen" : "h-max"} transition duration-1000 ease-out flex flex-col w-full mx-auto fixed bg-white flex lg:hidden z-40 font-matter font-normal`}>
+            mobileMenuVisible ? "h-screen" : "h-max"} transition duration-1000 ease-out flex-col w-full mx-auto fixed bg-white flex lg:hidden z-40 font-matter font-normal sticky`}>
           <div
             className="flex flex-row justify-between items-center h-[80px] px-[20px] border-b border-black-100/[0.05]">
             <Link href="/">
@@ -114,7 +114,7 @@ const Navbar = () => {
             />
           </div>
           {mobileMenuVisible ? <div
-            className="top-[80px] w-full pt-[16px] gap-[40px] absolute bg-white items-center z-50 flex flex-col justify-between">
+            className="top-[80px] w-full pt-[16px] gap-[40px] sticky bg-white items-center z-50 flex flex-col justify-between">
             {mobileNavItems.map((item, index) => {
               if (item?.link) {
                 return (
