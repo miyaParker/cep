@@ -96,8 +96,8 @@ const CertificatePortal = () => {
         dispatch({name: e.target.name, value: e.target.value})
     }
     useEffect(() => {
-        getYears().then(res => setYears(res.data))
-        getProgrammes().then(res => setProgrammes(res.data))
+        getYears().then(res => setYears(res?.data))
+        getProgrammes().then(res => setProgrammes(res?.data))
     }, [])
     return (
         <div

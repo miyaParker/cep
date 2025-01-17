@@ -1,6 +1,5 @@
 import { createPortal } from "react-dom";
 import Image from "next/image";
-import React from "react";
 
 interface DataProps {
     issued_on: string;
