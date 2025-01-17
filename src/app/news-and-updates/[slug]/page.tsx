@@ -14,7 +14,6 @@ const Post = () => {
 
     useEffect(() => {
         if (slug) {
-            console.log("slug", slug)
             fetchPost(slug.replace("/news-and-updates", "")).then(post => {
                 console.log(post.data);
                 setPost(post.data)
