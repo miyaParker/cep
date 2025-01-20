@@ -1,6 +1,6 @@
-'use client';
 import { createPortal } from 'react-dom';
 import Image from 'next/image';
+import React from 'react';
 
 interface DataProps {
     issued_on: string;
@@ -14,7 +14,11 @@ interface VerifiedModalProps {
 }
 
 const VerifiedModal: React.FC<VerifiedModalProps> = ({ data, closeModal }) => {
-    const modalRoot = document.getElementById('modal-root');
+    const [modalRoot, setModalRoot] = React.useState<HTMLElement | null>(null);
+
+    React.useEffect(() => {
+        setModalRoot(document.getElementById('modal-root'));
+    }, []);
 
     if (!modalRoot) return null;
 
