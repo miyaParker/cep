@@ -18,7 +18,7 @@ const Hero = () => {
                 </div>
 
                 <Image
-                    src='/about-image.jpg'
+                    src='/about.png'
                     alt='Our Focus is Education'
                     width={562}
                     height={496}

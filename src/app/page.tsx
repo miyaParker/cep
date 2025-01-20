@@ -1,4 +1,5 @@
 'use client'
+import "./page.module.css"
 import {useRef} from "react";
 import Organizations from '@/components/LandingPage/Organizations';
 import FeedbackForm from '@/components/LandingPage/FeedbackForm';

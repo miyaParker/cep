@@ -16,6 +16,8 @@
 *.pem
 .vscode
 .idea/
+.yarn/*
+.yarn/install-state.gz
 
 # debug
 npm-debug.log*

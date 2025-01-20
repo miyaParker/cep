@@ -33,6 +33,15 @@ module.exports = {
                 matter: ['var(--font-matter)'],
                 neue: ['var(--font-neue)'],
                 sans: ['var(--font-dm-sans)']
+            },
+            keyframes: {
+                extend: {
+                    '0%': { width: '0px' },
+                    '100%': { width: '48px' },
+                }
+            },
+            animation: {
+                extend: 'extend 1s ease-in',
             }
         }
     },

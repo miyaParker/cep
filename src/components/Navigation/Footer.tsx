@@ -5,7 +5,7 @@ const Footer = () => {
     return (
         <div className='bg-[#0E0E10] w-screen text-white'>
             <footer>
-                <div className='font-matter lg:flex-row lg:gap-x-[150px] xl:gap-x-[270px] lg:items-start lg:justify-start lg:text-[17px] text-white py-[72px] lg:py-[64px] max-w-[1500px] mx-auto flex flex-col px-[20px] lg:px-[80px] xl:px-[130px]'>
+                <div className='font-matter lg:flex-row lg:items-start lg:justify-between lg:text-[17px] text-white py-[72px] lg:py-[64px] max-w-[1500px] mx-auto flex flex-col px-[20px] lg:px-[80px] xl:px-[130px]'>
                     <div className='self-start'>
                         <div className='flex flex-col gap-[24px]'>
                             <div className='relative left-[-60px] top-[-40px]'>
@@ -32,14 +32,14 @@ const Footer = () => {
                                     8, Montgomery road, Yaba, Lagos
                                 </p>
                                 <p className='tracking-[1.5%] max-w-[308px]'>
-                                    6th Floor Senteu Plaza, Galana/Lenana Road,
-                                    Nairobi, Kenya.
+                                    Jahazi Building, 154 James Gichuru
+                                    Road, Nairobi, Kenya
                                 </p>
                             </div>
                         </div>
                         <div className='mt-[-15px] flex gap-x-[1rem]'>
                             <a
-                                href='https://instagram.com/relearnafrica?igshid=Y2IzZGU1MTFhOQ=='
+                                href='https://www.instagram.com/relearnafrica/profilecard/?igsh=MW9mYnJ2cGk2OXZmMg%3D%3D'
                                 target='_blank'
                             >
                                 <Image
@@ -50,7 +50,7 @@ const Footer = () => {
                                 />
                             </a>
                             <a
-                                href='https://facebook.com/CcHUBnigeria'
+                                href='https://www.facebook.com/people/Re-LearnAfrica/61554009331506'
                                 target='_blank'
                             >
                                 <Image
@@ -61,7 +61,7 @@ const Footer = () => {
                                 />
                             </a>
                             <a
-                                href='https://twitter.com/relearnNG?t=Hxou-GmPMa967uZRZEC6tA&s=09'
+                                href='https://x.com/relearnNG'
                                 target='_blank'
                             >
                                 <Image
@@ -98,34 +98,61 @@ const Footer = () => {
                                 Projects
                             </p>
                         </Link>
-                        <Link href='news-and-updates'>
+                        <Link href='/our-ecosystem'>
                             <p className='tracking-[1.5%] mb-[32px] lg:mb-[24px]'>
+                                Our Ecosystem
+                            </p>
+                        </Link>
+                        <Link href='/news-and-updates'>
+                            <p className='tracking-[1.5%]'>
                                 News & Update
                             </p>
                         </Link>
-                        <Link href='/certificate-portal'>
-                            <p className='tracking-[1.5%]'>
-                                Certificate Portal
-                            </p>
-                        </Link>
+
                     </div>
                     <div className='text-[16px] lg:text-[17px] self-start'>
                         <p className='text-[22px] lg:text-[20px] tracking-[0.8%] font-neue font-bold mb-[32px] lg:mb-[24px]'>
                             Get Involved
                         </p>
-                        <Link href='/get-involved/become-a-partner-at-relearn'>
-                            <p className='tracking-[1.5%] mb-[32px] lg:mb-[24px]'>
-                                Become a Partner
+                        <Link href='/get-involved/teachers-lounge'>
+                            <p className='text-[17px] tracking-[1.5%] mb-[32px] lg:mb-[24px]'>
+                                Teachers&apos; Lounge
                             </p>
                         </Link>
+                        <Link href='/get-involved/viable'>
+                            <p className='text-[17px] tracking-[1.5%] mb-[32px] lg:mb-[24px]'>
+                                Viable
+                            </p>
+                        </Link>
+                        <Link href='/get-involved/digital-literacy-community-of-practice'>
+                            <p className='text-[17px] tracking-[1.5%] mb-[32px] lg:mb-[24px]'>
+                                Digital Literacy Community of Practice
+                            </p>
+                        </Link>
+                        <Link href='/get-involved/schools-edtech-clinic'>
+                            <p className='text-[17px] tracking-[1.5%] mb-[32px] lg:mb-[24px]'>
+                                Schools EdTech Clinic
+                            </p>
+                        </Link>
+
                         <Link href='/get-involved/educators-network'>
-                            <p className='tracking-[1.5%] mb-[32px] lg:mb-[24px]'>
+                            <p className='text-[17px] tracking-[1.5%] mb-[32px] lg:mb-[24px]'>
                                 Educator Network
                             </p>
                         </Link>
-                        <Link href='/about?id=COE'>
-                            <p className='tracking-[1.5%]'>EdTech CoE</p>
+                        <Link href='/get-involved/edtech-festival'>
+                            <p className='text-[17px] tracking-[1.5%] mb-[32px] lg:mb-[24px]'>
+                                EdTech Festival
+                            </p>
                         </Link>
+                        <Link href='/get-involved/become-a-partner-at-relearn'>
+                            <p className='text-[17px] text-[17px] tracking-[1.5%] mb-[32px] lg:mb-[24px]'>
+                                Become a Partner
+                            </p>
+                        </Link>
+                        {/*<Link href='/about?id=COE'>*/}
+                        {/*    <p className='tracking-[1.5%]'>EdTech CoE</p>*/}
+                        {/*</Link>*/}
                     </div>
                 </div>
             </footer>

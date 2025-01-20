@@ -1,3 +1,4 @@
+'use client'
 import Hero from '@/components/AboutPage/Hero';
 import AffiliateCenter from '@/components/AboutPage/AffiliateCenter';
 import Team from '@/components/AboutPage/Team';

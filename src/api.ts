@@ -3,15 +3,15 @@ import sendgrid from '@sendgrid/mail';
 import {feedbackEmailTemplate, partnerEmailTemplate} from "@/constants";
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL
+const BLOG_BASE_URL = process.env.NEXT_PUBLIC_BLOG_BASE_URL
 
 export const subscribe = async (email: string) => {
     try {
-        const res = await axios.post(
+        return await axios.post(
             `${BASE_URL}/api/mailing/subscribe`,
             {
                 email,
             })
-        return res
     } catch (err: any) {
         if (err.response)
             return err.response.data
@@ -21,15 +21,14 @@ export const subscribe = async (email: string) => {
 export const getCertificate = async (payload: any) => {
     if (BASE_URL) {
         try {
-            const res = await axios.get(`${BASE_URL}/api/certificate?name=${payload.name}&program=${payload.programme}&year=${payload.year}`)
-            return res
+            return await axios.get(`${BASE_URL}/api/certificate?name=${payload.name}&program=${payload.programme}&year=${payload.year}`)
         } catch (err: any) {
             if (err.response)
                 return err.response.data
         }
     }
 }
-export const getYears= async () => {
+export const getYears = async () => {
     if (BASE_URL) {
         try {
             const res = await axios.get(`${BASE_URL}/api/years`)
@@ -40,7 +39,7 @@ export const getYears= async () => {
         }
     }
 }
-export const getProgrammes= async () => {
+export const getProgrammes = async () => {
     if (BASE_URL) {
         try {
             const res = await axios.get(`${BASE_URL}/api/programs`)
@@ -92,7 +91,13 @@ export const sendFeedback = async (payload: { email: string, message: string }) 
     }
 }
 
-export const sendPartnerMail = async (payload: { fullName: string, organization: string, proposal: string, email: string, file: File | undefined }) => {
+export const sendPartnerMail = async (payload: {
+    fullName: string,
+    organization: string,
+    proposal: string,
+    email: string,
+    file: File | undefined
+}) => {
     const API_KEY = process.env.NEXT_PUBLIC_SENDGRID_API_KEY
     const TO_EMAIL = process.env.NEXT_PUBLIC_TO_EMAIL
 
@@ -154,5 +159,25 @@ export const sendPartnerMail = async (payload: { fullName: string, organization:
             };
         }
 
+    }
+}
+export const fetchAllPosts = async () => {
+    if (BLOG_BASE_URL) {
+        try {
+            return await axios.get(`${BLOG_BASE_URL}/posts`)
+        } catch (err: any) {
+            if (err.response)
+                return err.response.data
+        }
+    }
+}
+export const fetchPost = async (slug: string) => {
+    if (BLOG_BASE_URL) {
+        try {
+            return await axios.get(`${BLOG_BASE_URL}/post${slug}`)
+        } catch (err: any) {
+            if (err.response)
+                return err.response.data
+        }
     }
 }

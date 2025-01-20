@@ -4,11 +4,12 @@ import useCounter from "@/app/customHooks/useCounter";
 
 const Numbers = () => {
     const ref = useRef<HTMLDivElement | null>(null)
-    const {value: teachers} = useCounter({ref, limit: 6698, step: 34, interval: 10})
-    const {value: students} = useCounter({ref, limit: 100285, step: 647, interval: 10})
-    const {value: partners} = useCounter({ref, limit: 12, step: 1, interval: 10})
-    const {value: projects} = useCounter({ref, limit: 12, step: 1, interval: 10})
-    const {value: schools} = useCounter({ref, limit: 95, step: 1, interval: 5})
+    const {value: teachers} = useCounter({ref, limit: 7195, step: 12, interval: 2})
+    const {value: students} = useCounter({ref, limit: 102255, step: 550, interval: 10})
+    const {value: partners} = useCounter({ref, limit: 12, step: 1, interval: 2})
+    const {value: projects} = useCounter({ref, limit: 12, step: 1, interval: 2})
+    const {value: learningHours} = useCounter({ref, limit: 3228, step: 20, interval: 10})
+    const {value: schools} = useCounter({ref, limit: 102, step: 2, interval: 12})
 
     return (
         <div className='bg-black-100' ref={ref}>
@@ -25,8 +26,8 @@ const Numbers = () => {
                     />
                 </div>
                 <div
-                    className='w-[100%] relative lg:flex-row flex flex-col items-center text-white flex mx-auto lg:before:hidden gap-y-[61px] before:left-[48%] lg:justify-between before:top-[-28px] before:w-auto before:content-[url("/point-down.svg")]  before:absolute'>
-                    <div className='flex flex-col items-center justify-center w-max'>
+                    className='w-[100%] relative lg:grid lg:grid-cols-3 flex-col items-center text-white flex mx-auto lg:before:hidden gap-y-[61px] before:left-[48%] lg:justify-between before:top-[-28px] before:w-auto before:content-[url("/point-down.svg")]  before:absolute'>
+                    <div className='flex flex-col items-center justify-center'>
                         <p className='text-[3rem] font-neue font-bold tracking-[0.008em]'>
                             {teachers}+
                         </p>
@@ -34,7 +35,7 @@ const Numbers = () => {
                             Teachers Trained
                         </p>
                     </div>
-                    <div className='flex flex-col items-center justify-center w-max'>
+                    <div className='flex flex-col items-center justify-center'>
                         <p className='text-[3rem] font-neue font-bold tracking-[0.008em]'>
                             {students}+
                         </p>
@@ -42,7 +43,7 @@ const Numbers = () => {
                             Students Empowered
                         </p>
                     </div>
-                    <div className='flex flex-col items-center justify-center w-max'>
+                    <div className='flex flex-col items-center justify-center'>
                         <p className='text-[3rem] font-neue font-bold tracking-[0.008em]'>
                             {schools}+
                         </p>
@@ -50,15 +51,23 @@ const Numbers = () => {
                             Schools Visited
                         </p>
                     </div>
-                    <div className='flex flex-col items-center justify-center w-max'>
+                    <div className='flex flex-col items-center justify-center'>
                         <p className='text-[3rem] font-neue font-bold tracking-[0.008em]'>
                             {projects}+
+                        </p>
+                        <p className='font-matter text-[1.1rem] text-gray-300 tracking-[0.015em]'>
+                            Projects Completed
+                        </p>
+                    </div>
+                    <div className='flex flex-col items-center justify-center'>
+                        <p className='text-[3rem] font-neue font-bold tracking-[0.008em]'>
+                            {learningHours}+
                         </p>
                         <p className='font-matter text-[1.1rem] text-gray-300 tracking-[0.015em]'>
                             Learning Hours
                         </p>
                     </div>
-                    <div className='flex flex-col items-center justify-center w-max'>
+                    <div className='flex flex-col items-center justify-center'>
                         <p className='text-[3rem] font-neue font-bold tracking-[0.008em]'>
                             {partners}+
                         </p>

@@ -43,57 +43,60 @@ const ProjectDetails = ({
                        className="mt-[20px] max-w-[521px] font-matter text-[17px] leading-[140%] tracking-[0.17px] text-[#333438]">{description}</p>
                 )}
                 <p className="mb-[20px] mt-[8px] max-w-[521px] font-bold font-neue text-[20px] leading-[140%] tracking-[0.16px] text-[#0E0E10]">Impact</p>
-                {project.impact.map((impact: any, index: number) => {
-                    if (impact?.location) {
-                        return (
-                            <div key={index} className="flex mr-[20px] mb-[20px] flex-wrap">
-                                {impact?.info?.map((info: any, index: number) => (
-                                    <div key={index}
-                                         className="flex items-center mr-[20px] my-2 py-[17px] px-[12px] bg-[#F6F6F9] rounded-[4px]">
-                                        <p className="font-bold text-[28px] text-[#0E0E10] mr-[10px] font-neue">{info.number}</p>
-                                        <p
-                                            className=" font-matter text-[17px] uppercase leading-[140%] tracking-[0.17px] text-[#333438]">{info.description}</p>
-                                    </div>))}
-                                <div className="flex ml-[12px] items-center"><Image className="mr-[6px]"
-                                                                                    src="location-pin.svg"
-                                                                                    alt="location"
-                                                                                    width={20}
-                                                                                    height={20}/>
-                                    <p>{impact.location}</p></div>
-                            </div>
-                        )
-                    }
-                    if (!impact?.location && !impact?.project) {
-                        return (
-                            <div key={index} className="flex mr-[20px] mb-[20px]">
-                                <div
-                                    className="flex items-center mr-[20px] py-[17px] px-[12px] bg-[#F6F6F9] rounded-[4px]">
-                                    <p className="font-bold text-[28px] text-[#0E0E10] mr-[10px] font-neue">{impact.number}</p>
-                                    <p
-                                        className=" font-matter text-[17px] uppercase leading-[140%] tracking-[0.17px] text-[#333438]">{impact.description}</p>
-                                </div>
-                            </div>)
-                    }
-                    if (impact?.project) {
-                        return (
-                            <div key={index}>
-                                <div className=" flex items-center mb-[12px]">
-                                    <p className="font-neue font-500 h-[4px] mr-[6px]  w-[4px] bg-[#E23F27] rounded-full"></p>
-                                    <p className="text-[#E23F27] font-neue font-500">{impact.project}</p>
-                                </div>
 
-                                <div className="flex mr-[20px] flex-wrap">
-                                    {impact?.info?.map((info: any, index: number) => <div key={index}
-                                                                                          className="flex items-center mb-[20px] mr-[20px] py-[17px] px-[12px] bg-[#F6F6F9] rounded-[4px]">
-                                        <p className="font-bold text-[28px] text-[#0E0E10] mr-[10px] font-neue">{info.number}</p>
-                                        <p
-                                            className=" font-matter text-[17px] uppercase leading-[140%] tracking-[0.17px] text-[#333438]">{info.description}</p>
-                                    </div>)}
+                <div className="flex mr-[20px] mb-[20px] flex-wrap">
+                    {project.impact.map((impact: any, index: number) => {
+                        if (impact?.location) {
+                            return (
+                                <div key={index} className="flex mr-[20px] mb-[20px] flex-wrap">
+                                    {impact?.info?.map((info: any, index: number) => (
+                                        <div key={index}
+                                             className="flex items-center mr-[20px] my-2 py-[17px] px-[12px] bg-[#F6F6F9] rounded-[4px]">
+                                            <p className="font-bold text-[28px] text-[#0E0E10] mr-[10px] font-neue">{info.number}</p>
+                                            <p
+                                                className=" font-matter text-[17px] uppercase leading-[140%] tracking-[0.17px] text-[#333438]">{info.description}</p>
+                                        </div>))}
+                                    <div className="flex ml-[12px] items-center"><Image className="mr-[6px]"
+                                                                                        src="location-pin.svg"
+                                                                                        alt="location"
+                                                                                        width={20}
+                                                                                        height={20}/>
+                                        <p>{impact.location}</p></div>
                                 </div>
-                            </div>
-                        )
-                    }
-                })}
+                            )
+                        }
+                        if (!impact?.location && !impact?.project) {
+                            return (
+                                <div key={index} className="flex w-max mr-[20px] mb-[20px]">
+                                    <div
+                                        className="flex  items-center mr-[20px] py-[17px] px-[12px] bg-[#F6F6F9] rounded-[4px]">
+                                        <p className="font-bold text-[28px] text-[#0E0E10] mr-[10px] font-neue">{impact.number}</p>
+                                        <p
+                                            className=" font-matter text-[17px] uppercase leading-[140%] tracking-[0.17px] text-[#333438]">{impact.description}</p>
+                                    </div>
+                                </div>)
+                        }
+                        if (impact?.project) {
+                            return (
+                                <div key={index}>
+                                    <div className=" flex items-center mb-[12px]">
+                                        <p className="font-neue font-500 h-[4px] mr-[6px]  w-[4px] bg-[#E23F27] rounded-full"></p>
+                                        <p className="text-[#E23F27] font-neue font-500">{impact.project}</p>
+                                    </div>
+
+                                    <div className="flex mr-[20px] flex-wrap">
+                                        {impact?.info?.map((info: any, index: number) => <div key={index}
+                                                                                              className="flex items-center mb-[20px] mr-[20px] py-[17px] px-[12px] bg-[#F6F6F9] rounded-[4px]">
+                                            <p className="font-bold text-[28px] text-[#0E0E10] mr-[10px] font-neue">{info.number}</p>
+                                            <p
+                                                className=" font-matter text-[17px] uppercase leading-[140%] tracking-[0.17px] text-[#333438]">{info.description}</p>
+                                        </div>)}
+                                    </div>
+                                </div>
+                            )
+                        }
+                    })}
+                </div>
                 {project?.cta ?
                     <a href={project?.cta?.link} target='_blank'>
                         <Button
@@ -103,7 +106,8 @@ const ProjectDetails = ({
                         /></a> : null
                 }
             </div>
-        </div>, modalRoot
+        </div>
+        , modalRoot
     )
 
 }
