@@ -1,4 +1,4 @@
-image: node:18
+image: node:16
 
 cache:
   paths:
@@ -18,7 +18,7 @@ stages:
 install:
   stage: install
   script:
-    - yarn install
+    - yarn --frozen-lockfile --ignore-script --production=false
   artifacts:
     expire_in: 1 days
     when: on_success
