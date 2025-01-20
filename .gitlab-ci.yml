@@ -10,7 +10,6 @@ before_script:
   - apt-get update -qq && apt-get install
 
 stages:
-  - deploy-to-stage
   - install
   - build
   - deploy-to-stage
@@ -19,7 +18,7 @@ stages:
 install:
   stage: install
   script:
-    - yarn --frozen-lockfile --ignore-script --production=false
+    - yarn install
   artifacts:
     expire_in: 1 days
     when: on_success
@@ -59,4 +58,4 @@ deploy-to-prod:
   script:
     - bash deploy/prod_deploy.sh
   rules:
-    - if: $CI_COMMIT_BRANCH == "main"    
+    - if: $CI_COMMIT_BRANCH == "main"
