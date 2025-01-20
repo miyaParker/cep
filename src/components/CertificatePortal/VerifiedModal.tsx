@@ -13,12 +13,9 @@ interface VerifiedModalProps {
 }
 
 const VerifiedModal: React.FC<VerifiedModalProps> = ({ data, closeModal }) => {
-    const modalRoot =
-        typeof window !== 'undefined'
-            ? document.getElementById('modal-root')
-            : null;
+    const modalRoot = document.getElementById('modal-root');
 
-    if (!modalRoot) return null; // Ensure modalRoot exists before rendering
+    if (!modalRoot) return null;
 
     return createPortal(
         <div className='modal bg-gray-200/50 w-screen h-[100vh] fixed top-0 z-50 left-0 flex items-center justify-center lg:px-0'>
