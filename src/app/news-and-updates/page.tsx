@@ -7,8 +7,11 @@ import {fetchAllPosts} from "@/api";
 import {Post} from "@/types";
 
 const NewsAndUpdates = () => {
+    const LIMIT = 9;
+    const [totalPages, setTotalPages] = useState(0);
     const [posts, setPosts] = useState([] as Post[]);
     const [data, setData] = useState([] as Post[]);
+    const [page, setPage] = useState(1);
     const [loading, setLoading] = useState(true);
 
     const [activeTab, setActiveTab] = useState("All");
@@ -23,7 +26,7 @@ const NewsAndUpdates = () => {
                 return category === title
             }
         )
-        setData(filteredPosts);
+        setData(data.length ? [data[0], ...filteredPosts] : filteredPosts);
     };
 
     const bannerPost = posts.length ? posts[0] : null
@@ -43,12 +46,14 @@ const NewsAndUpdates = () => {
     </p>
 
     useEffect(() => {
-        fetchAllPosts().then(posts => {
-            setPosts(posts.data)
-            setData(posts.data)
+        const params = {page, limit: LIMIT}
+        fetchAllPosts(params).then(postsList => {
+            setTotalPages(postsList.data.total_pages);
+            setPosts([...posts, ...postsList.data.posts])
+            setData([...posts, ...postsList.data.posts])
             setLoading(false);
         });
-    }, [])
+    }, [page])
     return (
         <div className='w-full pt-[160px] lg:pt-[218px] overflow-scroll'>
             <div className="mx-auto max-w-[1440px] px-[20px] lg:px-[80px] xl:px-[130px]">
@@ -58,7 +63,7 @@ const NewsAndUpdates = () => {
                     <p className="mt-[24px] text-[#333438]/90 leading-[140%] font-matter text-[20px] lg:text-[22px]  max-w-[289px] md:max-w-[389px] lg:max-w-[515px]">
                         See what we have been up to</p>
                 </div>
-                {posts?.length ?
+                {data?.length ?
                     <div>
                         {/*Banner post*/}
                         {bannerPost && <div
@@ -108,11 +113,16 @@ const NewsAndUpdates = () => {
                                 }
                             })}
                         </div>
-                        <Button
+                        {page !== totalPages ? <Button
+                            handleClick={() => {
+                                setPage(page + 1);
+                                setLoading(true)
+                            }}
+                            loading={loading}
                             styles='mb-[156px] bg-[#F1F2F3] w-max relative z-20 font-matter block mx-auto mt-[40px] text-[#43434C] w-[12rem] h-[4rem] text-[1.125rem] px-[40px] py-[20px]'
                             btnText='Load More Stories'
-                        />
-                    </div> : loading ? <div className="w-full ">
+                        /> : null}
+                    </div> : (loading && !posts.length) ? <div className="w-full ">
                         <div className="">
 
                             <div className="hidden lg:flex lg:flex-row mt-[80px] gap-x-[38px] xl:gap-x-[68px]">
@@ -142,7 +152,7 @@ const NewsAndUpdates = () => {
                             <div
                                 className="h-[64px] w-[12rem] bg-gray-300 rounded mx-auto mt-[40px] animate-pulse"></div>
                         </div>
-                    </div> : "No posts found"}
+                    </div> : <div className="min-h-[300px]">No posts found</div>}
             </div>
         </div>
     )

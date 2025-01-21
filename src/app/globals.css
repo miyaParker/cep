@@ -275,3 +275,7 @@ select:required:invalid {
 .post br {
     display: none;
 }
+.pillar{
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: rgba(50, 50, 50, 0.16);
+}

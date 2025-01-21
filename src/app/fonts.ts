@@ -1,6 +1,13 @@
 import localFont from 'next/font/local';
 import { DM_Sans } from 'next/font/google';
 
+export const luckiest_guy = localFont({
+    variable: '--font-luckiest',
+    src: './assets/fonts/LuckiestGuy-Regular.woff2',
+    display: 'swap',
+    style: 'normal'
+});
+
 export const matter = localFont({
     variable: '--font-matter',
     src: './assets/fonts/Matter-Regular.woff2',

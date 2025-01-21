@@ -7,9 +7,10 @@ interface ButtonProps {
     rightIcon?: string;
     animate?: boolean;
     disabled?:boolean;
+    loading?:boolean;
 }
 
-const Button = ({styles, btnText, rightIcon, handleClick, animate, disabled}: ButtonProps) => {
+const Button = ({styles, btnText, rightIcon, handleClick, animate, disabled, loading}: ButtonProps) => {
     return (
         <button
             disabled={disabled}
@@ -18,6 +19,7 @@ const Button = ({styles, btnText, rightIcon, handleClick, animate, disabled}: Bu
         >
             {animate ? <div className='btn-bg w-[350px] h-[350px] rounded-full absolute top-[80px]'></div> : null}
             <span className='capitalize'>{btnText}</span>
+            {loading ? <div className=' w-[20px] h-[20px] rounded-full animate-spin border border-black-100'></div> : null}
             {rightIcon && (
                 <Image
                     src={rightIcon}

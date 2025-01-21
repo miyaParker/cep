@@ -161,10 +161,10 @@ export const sendPartnerMail = async (payload: {
 
     }
 }
-export const fetchAllPosts = async () => {
+export const fetchAllPosts = async (params: { page: number, limit: number }) => {
     if (BLOG_BASE_URL) {
         try {
-            return await axios.get(`${BLOG_BASE_URL}/posts`)
+            return await axios.get(`${BLOG_BASE_URL}/posts?page=${params.page}&per_page=${params.limit}`)
         } catch (err: any) {
             if (err.response)
                 return err.response.data
