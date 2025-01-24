@@ -7,7 +7,7 @@ import {fetchAllPosts} from "@/api";
 import {Post} from "@/types";
 
 const NewsAndUpdates = () => {
-    const LIMIT = 9;
+    const LIMIT = 10;
     const [totalPages, setTotalPages] = useState(0);
     const [posts, setPosts] = useState([] as Post[]);
     const [data, setData] = useState([] as Post[]);
@@ -49,6 +49,7 @@ const NewsAndUpdates = () => {
         const params = {page, limit: LIMIT}
         fetchAllPosts(params).then(postsList => {
             setTotalPages(postsList.data.total_pages);
+            console.log(postsList.data.posts);
             setPosts([...posts, ...postsList.data.posts])
             setData([...posts, ...postsList.data.posts])
             setLoading(false);
