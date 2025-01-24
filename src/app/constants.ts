@@ -174,7 +174,7 @@ export const projects = [
         details: {
             summary: ["A state-of-the-art community that offers teachers access to qualified trainers, teaching resources and devices, to support their professional growth and meet the needs of 21st century learners."],
             info: {
-                title: "Our Objectives",
+                title: "Our Goals",
                 keyPoints: ["To build a community of 21st century teachers",
                     "To create a safe haven where teachers can work, network and unwind"]
             }

@@ -232,7 +232,7 @@ select:required:invalid {
 .box {
     width: 1px;
     opacity: 0;
-    transition: width 500ms ease-in 50ms, opacity 500ms ease-in 50ms;
+    transition: width 500ms ease-in 10ms, opacity 500ms ease-in 10ms;
 }
 
 .box.in-view {
@@ -274,4 +274,8 @@ select:required:invalid {
 
 .post br {
     display: none;
+}
+.pillar{
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: rgba(50, 50, 50, 0.16);
 }

@@ -6,11 +6,11 @@ const Hero = ({ href }: { href: any }) => {
     href.current?.scrollIntoView({ behavior: "smooth" });
   };
   return (
-    <div className="mx-auto overflow-hidden">
+    <div className="relative mx-auto overflow-hidden">
       <div
-        className='z-20 pt-[136px] lg:pt-0  relative w-[100%] leading-[44px] lg:px-0 mx-auto bg-[url("/hero-ellipse-mobile.svg")] sm:bg-[url("/hero-ellipse.svg")] 2xl:bg-[url("/hero-ellipse-2xl.svg")] bg-left-top lg:bg-right-top bg-no-repeat 3xl:bg-none'>
+        className='relative w-[100%] leading-[44px] lg:px-0 mx-auto'>
         <h1
-          className='pt-[152px]"} transition-padding duration-300 ease-out lg:pt-[340px] mx-auto px-[47px] lg:px-0 relative font-neue font-bold hero-text text-[37px] lg:text-[3.75rem] z-20 max-w-[751px] min-w-[4rem] leading-[1.2] text-center text-black-100'>
+          className='pt-[80px] transition-padding duration-300 ease-out lg:pt-[124px] mx-auto px-[47px] lg:px-0 relative font-neue font-bold hero-text text-[37px] lg:text-[3.75rem] z-20 max-w-[751px] min-w-[4rem] leading-[1.2] text-center text-black-100'>
           Using{" "}
           <span className="text-orange-100">
                         research-backed methods & technology
@@ -24,13 +24,34 @@ const Hero = ({ href }: { href: any }) => {
           handleClick={handleClick}
           animate={true}
         />
+        <Image
+            src="/hero-ellipse.svg"
+            alt="hero image"
+            width={868}
+            height={477}
+            className="hidden md:block absolute top-[-124px] mx-auto px-[20px] lg:px-0 w-[1222px] right-0 2xl:hidden "
+        />
+        <Image
+            src="/hero-ellipse-2xl.svg"
+            alt="hero image"
+            width={868}
+            height={477}
+            className="hidden absolute top-[-124px] mx-auto px-[20px] lg:px-0 w-[1222px] right-0 2xl:block "
+        />
+        <Image
+            src="/hero-ellipse-mobile.svg"
+            alt="hero image"
+            width={868}
+            height={477}
+            className="block md:hidden absolute top-[-124px] mx-auto px-[20px] lg:px-0 w-[1222px] right-0 "
+        />
         <div className="relative z-20">
           <Image
             src="/hero.jpg"
             alt="hero image"
             width={868}
             height={477}
-            className="mx-auto px-[20px] lg:px-0 w-[720px] xl:w-[868px] h-auto my-[62px]"
+            className="mx-auto px-[20px] lg:px-0 w-[720px] xl:w-[868px] h-auto my-[62px] "
           />
         </div>
       </div>

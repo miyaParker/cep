@@ -32,7 +32,8 @@ module.exports = {
             fontFamily: {
                 matter: ['var(--font-matter)'],
                 neue: ['var(--font-neue)'],
-                sans: ['var(--font-dm-sans)']
+                sans: ['var(--font-dm-sans)'],
+                luckiest: ['var(--font-luckiest)']
             },
             keyframes: {
                 extend: {

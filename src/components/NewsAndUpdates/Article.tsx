@@ -1,8 +1,6 @@
 "use client"
-import Image from "next/image";
 
 const Article = ({article, index}: { article: any, index: number }) => {
-    console.log(article);
     return (
         <a href={`/news-and-updates/${article.slug}`}>
             <div
