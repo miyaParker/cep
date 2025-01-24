@@ -6,11 +6,10 @@ const Hero = ({faqRef}: { faqRef: any }) => {
         faqRef.current?.scrollIntoView({behavior: 'smooth'});
     };
     return (
-        <>
             <div
-                className='w-full gap-x-[40px] pt-[136px] lg:pt-0 flex flex-col lg:flex-row lg:justify-between max-w-[1440px] px-[20px] lg:px-[80px] xl:px-[140px] mx-auto'>
+                className='mt-[80px] lg:mt-[124px] w-full gap-x-[40px] flex flex-col lg:flex-row lg:justify-between items-center max-w-[1440px] px-[20px] lg:px-[80px] xl:px-[140px] mx-auto'>
                 <div className='w-full'>
-                    <h1 className='max-w-[205px] lg:max-w-[436px] lg:mt-[312px] font-bold mx-auto lg:mx-0 leading-[120%] text-center lg:text-left font-neue text-[#0E0E10] text-[37px] lg:text-[60px]'>
+                    <h1 className='max-w-[205px] lg:max-w-[436px] font-bold mx-auto lg:mx-0 leading-[120%] text-center lg:text-left font-neue text-[#0E0E10] text-[37px] lg:text-[60px]'>
                         Join a{' '}<span className='text-[#ED7636]'>new wave</span>{' '}
                         of educators
                     </h1>
@@ -40,12 +39,11 @@ const Hero = ({faqRef}: { faqRef: any }) => {
                     alt='re:learn is driven by partnerships'
                     width={584}
                     height={496}
-                    className='w-full lg:w-[500px] lg:h-[383px] max-w-[500px] lg: max-w-[584px] xl:w-[540px] xl:h-[445px] 2xl:w-[584px] 2xl:h-[496px] mx-auto lg:mx-0 lg:mt-[264px]'
+                    className='w-full lg:w-[500px] lg:h-[383px] max-w-[500px] lg:max-w-[584px] xl:w-[540px] xl:h-[445px] 2xl:w-[584px] 2xl:h-[496px] mx-auto lg:mx-0'
                 />
 
 
             </div>
-        </>
     );
 };
 export default Hero;

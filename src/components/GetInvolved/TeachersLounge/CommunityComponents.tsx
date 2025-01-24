@@ -1,12 +1,6 @@
-import Image from 'next/image';
-import Button from "@/components/Generic/Button";
-import Pill from "@/components/EdtechClinic/Pill";
 import Component from "@/components/GetInvolved/TeachersLounge/Component";
 
-const CommunityComponents = ({faqRef}: { faqRef: any }) => {
-    const handleClick = () => {
-        faqRef.current?.scrollIntoView({behavior: 'smooth'});
-    };
+const CommunityComponents = () => {
     const components = [
         {icon: "/testing.svg", value: "Edtech Product Testing Session"},
         {icon: "/back-to-school.svg", value: "Back to School Conversations"},
@@ -43,9 +37,10 @@ const CommunityComponents = ({faqRef}: { faqRef: any }) => {
                 {components.map((component) => (<Component key={component.value} component={component}/>))}
             </div>
 
-            <div onClick={handleClick} className='cursor-pointer items-center gap-x-[16px] hidden lg:flex mt-[100px] mx-auto w-max'>
+            {/*TODO add link to join teachers lounge*/}
+            <div onClick={()=>{}} className='cursor-pointer items-center gap-x-[16px] hidden lg:flex mt-[100px] mx-auto w-max'>
                 <p className='px-[40px] py-[20px] text-white text-[17px] font-matter rounded-[40px] bg-red-100 font-medium tracking-[0.255px]'>Join
-                    the Teacher&apos;s Lounge</p>
+                    the Teachers&apos; Lounge</p>
             </div>
         </div>
     );

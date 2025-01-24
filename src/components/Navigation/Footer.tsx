@@ -119,7 +119,7 @@ const Footer = () => {
                                 Teachers&apos; Lounge
                             </p>
                         </Link>
-                        <Link href='/get-involved/viable'>
+                        <Link href='/get-involved/join-viable'>
                             <p className='text-[17px] tracking-[1.5%] mb-[32px] lg:mb-[24px]'>
                                 Viable
                             </p>

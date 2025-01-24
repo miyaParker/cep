@@ -3,13 +3,13 @@ import Image from 'next/image';
 const Hero = () => {
     return (
         <>
-            <div className='mx-auto gap-x-[40px] w-full pt-[136px] lg:pt-0 flex flex-col lg:flex-row lg:justify-between max-w-[1440px] px-[20px] lg:px-[80px] xl:px-[140px]'>
+            <div className='mt-[80px] lg:mt-[124px] mx-auto gap-x-[40px] w-full lg:pt-0 flex flex-col lg:flex-row lg:justify-between items-center max-w-[1440px] px-[20px] lg:px-[80px] xl:px-[140px] pb-[72px]'>
                 <div className='w-full'>
-                    <h1 className='max-w-[205px] lg:max-w-[337px] lg:mt-[312px] font-bold mx-auto lg:mx-0 leading-[120%] text-center lg:text-left font-neue text-[#0E0E10] text-[37px] lg:text-[60px]'>
+                    <h1 className='max-w-[205px] lg:max-w-[337px] font-bold mx-auto lg:mx-0 leading-[120%] text-center lg:text-left font-neue text-[#0E0E10] text-[37px] lg:text-[60px]'>
                         Our Focus is{' '}
                         <span className='text-[#ED7636]'>Education</span>
                     </h1>
-                    <p className='mt-[20px] mb-[48px] leading-[140%] max-w-[420px] xl:max-w-[479px] mx-auto tracking-[0.1px] lg:tracking-[0.11px] font-matter lg:text-[22px] text-center lg:text-left text-[#333438] text-[20px] lg:mx-0'>
+                    <p className='mt-[20px] mb-[48px] leading-[150%] max-w-[420px] xl:max-w-[479px] mx-auto tracking-[0.5%] font-matter lg:text-[22px] text-center lg:text-left text-[#313235] opacity-90 text-[20px] lg:mx-0'>
                         We are committed to improving the quality of education
                         in Nigeria and across Africa, by using empirical
                         evidence from research-backed innovative teaching
@@ -22,10 +22,10 @@ const Hero = () => {
                     alt='Our Focus is Education'
                     width={562}
                     height={496}
-                    className='w-full max-w-[480px] lg:max-w-[562px] lg:w-[480px] lg:h-[462px] xl:w-[500px] xl:h-[483px] 2xl:w-[562px] 2xl:h-[544px] mx-auto lg:mx-0 lg:mt-[264px]'
+                    className='w-full max-w-[480px] lg:max-w-[562px] lg:w-[480px] lg:h-[462px] xl:w-[500px] xl:h-[483px] 2xl:w-[562px] 2xl:h-[544px] mx-auto lg:mx-0'
                 />
             </div>
-            <div className='mt-[80px] lg:mt-[124px] text-center font-neue'>
+            <div className=' text-center font-neue pt-[40px] md:pt-[80px]'>
                 <p className='text-[22px] lg:text-[25px] mx-auto mb-[28px] font-bold'>
                     Mission
                 </p>

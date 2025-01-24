@@ -4,15 +4,15 @@ import {useRef} from "react";
 import Pillars from "@/components/GetInvolved/TeachersLounge/Pillars";
 import CommunityComponents from "@/components/GetInvolved/TeachersLounge/CommunityComponents";
 
-const BecomeAPartner = () => {
-    const faqRef = useRef<HTMLDivElement>(null);
+const TeachersLounge = () => {
+    const pillarsRef = useRef<HTMLDivElement>(null);
 
     return (
         <>
-            <Hero faqRef={faqRef}/>
-            <Pillars faqRef={faqRef}/>
-            <CommunityComponents faqRef={faqRef}/>
+            <Hero pillarsRef={pillarsRef}/>
+            <Pillars ref={pillarsRef}/>
+            <CommunityComponents/>
         </>
     );
 };
-export default BecomeAPartner;
+export default TeachersLounge;

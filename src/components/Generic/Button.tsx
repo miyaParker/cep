@@ -18,7 +18,7 @@ const Button = ({styles, btnText, rightIcon, handleClick, animate, disabled, loa
             className={`btn relative overflow-hidden rounded-[2.5rem] flex justify-center items-center py-[10px] px-[16px] sm:px-[36px] sm:py-[20px] sm:w-max font-sans font-medium ${styles}`}
         >
             {animate ? <div className='btn-bg w-[350px] h-[350px] rounded-full absolute top-[80px]'></div> : null}
-            <span className='capitalize'>{btnText}</span>
+            <span className='capitalize font-matter'>{btnText}</span>
             {loading ? <div className=' w-[20px] h-[20px] rounded-full animate-spin border border-black-100'></div> : null}
             {rightIcon && (
                 <Image

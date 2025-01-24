@@ -1,12 +1,15 @@
 import Image from 'next/image';
 
-const Hero = () => {
+const Hero = ({objectivesRef}: { objectivesRef: any }) => {
+    const handleClick = () => {
+        objectivesRef.current?.scrollIntoView({behavior: 'smooth'});
+    };
     return (
         <>
             <div
-                className='mx-auto gap-x-[40px] w-full pt-[136px] lg:pt-0 flex flex-col lg:flex-row lg:justify-between max-w-[1440px] px-[20px] lg:px-[80px] xl:px-[140px]'>
+                className='mt-[80px] lg:mt-[124px] mx-auto gap-x-[40px] w-full flex flex-col lg:flex-row lg:justify-between items-center max-w-[1440px] px-[20px] lg:px-[80px] xl:px-[140px]'>
                 <div className='w-full'>
-                    <h1 className='max-w-[205px] lg:max-w-[337px] lg:mt-[312px] font-bold mx-auto lg:mx-0 leading-[120%] text-center lg:text-left font-neue text-[#0E0E10] text-[37px] lg:text-[60px]'>
+                    <h1 className='max-w-[205px] lg:max-w-[337px] font-bold mx-auto lg:mx-0 leading-[120%] text-center lg:text-left font-neue text-[#0E0E10] text-[37px] lg:text-[60px]'>
                         Join{' '}
                         <span className='text-[#ED7636]'>Viable</span>
                     </h1>
@@ -17,29 +20,34 @@ const Hero = () => {
                         methods and digital tools to improve learning outcomes.
                     </p>
                     <div className="flex items-center gap-[20px]">
-                        <div onClick={()=>{}} className='cursor-pointer items-center gap-x-[16px] hidden lg:flex'>
-                            <p className='px-[40px] py-[20px] text-white text-[17px] font-matter rounded-[40px] bg-red-100 font-medium tracking-[0.255px]'>Join
-                                our Community</p>
-                        </div>
-                        <div onClick={()=>{}}  className='cursor-pointer items-center gap-x-[16px] hidden lg:flex'>
-                            <p className='text-[17px] font-matter text-red-100 font-medium tracking-[0.255px]'>Learn
-                                More</p>
-                            <div className='rounded-full bg-red-100 w-[32px] h-[32px] flex items-center justify-center'>
-                                <Image src='/arrow-down.svg' alt='why you should join us' width={24} height={24}/></div>
-                        </div>
+                        <a href="https://bit.ly/joinviable" target="_blank">
+                            <div className='cursor-pointer items-center gap-x-[16px] hidden lg:flex'>
+                                <p className='px-[40px] py-[20px] text-white text-[17px] font-matter rounded-[40px] bg-red-100 font-medium tracking-[0.255px]'>Join
+                                    our Community</p>
+                            </div>
+                        </a>
+                            <div onClick={handleClick}
+                                 className='cursor-pointer items-center gap-x-[16px] hidden lg:flex'>
+                                <p className='text-[17px] font-matter text-red-100 font-medium tracking-[0.255px]'>Learn
+                                    More</p>
+                                <div
+                                    className='rounded-full bg-red-100 w-[32px] h-[32px] flex items-center justify-center'>
+                                    <Image src='/arrow-down.svg' alt='why you should join us' width={24} height={24}/>
+                                </div>
+                            </div>
 
                     </div>
                 </div>
 
                 <Image
-                    src='/about.png'
+                    src='/viable.png'
                     alt='Our Focus is Education'
-                    width={562}
+                    width={584}
                     height={496}
-                    className='w-full max-w-[480px] lg:max-w-[562px] lg:w-[480px] lg:h-[462px] xl:w-[500px] xl:h-[483px] 2xl:w-[562px] 2xl:h-[544px] mx-auto lg:mx-0 lg:mt-[264px]'
+                    className='w-full max-w-[480px] lg:max-w-[562px] lg:w-[480px] lg:h-[462px] xl:w-[500px] xl:h-[483px] 2xl:w-[584px] 2xl:h-[496px] mx-auto lg:mx-0'
                 />
             </div>
-            <div className='mt-[80px] lg:mt-[124px] text-center font-neue'>
+            <div className='mt-[80px] lg:mt-[124px] mb-[80px] text-center font-neue'>
                 <p className='text-[22px] lg:text-[25px] mx-auto mb-[28px] font-bold'>
                     Mission
                 </p>

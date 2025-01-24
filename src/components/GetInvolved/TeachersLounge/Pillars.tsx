@@ -2,11 +2,10 @@ import Image from 'next/image';
 import Button from "@/components/Generic/Button";
 import Pill from "@/components/EdtechClinic/Pill";
 import Pillar from "@/components/GetInvolved/TeachersLounge/Pillar";
+import {forwardRef} from "react";
 
-const Pillars = ({faqRef}: { faqRef: any }) => {
-    const handleClick = () => {
-        faqRef.current?.scrollIntoView({behavior: 'smooth'});
-    };
+const Pillars = forwardRef<HTMLDivElement>((props, ref) => {
+
     const pillars = [
         {number: 1, value: "Innovative  Pedagogies"},
         {number: 2, value: "Digital Literacy"},
@@ -15,7 +14,7 @@ const Pillars = ({faqRef}: { faqRef: any }) => {
 
     ]
     return (
-        <div className="bg-[#FAFAFA] w-full pt-[120px]">
+        <div ref={ref} className="bg-[#FAFAFA] w-full pt-[60px] lg:pt-[120px]">
             <div
                 className='items-center max-w-[1440px] px-[20px] lg:px-[80px] xl:px-[140px] mx-auto'>
                 <h2 className='w-full lg:max-w-[523px] font-bold mx-auto leading-[120%] text-center font-neue text-[#0E0E10] text-[32px] lg:text-[48px]'>
@@ -35,6 +34,6 @@ const Pillars = ({faqRef}: { faqRef: any }) => {
             </div>
         </div>
     );
-};
+})
 export default Pillars;
-Pillars.displayName = 'Hero';
+Pillars.displayName = 'Pillars';

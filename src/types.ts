@@ -29,3 +29,9 @@ export interface Post {
     excerpt?: string;
     custom_fields: CustomFields
 }
+export interface AffiliateCentre {
+    image: string
+    title: string;
+    description: string[];
+    arrow: any;
+}

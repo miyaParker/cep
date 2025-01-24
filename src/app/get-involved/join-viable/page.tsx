@@ -1,17 +1,15 @@
 'use client'
 import Hero from '@/components/GetInvolved/Viable/Hero';
 import Objectives from '@/components/GetInvolved/Viable/Objectives';
-// import Team from '@/components/AboutPage/Team';
-// import SubscribeForm from '@/components/LandingPage/SubscribeForm';
+import {useRef} from "react";
 
 const About = () => {
+    const objectivesRef = useRef<HTMLDivElement>(null);
 
     return (
         <div className='w-screen'>
-            <Hero/>
-            <Objectives/>
-            {/*<Team/>*/}
-            {/*<SubscribeForm/>*/}
+            <Hero objectivesRef={objectivesRef}/>
+            <Objectives ref={objectivesRef}/>
         </div>
     );
 };

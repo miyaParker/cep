@@ -17,7 +17,7 @@ const RootLayout = ({children}: { children: ReactNode }) => {
     return (
         <html
             lang="en"
-            className={`${matter.variable} ${neue.variable} ${dm_sans.variable} ${luckiest_guy.variable}`}
+            className={`${neue.variable} ${dm_sans.variable} ${luckiest_guy.variable} ${matter.variable} `}
         >
         <body className="relative">
         <div>

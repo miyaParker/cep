@@ -26,7 +26,7 @@ const FAQ = forwardRef<HTMLDivElement>((props, ref) => {
                     <div>
                         <p className='text-center lg:text-left  text-[#333438] font-neue text-[20px] font-bold tracking-[0.28px]'>Competitive
                             Stipend</p>
-                        <p className='text-center lg:text-left text-[#333438] max-w-[456px] text-[#333438] font-matter text-[17px] tracking-[0.28px]'>Competitive
+                        <p className='text-center lg:text-left text-[#333438] max-w-[456px]  font-matter text-[17px] tracking-[0.28px]'>Competitive
                             monthly pay, with tons of additional
                             benefits and regular access to the re:learn Centre</p>
                     </div>
@@ -37,7 +37,7 @@ const FAQ = forwardRef<HTMLDivElement>((props, ref) => {
                         <p className='text-center lg:text-left font-neue text-[20px] font-bold tracking-[0.28px] text-[#333438] '>Flexible
                             Work
                             Schedule</p>
-                        <p className='text-center lg:text-left max-w-[456px] text-[#333438] font-matter text-[17px] tracking-[0.28px] text-[#333438]'>With
+                        <p className='text-center lg:text-left max-w-[456px] text-[#333438] font-matter text-[17px] tracking-[0.28px] '>With
                             an
                             average of 15-20 active teaching hours
                             each week</p>
@@ -63,7 +63,7 @@ const FAQ = forwardRef<HTMLDivElement>((props, ref) => {
                 </a>
             </div>
             <div
-                className='w-full lg:w-[50%]  max-w-[570px] h-max w-full py-[40px] px-[28px] rounded-[3px] bg-[#F4F4F6]'>
+                className='w-full lg:w-[50%]  max-w-[570px] h-max py-[40px] px-[28px] rounded-[3px] bg-[#F4F4F6]'>
                 <p className='text-center lg:text-left font-neue font-bold text-[25px] tracking-[0.2px] mb-[32px]'>Frequently
                     Asked Questions</p>
                 {faqs.map((faq, index) => <FAQItem data={faq} key={index} index={index + 1}
