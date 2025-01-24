@@ -35,3 +35,13 @@ export interface AffiliateCentre {
     description: string[];
     arrow: any;
 }
+type SectionArray = Section[];
+
+interface Section {
+    title: string;
+    links: { text: string; link: string }[];
+}
+
+export interface GetInvolvedLinkSectionProps {
+    section: Section | SectionArray;
+}

@@ -2,33 +2,9 @@
 import Image from "next/image";
 import {navItems, mobileNavItems} from "@/constants";
 import Link from "next/link";
-import {useState, useEffect, useRef, useCallback, useContext} from "react";
+import {useState, useEffect, useCallback} from "react";
 import {usePathname} from "next/navigation";
-
-const FooterLinkSection = ({section}) => {
-    return (
-        <div>
-            <div className="text-[#313235]">
-                <div className="w-max">
-                    <p className="font-matter text-[18px] leading-[120%] text-left uppercase">
-                        {section.title}
-                    </p>
-                    <div className="w-full bg-[#313235D6] bg-opacity-80 h-[1px]"></div>
-                </div>
-            </div>
-            <div className="">
-                {section.links.map((link, index) => (
-                    <p
-                        key={index}
-                        className="font-matter text-[17px] leading-[120%] text-left mt-[16px]"
-                    >
-                        {link}
-                    </p>
-                ))}
-            </div>
-        </div>
-    );
-};
+import GetInvolvedSection from "@/components/GetInvolved/GetInvolvedSection";
 
 const Navbar = () => {
         const pathname = usePathname();
@@ -64,25 +40,45 @@ const Navbar = () => {
             communities: {
                 title: "Our communities",
                 links:
-                    ["Teachers’ Lounge", "Viable", "Digital Literacy COP", "Educators’ Network"]
-            }
-            ,
-            programs: {
+                    [{
+                        text: "Teachers’ Lounge",
+                        link: "/teachers-lounge"
+                    }, {
+                        text: "Viable",
+                        link: "/join-viable"
+                    }, {
+                        text: "Digital Literacy COP",
+                        link: "/digital-literacy-COP"
+                    }, {
+                        text: "Educators’ Network",
+                        link: "/educators-network"
+                    },]
+            },
+            programs: [{
                 title: "Our Programs",
                 links:
-                    ["EdTech Festival", "Schools EdTech Clinic"]
-            }
-            ,
-            ecosystem: {
+                    [{
+                        text: "EdTech Festival",
+                        link: "https://edtechfestival.relearn.ng/"
+                    }, {
+                        text: "Schools EdTech Clinic",
+                        link: "/edtech-clinic"
+                    }]
+            }, {
                 title: "Ecosystem",
                 links:
-                    ["Our Ecosystem"]
-            }
-            ,
+                    [{
+                        text: "Our Ecosystem",
+                        link: "/our-ecosystem"
+                    }]
+            }],
             partnerships: {
                 title: "Partnerships",
                 links:
-                    ["Become a Partner"]
+                    [{
+                        text: "Become a Partner",
+                        link: "/become-a-partner-at-relearn"
+                    }]
             }
 
         }
@@ -135,34 +131,10 @@ const Navbar = () => {
                                                         our communities
                                                         and programs.</p>
                                                 </div>
-                                                {/*<div className="">*/}
-                                                    {Object.values(getInvolvedLinks).map((section, index) => (
-                                                        <FooterLinkSection key={index} section={section}/>
-                                                    ))}
-                                                {/*</div>*/}
-                                                {/*<div>*/}
-                                                {/*<div className="text-[#313235]">*/}
-                                                {/*    <div className="w-max">*/}
-                                                {/*        <p className="font-matter text-[18px] leading-[120%] text-left uppercase">{getInvolvedLinks.communities.title}</p>*/}
-                                                {/*        <div*/}
-                                                {/*            className="w-full bg-[#313235D6] bg-opacity-80 h-[1px]">*/}
-                                                {/*        </div>*/}
-                                                {/*    </div>*/}
-                                                {/*</div>*/}
-
-                                                {/*</div>*/}
-
+                                                {Object.values(getInvolvedLinks).map((section, index) => (
+                                                    <GetInvolvedSection key={index} section={section}/>
+                                                ))}
                                             </div>
-                                            {/*{item?.children.map((child, index) => (<div key={index}*/}
-                                            {/*                                            className="flex items-center gap-x-[8px] mb-[24px]">*/}
-                                            {/*  <Image src={child.icon} alt={child.name}*/}
-                                            {/*         width={28}*/}
-                                            {/*         height={28} />*/}
-                                            {/*  {child?.target ? <a target={child?.target} href={child.link}*/}
-                                            {/*                      className="font-sans text-[16px] tracking-[0.5px]">{child.name}</a> :*/}
-                                            {/*    <Link href={child.link}*/}
-                                            {/*          className="font-sans text-[16px] tracking-[0.5px]">{child.name}</Link>}*/}
-                                            {/*</div>))}*/}
                                         </div> : null}
 
                                     </div>);

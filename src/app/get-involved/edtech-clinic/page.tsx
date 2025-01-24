@@ -25,7 +25,7 @@ const EdtechClinic = () => {
   return (
     <section className="">
       <div
-        className="mx-auto gap-x-[40px] w-full flex flex-col lg:flex-row lg:justify-between mx-auto pt-[136px] lg:pt-0  lg:mt-[312px] max-w-[1440px] px-[20px] lg:px-[80px] xl:px-[140px]">
+        className="mx-auto gap-x-[40px] w-full flex flex-col lg:flex-row lg:justify-between  mt-[80px] lg:mt-[124px] items-center max-w-[1440px] px-[20px] lg:px-[80px] xl:px-[140px]">
         <div className="mx-auto lg:mx-0 lg:flex-1">
           <h1
             className="max-w-[205px] lg:max-w-[337px]  font-bold mx-auto lg:mx-0 leading-[120%] text-center lg:text-left font-neue text-[#0E0E10] text-[37px] lg:text-[60px]">

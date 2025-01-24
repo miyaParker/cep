@@ -6,12 +6,14 @@ import {useRef} from "react";
 
 const Ecosystem = () => {
     const orgRef = useRef<HTMLDivElement>(null);
+    const exploreRef = useRef<HTMLDivElement>(null);
+
 
     return (
         <>
-            <Hero orgRef={orgRef}/>
+            <Hero orgRef={orgRef} exploreRef={exploreRef}/>
             <Organizations ref={orgRef}/>
-            <Explore/>
+            <Explore ref={exploreRef}/>
         </>
     );
 };

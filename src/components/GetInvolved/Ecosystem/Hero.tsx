@@ -1,8 +1,12 @@
 import Image from 'next/image';
+import explore from "@/components/GetInvolved/Ecosystem/Explore";
 
-const Hero = ({orgRef}: { orgRef: any }) => {
-    const handleClick = () => {
+const Hero = ({orgRef, exploreRef}: { orgRef: any ,exploreRef: any }) => {
+    const onClickLearnMore = () => {
         orgRef.current?.scrollIntoView({behavior: 'smooth'});
+    };
+    const onClickExplore = () => {
+        exploreRef.current?.scrollIntoView({behavior: 'smooth'});
     };
     return (
         <>
@@ -24,11 +28,10 @@ const Hero = ({orgRef}: { orgRef: any }) => {
 
                     </p>
                     <div className="flex items-center gap-[20px]">
-                        <div onClick={() => {
-                        }} className='cursor-pointer items-center gap-x-[16px] flex'>
+                        <div onClick={onClickExplore} className='cursor-pointer items-center gap-x-[16px] flex'>
                             <p className='px-[40px] py-[20px] text-white text-[17px] font-matter rounded-[40px] bg-red-100 font-medium tracking-[0.255px]'>Book a Tour</p>
                         </div>
-                        <div onClick={handleClick} className='cursor-pointer items-center gap-x-[16px] hidden lg:flex'>
+                        <div onClick={onClickLearnMore} className='cursor-pointer items-center gap-x-[16px] hidden lg:flex'>
                             <p className='text-[17px] font-matter text-red-100 font-medium tracking-[0.255px]'>Learn
                                 More</p>
                             <div className='rounded-full bg-red-100 w-[32px] h-[32px] flex items-center justify-center'>

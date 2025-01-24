@@ -19,7 +19,7 @@ const RootLayout = ({children}: { children: ReactNode }) => {
             lang="en"
             className={`${neue.variable} ${dm_sans.variable} ${luckiest_guy.variable} ${matter.variable} `}
         >
-        <body className="relative">
+        <body className="relative overflow-x-hidden">
         <div>
             <>
                 <Navbar/>

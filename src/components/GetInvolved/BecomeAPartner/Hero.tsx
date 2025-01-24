@@ -17,7 +17,7 @@ const Hero = () => {
                     whilst integrating the use of technology to solve the
                     most pressing challenges in education.
                 </p>
-                <a href="/get-involved/become-a-partner-at-relearn/apply">
+                <a href="https://forms.gle/TaoYSxjhnHoAJMDu6" target='_blank'>
                     <Button
                         animate={true}
                         btnText=' Become a Partner'

@@ -5,13 +5,6 @@ import {motion} from "framer-motion";
 import Image from "next/image";
 
 const Organizations = forwardRef<HTMLDivElement>((props, ref) => {
-    const imageMap = [
-        "innovation",
-        "masterclass",
-        "pitch",
-        "debate",
-        "collaboration"
-    ].map((image) => `/activities/${image}.jpg`);
     const [currentCard, setCurrentCard] = useState(0);
     const cards = [
         {

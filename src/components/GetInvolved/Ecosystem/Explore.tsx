@@ -1,6 +1,8 @@
-const Explore = () => {
+import {forwardRef} from "react";
+
+const Explore = forwardRef<HTMLDivElement>((props, ref) => {
     return (
-        <div className=" w-full py-[120px]">
+        <div ref={ref} className=" w-full py-[120px]">
             <div
                 className='items-center max-w-[1440px] px-[20px] lg:px-[80px] xl:px-[140px] mx-auto'>
                 <h2 className='w-full max-w-[574px] font-bold mx-auto leading-[120%] text-center font-neue text-[#0E0E10] text-[32px] lg:text-[48px]'>
@@ -14,19 +16,28 @@ const Explore = () => {
 
 
             <div className="flex flex-col min-[500px]:flex-row gap-4 w-max mx-auto mt-[48px]">
-                <div onClick={()=>{}}
-                     className='cursor-pointer items-center gap-x-[16px] flex mx-auto w-max'>
-                    <p className='px-[40px] py-[20px] text-white text-[17px] font-matter rounded-[40px] bg-red-100 font-medium tracking-[0.255px]'>
-                        Send us an Email</p>
-                </div>
-                <div onClick={()=>{}}
-                     className='cursor-pointer items-center gap-x-[16px] flex mx-auto w-max'>
-                    <p className='border px-[40px] py-[20px] text-[] text-[17px] font-matter rounded-[40px]  font-medium tracking-[0.255px]'>
-                        +2347064020742</p>
-                </div>
+                <a href='mailto:info@relearn.ng'
+                   target='_blank'>
+                    <div onClick={() => {
+                    }}
+                         className='cursor-pointer items-center gap-x-[16px] flex mx-auto w-max'>
+                        <p className='px-[40px] py-[20px] text-white text-[17px] font-matter rounded-[40px] bg-red-100 font-medium tracking-[0.255px]'>
+                            Send us an Email</p>
+                    </div>
+                </a>
+                <a href='tel:+2347064020742'
+                   target='_blank'>
+                    <div onClick={() => {
+                    }}
+                         className='cursor-pointer items-center gap-x-[16px] flex mx-auto w-max'>
+                        <p className='border px-[40px] py-[20px] text-[] text-[17px] font-matter rounded-[40px]  font-medium tracking-[0.255px]'>
+                            +2347064020742</p>
+                    </div>
+                </a>
             </div>
 
         </div>
-    );
-};
+);
+})
 export default Explore;
+Explore.displayName = 'Explore';

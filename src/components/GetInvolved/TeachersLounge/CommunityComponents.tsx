@@ -37,11 +37,12 @@ const CommunityComponents = () => {
                 {components.map((component) => (<Component key={component.value} component={component}/>))}
             </div>
 
-            {/*TODO add link to join teachers lounge*/}
-            <div onClick={()=>{}} className='cursor-pointer items-center gap-x-[16px] hidden lg:flex mt-[100px] mx-auto w-max'>
-                <p className='px-[40px] py-[20px] text-white text-[17px] font-matter rounded-[40px] bg-red-100 font-medium tracking-[0.255px]'>Join
-                    the Teachers&apos; Lounge</p>
-            </div>
+            <a href="http://bit.ly/TEACHERSLOUNGE" target="_blank">
+                <div className='cursor-pointer items-center gap-x-[16px] hidden lg:flex mt-[100px] mx-auto w-max'>
+                    <p className='px-[40px] py-[20px] text-white text-[17px] font-matter rounded-[40px] bg-red-100 font-medium tracking-[0.255px]'>Join
+                        the Teachers&apos; Lounge</p>
+                </div>
+            </a>
         </div>
     );
 };

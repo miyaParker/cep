@@ -1,20 +1,9 @@
 'use client'
 import Image from 'next/image';
-import {useSearchParams} from "next/navigation";
-import {useEffect, useRef} from "react";
+import {forwardRef} from "react";
 
-const Goals = () => {
+const Goals =forwardRef<HTMLDivElement>((props, ref) => {
     const objectives = ["Improve Nigerians' outlook toward protecting online personal data and privacy", "Reduce barriers to the adoption of digital literacy and online safety among Stakeholders."]
-
-    const ref = useRef<HTMLDivElement | null>(null)
-    const searchParams = useSearchParams()
-    const id = searchParams.get('id')
-
-    useEffect(() => {
-        if (searchParams.get('id') === 'COE') {
-            ref.current?.scrollIntoView({behavior: 'smooth'})
-        }
-    }, [id, searchParams])
 
     return (
         <div className='py-[80px] mt-0 lg:mt-[80px]' ref={ref} id='COE'>
@@ -127,6 +116,7 @@ const Goals = () => {
             </div>
         </div>
     );
-};
+})
 
 export default Goals;
+Goals.displayName = 'Goals';

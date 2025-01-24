@@ -1,6 +1,9 @@
 import Image from 'next/image';
 
-const Hero = () => {
+const Hero = ({learnMoreRef}: { learnMoreRef: any }) => {
+    const handleClick = () => {
+        learnMoreRef.current?.scrollIntoView({behavior: 'smooth'});
+    };
     return (
         <>
             <div
@@ -25,8 +28,7 @@ const Hero = () => {
                                     our Community</p>
                             </div>
                         </a>
-                        <div onClick={() => {
-                        }} className='cursor-pointer items-center gap-x-[16px] hidden lg:flex'>
+                        <div onClick={handleClick} className='cursor-pointer items-center gap-x-[16px] hidden lg:flex'>
                             <p className='text-[17px] font-matter text-red-100 font-medium tracking-[0.255px]'>Learn
                                 More</p>
                             <div

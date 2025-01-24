@@ -18,22 +18,28 @@ const Hero = ({pillarsRef}: { pillarsRef: any }) => {
                         skills that support their growth and help foster their students’ learning outcomes.
                     </p>
 
-                    <a href="https://forms.gle/BJXEvk9jrkMhW7LH6" className='block xl:hidden'>
+                    <a href="http://bit.ly/TEACHERSLOUNGE" className='block xl:hidden'>
                         <Button
                             animate={true}
                             btnText={'Join the Teacher’s Lounge'}
                             styles='block mb-[64px] lg:b-0 mx-auto lg:mx-0 bg-[#E23F27] px-[36px] py-[23.5px] font-matter font-[500] text-[17px] text-white text-center rounded-[40px]'/></a>
-                    <div className="flex items-center gap-[20px] hidden xl:flex">
-                        <div onClick={handleClick} className='cursor-pointer items-center gap-x-[16px] '>
-                            <p className='px-[40px] py-[20px] text-white text-[17px] font-matter rounded-[40px] bg-red-100 font-medium tracking-[0.255px]'>Join
-                                the Teacher’s Lounge</p>
-                        </div>
-                        <div onClick={handleClick} className='cursor-pointer items-center gap-x-[16px] hidden xl:flex'>
-                            <p className='text-[17px] font-matter text-red-100 font-medium tracking-[0.255px]'>Learn
-                                More</p>
-                            <div className='rounded-full bg-red-100 w-[32px] h-[32px] flex items-center justify-center'>
-                                <Image src='/arrow-down.svg' alt='why you should join us' width={24} height={24}/></div>
-                        </div>
+                    <div className=" items-center gap-[20px] hidden xl:flex">
+                        <a href="http://bit.ly/TEACHERSLOUNGE" target="_blank">
+                            <div className='cursor-pointer items-center gap-x-[16px] '>
+                                <p className='px-[40px] py-[20px] text-white text-[17px] font-matter rounded-[40px] bg-red-100 font-medium tracking-[0.255px]'>Join
+                                    the Teacher’s Lounge</p>
+                            </div>
+                        </a>
+                            <div onClick={handleClick}
+                                 className='cursor-pointer items-center gap-x-[16px] hidden xl:flex'>
+                                <p className='text-[17px] font-matter text-red-100 font-medium tracking-[0.255px]'>Learn
+                                    More</p>
+                                <div
+                                    className='rounded-full bg-red-100 w-[32px] h-[32px] flex items-center justify-center'>
+                                    <Image src='/arrow-down.svg' alt='why you should join us' width={24} height={24}/>
+                                </div>
+                            </div>
+
                     </div>
 
                 </div>

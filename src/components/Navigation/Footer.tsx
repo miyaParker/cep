@@ -5,7 +5,8 @@ const Footer = () => {
     return (
         <div className='bg-[#0E0E10] w-screen text-white'>
             <footer>
-                <div className='font-matter lg:flex-row lg:items-start lg:justify-between lg:text-[17px] text-white py-[72px] lg:py-[64px] max-w-[1500px] mx-auto flex flex-col px-[20px] lg:px-[80px] xl:px-[130px]'>
+                <div
+                    className='font-matter lg:flex-row lg:items-start lg:justify-between lg:text-[17px] text-white py-[72px] lg:py-[64px] max-w-[1500px] mx-auto flex flex-col px-[20px] lg:px-[80px] xl:px-[130px]'>
                     <div className='self-start'>
                         <div className='flex flex-col gap-[24px]'>
                             <div className='relative left-[-60px] top-[-40px]'>
@@ -25,9 +26,15 @@ const Footer = () => {
                                 >
                                     info@relearn.ng
                                 </a>
-                                <p className='text-white tracking-[1.5%]'>
-                                    +2347031650809
-                                </p>
+                                <a
+                                    className='block tracking-[1.5%]'
+                                    href='tel:+2347064020742'
+                                    target='_blank'
+                                >
+                                    <p className='text-white tracking-[1.5%]'>
+                                        +2347064020742
+                                    </p>
+                                </a>
                                 <p className='tracking-[1.5%]'>
                                     8, Montgomery road, Yaba, Lagos
                                 </p>
@@ -98,11 +105,6 @@ const Footer = () => {
                                 Projects
                             </p>
                         </Link>
-                        <Link href='/our-ecosystem'>
-                            <p className='tracking-[1.5%] mb-[32px] lg:mb-[24px]'>
-                                Our Ecosystem
-                            </p>
-                        </Link>
                         <Link href='/news-and-updates'>
                             <p className='tracking-[1.5%]'>
                                 News & Update
@@ -124,12 +126,12 @@ const Footer = () => {
                                 Viable
                             </p>
                         </Link>
-                        <Link href='/get-involved/digital-literacy-community-of-practice'>
+                        <Link href='/get-involved/digital-literacy-COP'>
                             <p className='text-[17px] tracking-[1.5%] mb-[32px] lg:mb-[24px]'>
                                 Digital Literacy Community of Practice
                             </p>
                         </Link>
-                        <Link href='/get-involved/schools-edtech-clinic'>
+                        <Link href='/get-involved/edtech-clinic'>
                             <p className='text-[17px] tracking-[1.5%] mb-[32px] lg:mb-[24px]'>
                                 Schools EdTech Clinic
                             </p>
@@ -140,19 +142,21 @@ const Footer = () => {
                                 Educator Network
                             </p>
                         </Link>
-                        <Link href='/get-involved/edtech-festival'>
+                        <Link href='https://edtechfestival.relearn.ng/'>
                             <p className='text-[17px] tracking-[1.5%] mb-[32px] lg:mb-[24px]'>
                                 EdTech Festival
                             </p>
                         </Link>
                         <Link href='/get-involved/become-a-partner-at-relearn'>
-                            <p className='text-[17px] text-[17px] tracking-[1.5%] mb-[32px] lg:mb-[24px]'>
+                            <p className='text-[17px] tracking-[1.5%] mb-[32px] lg:mb-[24px]'>
                                 Become a Partner
                             </p>
                         </Link>
-                        {/*<Link href='/about?id=COE'>*/}
-                        {/*    <p className='tracking-[1.5%]'>EdTech CoE</p>*/}
-                        {/*</Link>*/}
+                        <Link href='/get-involved/our-ecosystem'>
+                            <p className='tracking-[1.5%] mb-[32px] lg:mb-[24px]'>
+                                Our Ecosystem
+                            </p>
+                        </Link>
                     </div>
                 </div>
             </footer>
