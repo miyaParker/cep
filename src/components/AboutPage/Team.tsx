@@ -84,32 +84,31 @@ const Team = () => {
             name: 'Janet Nyanrida',
             role: 'Programmes Associate',
             imageSrc: '/janet.png',
-            linkedinUrl: 'https://www.linkedin.com/in/busayo-ademuyiwa-571373112/',
+            linkedinUrl: 'https://www.linkedin.com/in/janet-nyarinda-90433251/',
             alt: 'Janet Nyanrida'
         },
         {
             name: 'Neema Muganga',
             role: 'Product Support Associate',
             imageSrc: '/neema.png',
-            linkedinUrl: 'https://www.linkedin.com/in/abiodunomotosho/',
+            linkedinUrl: 'https://www.linkedin.com/in/neema-muganga/',
             alt: 'Neema Muganga'
         },
         {
             name: 'Auralia Adilla Mboya',
             role: 'Product Support Associate',
             imageSrc: '/auralia.png',
-            linkedinUrl: 'https://www.linkedin.com/in/abiodunomotosho/',
+            linkedinUrl: 'https://www.linkedin.com/in/auralia-adilla-mboya/',
             alt: 'Auralia Adilla Mboya'
         },
         {
             name: 'Christine Ombima',
             role: 'Product Support Associate',
             imageSrc: '/christine.png',
-            linkedinUrl: 'https://www.linkedin.com/in/abiodunomotosho/',
-            alt: 'Yetunde Omotosho Monitoring & Evaluation Associate'
+            linkedinUrl: 'https://www.linkedin.com/in/christine-ombima/',
+            alt: 'Christine Ombima'
         }
     ];
-
     return (
         <div className='max-w-[1440px] mx-auto mt-[120px] lg:px-[80px] xl:px-[140px]'>
             <h2 className='text-[30px] font-neue font-bold text-center mb-[3rem]'>
