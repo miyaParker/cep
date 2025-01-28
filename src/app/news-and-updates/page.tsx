@@ -83,8 +83,7 @@ const NewsAndUpdates = () => {
                                 </h1>
                                 <div
                                     className='mt-[20px] mb-[25px] xl:mb-[47.5px] leading-[140%] max-w-[402px] mx-auto tracking-[0.1px] lg:tracking-[0.11px] font-matter lg:text-[20px] text-center lg:text-left text-[#333438] text-[20px] lg:mx-0'
-                                    dangerouslySetInnerHTML={{__html: `${bannerPost?.excerpt}...`}}/>
-                                {/*TODO replace with excerpt*/}
+                                    dangerouslySetInnerHTML={{__html: `${bannerPost?.excerpt?.slice(0,110)}...`}}/>
                                 <div className='flex items-center gap-x-[16px]'>
                                     <a href={`/news-and-updates/${bannerPost.slug}`}><p
                                         className='text-[17px] font-matter text-red-100 font-medium tracking-[0.255px]'>Read

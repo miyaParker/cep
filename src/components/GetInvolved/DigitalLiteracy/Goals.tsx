@@ -75,10 +75,7 @@ const Goals =forwardRef<HTMLDivElement>((props, ref) => {
                        text-[20px]
                        lg:text-[22px]
                    '>
-                        We are committed to improving the quality of education
-                        in Nigeria and across Africa, by using empirical
-                        evidence from research-backed innovative teaching
-                        methods and digital tools to improve learning outcomes.
+                        The COP brings together key stakeholders from various domains of interest including academia, entrepreneurship, health, finance, technology and cybersecurity among others and is designed to achieve the following objectives;
                     </p>
                     <div className="flex flex-col gap-4">
                         {objectives.map((objective, index) => (
