@@ -17,7 +17,7 @@ const Article = ({article, index}: { article: any, index: number }) => {
                     <p className="max-w-[260px] font-neue text-[22px] lg:text-[25px] text-[#0E0E10] font-bold mb-[12px] leading-[120%]">{article.title}</p>
                     <p
                         className='max-w-[315px] cursor-pointer font-[500] font-matter text-[17px] text-[#333438] tracking-[1%]'
-                        dangerouslySetInnerHTML={{__html: `${article?.excerpt}...`}}/>
+                        dangerouslySetInnerHTML={{__html: `${article?.excerpt.slice(0,50)}...`}}/>
                 </div>
             </div>
         </a>

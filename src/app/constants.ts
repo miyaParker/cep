@@ -180,7 +180,7 @@ export const projects = [
             }
         },
         impact: [{
-            location: "lagos",
+            location: "Nigeria",
             info: [{number: "913", description: "Teachers"}, {number: "75950", description: "Students"}]
         }, {
             location: "kenya",

@@ -19,7 +19,6 @@ const ProjectsList = () => {
                 left: 0,
                 behavior: "smooth",
             });
-            // box.scrollIntoView({behavior: "smooth"});
         }
     }
 
@@ -43,21 +42,31 @@ const ProjectsList = () => {
     }, {});
 
 
-    const projectGroup = (group: string, list: any, id: number) => <div key={group}
-                                                                        ref={(el: HTMLDivElement) => (boxRefs.current[id] = el)}
-                                                                        className={`pt-[100px]`}>
-        <p className="mb-[10px] text-[16px] md:text-[18px] lg:text-[20px] font-matter tracking-[0.5%] leading-[112%]">{group}</p>
-        <div
-            className={`hidden lg:block h-[1px] mb-[32px] bg-[#E23F27] box ${inViewStates[id] ? 'in-view ' : ''}`}
-        ></div>
-        <div
-            className={`block lg:hidden h-[1px] w-[48px] mb-[32px] bg-[#E23F27]`}
-        ></div>
-        <div
-            className="justify-center gap-x-[36px] gap-y-[68px] grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3">
-            {list?.map((project: any, index: number) => <Project key={index} project={project}/>)}
-        </div>
-    </div>
+    const projectGroup = (group: string, list: any, id: number) =>
+         <div
+            key={group}
+            ref={(el: HTMLDivElement) => (boxRefs.current[id] = el)}
+            className={`pt-[100px]`}
+            id={group}
+        >
+            <p className='mb-[10px] text-[16px] md:text-[18px] lg:text-[20px] font-matter tracking-[0.5%] leading-[112%]'>
+                {group}
+            </p>
+            <div
+                className={`hidden lg:block h-[1px] mb-[32px] bg-[#E23F27] box ${
+                    inViewStates[id] ? 'in-view ' : ''
+                }`}
+            ></div>
+            <div
+                className={`block lg:hidden h-[1px] w-[48px] mb-[32px] bg-[#E23F27]`}
+            ></div>
+            <div className='justify-center gap-x-[36px] gap-y-[68px] grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3'>
+                {list?.map((project: any, index: number) => (
+                    <Project key={index} project={project} />
+                ))}
+            </div>
+        </div>;
+
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -65,8 +74,9 @@ const ProjectsList = () => {
                 const newInViewStates = Array(boxRefs.current.length).fill(false);
                 entries.forEach(entry => {
                     const index = boxRefs.current.indexOf(entry.target as HTMLDivElement);
-                    if (index >= 0 && entry.intersectionRatio > 0.6) {
+                    if (index >= 0 && entry.intersectionRatio > 0.4) {
                         newInViewStates[index] = entry.isIntersecting;
+                        setActiveTab(entry.target.id)
                     }
                 });
                 setInViewStates(newInViewStates);
@@ -84,6 +94,7 @@ const ProjectsList = () => {
                 if (box) {
                     observer.observe(box);
                 }
+
             });
         };
 

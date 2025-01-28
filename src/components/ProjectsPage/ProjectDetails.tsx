@@ -18,7 +18,7 @@ const ProjectDetails = ({
             className="modal bg-gray-200/50 w-screen h-[100vh] fixed top-0 z-50 left-0 flex items-center justify-center"
             style={{display: showModal ? "flex" : "none"}}>
             <div
-                className="w-[90%] max-w-[640px] h-max max-h-[90vh] overflow-scroll relative rounded-[8px] px-[20px] md:pl-[44px]  bg-white">
+                className="w-[90%] max-w-[640px] h-max max-h-[70vh] top-[8vh] overflow-scroll relative rounded-[8px] px-[20px] md:pl-[44px]  bg-white">
                 <div onClick={closeModal}
                      className='bg-[#F6F6F9] absolute top-[18px] right-[18px] lg:top-[24px] lg:right-[24px] cursor-pointer w-[28px] h-[28px] lg:w-[32px] lg:h-[32px] rounded-full flex justify-center items-center'>
                     <Image src="/close.svg" alt={'close modal'} width={24} height={24}
