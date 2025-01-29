@@ -14,10 +14,13 @@ const Hero = ({objectivesRef}: { objectivesRef: any }) => {
                         <span className='text-[#ED7636]'>Viable</span>
                     </h1>
                     <p className='mt-[20px] mb-[48px] leading-[140%] max-w-[420px] xl:max-w-[479px] mx-auto tracking-[0.1px] lg:tracking-[0.11px] font-matter lg:text-[22px] text-center lg:text-left text-[#333438] text-[20px] lg:mx-0'>
-                        We are committed to improving the quality of education
-                        in Nigeria and across Africa, by using empirical
-                        evidence from research-backed innovative teaching
-                        methods and digital tools to improve learning outcomes.
+                        Viable is a community of EdTech Professionals,
+                        Enthusiasts, and users. The aim of this
+                        community is to spark critical, continuous
+                        engagement targeted at promoting innovation
+                        around Education Technology in relation to the
+                        current trends and future possibilities of
+                        EdTech in Nigeria and on the continent.
                     </p>
                     <div className="flex items-center gap-[20px]">
                         <a href="https://bit.ly/joinviable" target="_blank">

@@ -32,7 +32,7 @@ const Organizations = forwardRef<HTMLDivElement>((props, ref) => {
             <div
                 className='mt-[60px] lg:mt-[73px] max-w-[1440px] gap-x-[20px] mx-auto font-neue font-bold flex flex-col items-center lg:justify-between px-[20px] lg:flex-row lg:px-[80px] xl:px-[140px]'>
 
-                <div className='relative mx-auto lg:mx-0 w-full max-w-[440px] lg:w-[440px] xl:w-[545px]'>
+                <div className='flex-1 relative mx-auto lg:mx-0 w-max lg:w-full '>
                     <Image
                         src='/organization.png'
                         alt='The Ed-Tech Centre of Excellence, TASUED'
@@ -49,7 +49,7 @@ const Organizations = forwardRef<HTMLDivElement>((props, ref) => {
                     />
                 </div>
                 <div
-                    className={`flex-1 max-w-[557px] w-full min-h-[236px] lg:w-[557px] flex flex-col gap-y-[16px] mt-12 lg:mt-0`}
+                    className={`flex-1  w-full max-w-[557px] min-h-[236px] flex flex-col gap-y-[16px] mt-12 lg:mt-0`}
                 >
                     {cards.map((card, index) => (
                         <div className={`w-full h-max relative overflow-hidden`} key={index}>
