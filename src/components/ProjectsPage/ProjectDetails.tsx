@@ -19,12 +19,15 @@ const ProjectDetails = ({
             style={{display: showModal ? "flex" : "none"}}>
             <div
                 className="w-[90%] max-w-[640px] h-max max-h-[70vh] top-[8vh] overflow-scroll relative rounded-[8px] px-[20px] md:pl-[44px]  bg-white">
-                <div onClick={closeModal}
-                     className='bg-[#F6F6F9] absolute top-[18px] right-[18px] lg:top-[24px] lg:right-[24px] cursor-pointer w-[28px] h-[28px] lg:w-[32px] lg:h-[32px] rounded-full flex justify-center items-center'>
-                    <Image src="/close.svg" alt={'close modal'} width={24} height={24}
-                           className={'w-[20px] lg:w-[20px]'}/>
+                <div className="sticky top-[18px] lg:top-[24px] flex items-center justify-end w-full">
+                    <div onClick={closeModal}
+                         className='bg-[#F6F6F9]  sticky shrink-0 top-[18px] right-0 lg:top-[24px] cursor-pointer w-[28px] h-[28px] lg:w-[32px] lg:h-[32px] rounded-full flex justify-center items-center'>
+                        <Image src="/close.svg" alt={'close modal'} width={24} height={24}
+                               className={'w-[20px] lg:w-[20px]'}/>
+                    </div>
                 </div>
-                <p className="font-neue mt-[40px] font-bold text-[25px] leading-[120%] tracking-[0.125px] text-[#0E0E10]">{project.name}</p>
+
+                <p className="font-neue font-bold text-[25px] leading-[120%] tracking-[0.125px] text-[#0E0E10]">{project.name}</p>
                 {project.details.summary.map((summary: any, index: number) =>
                     <p key={index}
                        className="mt-[20px] max-w-[521px] font-matter text-[17px] leading-[140%] tracking-[0.17px] text-[#333438]">{summary}</p>

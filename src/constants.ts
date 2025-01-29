@@ -1,23 +1,26 @@
 export const navItems = [
-    {name: "about", link: "/about", path: "/about"},
-    {name: "projects", link: "/projects"},
-    {name: "news & updates", link: "/news-and-updates"},
+    {name: "about", link: "/about",  target: "_parent"},
+    {name: "projects", link: "/projects", target: "_parent"},
+    {name: "news & updates", link: "/news-and-updates", target: "_parent"},
     {
         name: "get involved", children: [
             {
                 name: "Become a Partner",
                 link: "/get-involved/become-a-partner-at-relearn",
-                icon: "/partner-icon.svg"
+                icon: "/partner-icon.svg",
+                target: "_parent"
             },
             {
                 name: "Educator's Network",
                 link: "/get-involved/educators-network",
-                icon: "/educator-icon.svg"
+                icon: "/educator-icon.svg",
+                target: "_parent"
             },
             {
                 name: "Edtech Clinic",
                 link: "/edtech-clinic",
                 icon: "/edtech-clinic.svg",
+                target: "_parent"
             },
             {
                 name: "Edtech Festival",
@@ -29,18 +32,8 @@ export const navItems = [
     },
     {name: "certificate portal", link: "/certificate-portal"}
 ];
-export const mobileNavItems = [
-    {name: "about", link: "/about", path: "/about"},
-    {name: "projects", link: "/projects"},
-    {name: "news & updates", link: "/news-and-updates"},
-    {name: "Become a Partner", link: "/get-involved/become-a-partner-at-relearn"},
-    {name: "edtech clinic", link: "/edtech-clinic"},
-    {name: "Educator's Network", link: "/get-involved/educators-network"},
-    {name: "Certificate portal", link: "/certificate-portal"},
-    {name: "edtech clinic", link: "/edtech-clinic"},
-    {name: "edtech Festival", link: "https://edtechfestival.relearn.ng/", target: "_blank"},
 
-];
+
 export const faqs = [{
     q: "How do I become part of the network?",
     a: "To get started, fill out the online application form, here. The Educators’ Network is currently open to residents"
