@@ -30,7 +30,7 @@ const NewsAndUpdates = () => {
     };
 
     const bannerPost = posts.length ? posts[0] : null
-    const tabs = ["All", "Blog", "Event"]
+    const tabs = ["All", "Blog", "Event Recap","Report"]
     const activeTabStyle = "font-semibold lg:text-[17px] border-b-2 text-[#313235]"
 
 
@@ -49,7 +49,6 @@ const NewsAndUpdates = () => {
         const params = {page, limit: LIMIT}
         fetchAllPosts(params).then(postsList => {
             setTotalPages(postsList.data.total_pages);
-            console.log(postsList.data.posts);
             setPosts([...posts, ...postsList.data.posts])
             setData([...posts, ...postsList.data.posts])
             setLoading(false);
