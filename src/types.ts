@@ -34,6 +34,7 @@ export interface AffiliateCentre {
     title: string;
     description: string[];
     arrow: any;
+    link: string
 }
 type SectionArray = Section[];
 

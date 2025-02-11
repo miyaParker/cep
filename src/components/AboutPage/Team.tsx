@@ -60,25 +60,11 @@ const Team = () => {
             alt: 'Famous Ogaga Learning Development Lead'
         },
         {
-            name: 'Abigael Anaza-Mark',
-            role: 'Programmes Associate',
-            imageSrc: '/abigael.jpg',
-            linkedinUrl: 'https://www.linkedin.com/in/abigael-anaza-mark-30711214b',
-            alt: 'Abigael Anaza-Mark Programmes Associate'
-        },
-        {
             name: 'Shalom Anurigwo',
             role: 'Learning Development Associate',
             imageSrc: '/shalom.jpg',
             linkedinUrl: 'https://www.linkedin.com/in/shalom-anurigwo/',
             alt: 'Shalom Anurigwo Learning Development Associate'
-        },
-        {
-            name: 'Aderonke Adeniran',
-            role: 'Community Support Associate',
-            imageSrc: '/aderonke.jpg',
-            linkedinUrl: 'https://www.linkedin.com/in/oluwakemi-adeniran/',
-            alt: 'Aderonke Adeniran Community Support Associate'
         },
         {
             name: 'Janet Nyanrida',

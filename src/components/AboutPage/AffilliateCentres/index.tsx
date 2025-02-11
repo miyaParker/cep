@@ -42,7 +42,8 @@ const AffiliateCentres = () => {
                     height={24}
                     className=''
                 />
-            </div>
+            </div>,
+            link:'https://sailab.ng/',
         },
         {
             title: "The Ed-Tech Centre of Excellence, TASUED",
@@ -65,8 +66,8 @@ const AffiliateCentres = () => {
                 <p className="text-white bg-[#0E0E10] font-medium font-matter rounded-[10px] px-[10px] lg:px-[20px] py-[5px] lg:py-[10px]">TASUED
                     Ed-Tech centre</p>
 
-            </div>
-
+            </div>,
+            link:'https://edtechcoe.com/'
         }
     ]
     return (
