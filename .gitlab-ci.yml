@@ -32,7 +32,7 @@ build:
   dependencies:
     - install
   script:
-    - npm build
+    - npm run build
   only:
     - merge_requests
 
