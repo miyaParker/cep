@@ -1,4 +1,4 @@
-image: node:20
+image: node:18
 
 cache:
   paths:
@@ -32,7 +32,7 @@ build:
   dependencies:
     - install
   script:
-    - yarn build
+    - npm build
   only:
     - merge_requests
 
