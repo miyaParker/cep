@@ -9,7 +9,7 @@ import { Post } from "@/types";
 const NewsAndUpdates = () => {
     const LIMIT = 10;
     const [totalPages, setTotalPages] = useState(0);
-    const [posts, setPosts] = useState([] as Post[]);
+    // const [posts, setPosts] = useState([] as Post[]);
     const [data, setData] = useState([] as Post[]);
     const [page, setPage] = useState(1);
     const [loading, setLoading] = useState(true);
@@ -21,7 +21,7 @@ const NewsAndUpdates = () => {
 
     };
 
-    const fetchPosts = (category: string) => {
+    const fetchPosts = (category: string, loadMore: boolean = false) => {
         const url = category === "All"
             ? `https://blog.relearn.ng/wp-json/relearn/v1/posts?page=${page}&per_page=${LIMIT}`
             : `https://blog.relearn.ng/wp-json/relearn/v1/posts?page=${page}&per_page=${LIMIT}&category=${category.toLowerCase()}`;
@@ -29,10 +29,17 @@ const NewsAndUpdates = () => {
         fetch(url)
             .then(response => response.json())
             .then(postsList => {
+                console.log("Posts fetched:", postsList);
+                if (loadMore) {
+                    console.log("load more",postsList?.posts);
+                    setData([...data, ...postsList.posts]);
+                }
+                else {
+                    console.log("not load more",postsList?.posts);
+                    // setPosts(postsList?.posts);
+                    setData(postsList?.posts);
+                }
                 setTotalPages(postsList?.total_pages);
-
-                setPosts(postsList?.posts);
-                setData(postsList?.posts);
                 // setData(category === "All" ? postsList.posts : [...posts, ...postsList.posts]);
                 setLoading(false);
             })
@@ -42,7 +49,7 @@ const NewsAndUpdates = () => {
             });
     };
 
-    const bannerPost = posts.length ? posts[0] : null;
+    const bannerPost = data.length ? data[0] : null;
     const tabs = ["All", "Blog", "Event Recap", "Report"];
     const activeTabStyle = "font-semibold lg:text-[17px] border-b-2 text-[#313235]";
 
@@ -64,7 +71,20 @@ const NewsAndUpdates = () => {
         }
 
         fetchPosts(activeTab);
-    }, [page, activeTab]);
+    }, [activeTab]);
+
+    useEffect(() => {
+        if(page === 1) return
+        if (activeTab === "All") {
+            fetchPosts("All", true);
+            return;
+        }
+        if (activeTab === 'Event Recap') {
+            fetchPosts('event', true);
+            return;
+        }
+        fetchPosts(activeTab, true);
+    }, [page]);
 
     return (
         <div className='w-full pt-[160px] lg:pt-[218px] overflow-scroll'>
@@ -134,7 +154,7 @@ const NewsAndUpdates = () => {
                             styles='mb-[156px] bg-[#F1F2F3] w-max relative z-20 font-matter block mx-auto mt-[40px] text-[#43434C] w-[12rem] h-[4rem] text-[1.125rem] px-[40px] py-[20px]'
                             btnText='Load More Stories'
                         /> : null}
-                    </div> : (loading && !posts.length) ? <div className="w-full ">
+                    </div> : (loading && !data.length) ? <div className="w-full ">
                         <div className="">
 
                             <div className="hidden lg:flex lg:flex-row mt-[80px] gap-x-[38px] xl:gap-x-[68px]">
