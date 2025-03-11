@@ -2,9 +2,9 @@
 import Image from "next/image";
 import Article from "@/components/NewsAndUpdates/Article";
 import Button from "@/components/Generic/Button";
-import React, {useEffect, useState} from "react";
-import {fetchAllPosts} from "@/api";
-import {Post} from "@/types";
+import React, { useEffect, useState } from "react";
+import { fetchAllPosts } from "@/api";
+import { Post } from "@/types";
 
 const NewsAndUpdates = () => {
     const LIMIT = 10;
@@ -17,43 +17,55 @@ const NewsAndUpdates = () => {
     const [activeTab, setActiveTab] = useState("All");
     const onClickTab = (title: string) => {
         setActiveTab(title);
-        if (title === "All") {
-            setData(posts);
-            return;
-        }
-        const filteredPosts = posts.filter((post) => {
-                const category = post?.terms[0]?.name
-                return category === title
-            }
-        )
-        setData(data.length ? [data[0], ...filteredPosts] : filteredPosts);
+        setPage(1); // Reset page to 1 when switching tabs
+
     };
 
-    const bannerPost = posts.length ? posts[0] : null
-    const tabs = ["All", "Blog", "Event Recap","Report"]
-    const activeTabStyle = "font-semibold lg:text-[17px] border-b-2 text-[#313235]"
+    const fetchPosts = (category: string) => {
+        const url = category === "All"
+            ? `https://blog.relearn.ng/wp-json/relearn/v1/posts?page=${page}&per_page=${LIMIT}`
+            : `https://blog.relearn.ng/wp-json/relearn/v1/posts?page=${page}&per_page=${LIMIT}&category=${category.toLowerCase()}`;
 
+        fetch(url)
+            .then(response => response.json())
+            .then(postsList => {
+                setTotalPages(postsList?.total_pages);
+
+                setPosts(postsList?.posts);
+                setData(postsList?.posts);
+                // setData(category === "All" ? postsList.posts : [...posts, ...postsList.posts]);
+                setLoading(false);
+            })
+            .catch(error => {
+                console.error("Error fetching posts:", error);
+                setLoading(false);
+            });
+    };
+
+    const bannerPost = posts.length ? posts[0] : null;
+    const tabs = ["All", "Blog", "Event Recap", "Report"];
+    const activeTabStyle = "font-semibold lg:text-[17px] border-b-2 text-[#313235]";
 
     const Tab = (title: string) => <p
-        onClick={() => {
-            onClickTab(title)
-            console.log(activeTab === title, activeTab, title)
-        }
-        }
+        onClick={() => onClickTab(title)}
         className={`px-[2px] pb-[8px] transition-all duration-300 ease-in cursor-pointer tracking-[0.5%] leading-[120%] lg:text-[18px] ${activeTab === title ? activeTabStyle : "opacity-90 font-light"}`}
     >
         {title}
-    </p>
+    </p>;
 
     useEffect(() => {
-        const params = {page, limit: LIMIT}
-        fetchAllPosts(params).then(postsList => {
-            setTotalPages(postsList.data.total_pages);
-            setPosts([...posts, ...postsList.data.posts])
-            setData([...posts, ...postsList.data.posts])
-            setLoading(false);
-        });
-    }, [page])
+        if (activeTab === "All") {
+            fetchPosts("All");
+            return;
+        }
+        if (activeTab === 'Event Recap') {
+            fetchPosts('event');
+            return;
+        }
+
+        fetchPosts(activeTab);
+    }, [page, activeTab]);
+
     return (
         <div className='w-full pt-[160px] lg:pt-[218px] overflow-scroll'>
             <div className="mx-auto max-w-[1440px] px-[20px] lg:px-[80px] xl:px-[130px]">
@@ -69,7 +81,7 @@ const NewsAndUpdates = () => {
                         {bannerPost && <div
                             className='hidden w-full lg:flex lg:flex-row mt-[80px] gap-x-[38px] xl:gap-x-[68px]'>
                             <div className='bg-center bg-cover rounded-[6px] w-[60%] lg:h-[408px] mx-auto lg:mx-0'
-                                 style={{backgroundImage: `url(${bannerPost.featured_image})`}}></div>
+                                style={{ backgroundImage: `url(${bannerPost.featured_image})` }}></div>
                             <div className="w-[40%]">
                                 <div
                                     className='mt-[20px] justify-center lg:justify-start lg:mx-0 flex items-center gap-x-[12px] mb-[24px]'>
@@ -83,7 +95,7 @@ const NewsAndUpdates = () => {
                                 </h1>
                                 <div
                                     className='mt-[20px] mb-[25px] xl:mb-[47.5px] leading-[140%] max-w-[402px] mx-auto tracking-[0.1px] lg:tracking-[0.11px] font-matter lg:text-[20px] text-center lg:text-left text-[#333438] text-[20px] lg:mx-0'
-                                    dangerouslySetInnerHTML={{__html: `${bannerPost?.excerpt?.slice(0,110)}...`}}/>
+                                    dangerouslySetInnerHTML={{ __html: `${bannerPost?.excerpt?.slice(0, 110)}...` }} />
                                 <div className='flex items-center gap-x-[16px]'>
                                     <a href={`/news-and-updates/${bannerPost.slug}`}><p
                                         className='text-[17px] font-matter text-red-100 font-medium tracking-[0.255px]'>Read
@@ -91,8 +103,8 @@ const NewsAndUpdates = () => {
                                     <div
                                         className='rounded-full bg-red-100 w-[32px] h-[32px] flex items-center justify-center'>
                                         <Image src='/arrow-down.svg' className='rotate-[-90deg]'
-                                               alt='why you should join us'
-                                               width={24} height={24}/></div>
+                                            alt='why you should join us'
+                                            width={24} height={24} /></div>
                                 </div>
                             </div>
 
@@ -107,15 +119,16 @@ const NewsAndUpdates = () => {
                         <div
                             className="justify-center mt-[64px] lg:mt-[57px] mb-[48px] gap-x-[26px] gap-y-[68px] grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3">
                             {data.map((article, index) => {
-                                if (index > 0) {
-                                    return <Article key={index} article={article} index={index}/>
+                                if (data.length == 1) { return <Article key={index} article={article} index={index} /> }
+                                else if (index > 0) {
+                                    return <Article key={index} article={article} index={index} />
                                 }
                             })}
                         </div>
                         {page !== totalPages ? <Button
                             handleClick={() => {
                                 setPage(page + 1);
-                                setLoading(true)
+                                setLoading(true);
                             }}
                             loading={loading}
                             styles='mb-[156px] bg-[#F1F2F3] w-max relative z-20 font-matter block mx-auto mt-[40px] text-[#43434C] w-[12rem] h-[4rem] text-[1.125rem] px-[40px] py-[20px]'
@@ -156,4 +169,4 @@ const NewsAndUpdates = () => {
         </div>
     )
 }
-export default NewsAndUpdates
+export default NewsAndUpdates;
