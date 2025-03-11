@@ -4,7 +4,7 @@ const Article = ({article, index}: { article: any, index: number }) => {
     return (
         <a href={`/news-and-updates/${article.slug}`}>
             <div
-                className={`${index === 0 && 'display lg:hidden'} rounded-[3px] border border-white hover:border-[#0E0E10] duration-500 p-[16px]`}>
+                className={` rounded-[3px] border border-white hover:border-[#0E0E10] duration-500 p-[16px]`}>
                 <div className={`justify-items-start`}>
 
                     <div className='bg-center bg-cover h-[252px] w-full mb-[28px] rounded-[4px]'
