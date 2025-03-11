@@ -87,7 +87,7 @@ const NewsAndUpdates = () => {
     }, [page]);
 
     return (
-        <div className='w-full pt-[160px] lg:pt-[218px] overflow-scroll'>
+        <div className='w-full mt-[80px] lg:mt-[124px]  lg:pt-0  pb-[72px] overflow-scroll'>
             <div className="mx-auto max-w-[1440px] px-[20px] lg:px-[80px] xl:px-[130px]">
                 <div>
                     <h1 className="text-[#0E0E10] font-neue text-[37px] md:text-[42px] lg:text-[60px] font-bold">Latest
