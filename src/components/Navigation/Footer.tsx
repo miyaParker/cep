@@ -111,8 +111,13 @@ const Footer = () => {
                             </p>
                         </Link>
                         <Link href='/certificate-portal'>
-                            <p className='tracking-[1.5%]'>
+                            <p className='tracking-[1.5%]  mb-[32px] lg:mb-[24px]'>
                                 Certificate Portal
+                            </p>
+                        </Link>
+                        <Link href='https://cchub.africa/wp-content/uploads/2025/03/CcHUB-Data-Subject-Access-Request-Form.pdf' target='_blank'>
+                            <p className='tracking-[1.5%]'>
+                                DSAR Form
                             </p>
                         </Link>
                     </div>
