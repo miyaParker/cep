@@ -243,6 +243,10 @@ select:required:invalid {
 .post img {
     margin: 64px 0;
 }
+.post strong{
+    font-weight: 600 !important;
+    color: #313131 !important;
+}
 
 .post h2, .post p {
     margin-bottom: 40px;
@@ -251,7 +255,7 @@ select:required:invalid {
 
 .post p {
     font-family: 'Matter', serif;
-    font-size: 22px;
+    /* font-size: 22px; */
     font-weight: 400;
     line-height: 140%;
     letter-spacing: 1.5%;
@@ -278,4 +282,16 @@ select:required:invalid {
 .pillar{
     -webkit-text-stroke-width: 2px;
     -webkit-text-stroke-color: rgba(50, 50, 50, 0.16);
+}
+.post ul.wp-block-list{
+    list-style-type: disc !important;
+    display: block !important;
+}
+.post .wp-block-list li{
+    margin: 20px 0 !important;
+}
+.post .wp-block-list li strong{
+    color: #313131 !important;
+    font-weight:bold !important;
+    text-decoration: underline !important;
 }
