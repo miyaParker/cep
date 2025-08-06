@@ -46,3 +46,21 @@ interface Section {
 export interface GetInvolvedLinkSectionProps {
     section: Section | SectionArray;
 }
+
+// Cloudflare Turnstile types
+declare global {
+  interface Window {
+    turnstile: {
+      render: (
+        container: HTMLElement,
+        options: {
+          sitekey: string;
+          callback?: (token: string) => void;
+          'expired-callback'?: () => void;
+          'error-callback'?: () => void;
+        }
+      ) => void;
+    };
+    onTurnstileSuccess: (token: string) => void;
+  }
+}
