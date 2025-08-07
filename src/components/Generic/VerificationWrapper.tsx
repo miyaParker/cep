@@ -17,6 +17,29 @@ const VerificationWrapper: React.FC<VerificationWrapperProps> = ({ children }) =
     console.log('VerificationWrapper: verified state changed to:', verified);
   }, [verified]);
 
+  // Manual widget rendering as fallback
+  React.useEffect(() => {
+    if (scriptLoaded && siteKey && widgetRef.current && window.turnstile) {
+      console.log('Manually rendering Turnstile widget');
+      try {
+        window.turnstile.render(widgetRef.current, {
+          sitekey: siteKey,
+          callback: function(token: string) {
+            console.log('Turnstile verification successful in wrapper:', token);
+          },
+          'expired-callback': function() {
+            console.log('Turnstile verification expired');
+          },
+          'error-callback': function() {
+            console.log('Turnstile verification error');
+          }
+        });
+      } catch (error) {
+        console.error('Error rendering Turnstile widget:', error);
+      }
+    }
+  }, [scriptLoaded, siteKey]);
+
 
   if (!verified) {
     return (
@@ -95,6 +118,7 @@ const VerificationWrapper: React.FC<VerificationWrapperProps> = ({ children }) =
                 data-callback="onTurnstileSuccess"
                 data-theme="light"
                 ref={widgetRef}
+                style={{ minHeight: '65px' }}
               ></div>
             )}
             {!scriptLoaded && !scriptError && (
@@ -140,6 +164,8 @@ const VerificationWrapper: React.FC<VerificationWrapperProps> = ({ children }) =
                 ⚠️ Security verification is currently unavailable. Please contact the administrator.
               </div>
             )}
+            
+
           </div>
 
           {/* Footer */}
