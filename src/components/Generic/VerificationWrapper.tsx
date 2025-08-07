@@ -1,20 +1,16 @@
-'use client';
-import React, { useRef } from 'react';
-import useCloudflareTurnstile from '@/customHooks/useCloudflareTurnstile';
+"use client"
+import { useRef } from 'react';
+import useCloudflareTurnstile from '../../customHooks/useCloudflareTurnstile';
+import Image from 'next/image';
 
-interface VerificationWrapperProps {
-  children: React.ReactNode;
-}
-
-const VerificationWrapper: React.FC<VerificationWrapperProps> = ({ children }) => {
+const CloudflareTurnstileGate = ({ children }: { children: React.ReactNode }) => {
   const { verified, scriptLoaded, scriptError, siteKey } = useCloudflareTurnstile();
-  const widgetRef = useRef<HTMLDivElement>(null);
-
+  const widgetRef = useRef(null);
 
   if (!verified) {
     return (
       <div style={{
-        minHeight: '100vh',
+        minHeight: '100vh', 
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -34,9 +30,11 @@ const VerificationWrapper: React.FC<VerificationWrapperProps> = ({ children }) =
           {/* Logo */}
           <div style={{ marginBottom: '32px' }}>
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-              <img 
-                src="/logo.svg" 
-                alt="Re-Learn" 
+              <Image 
+                src={"/logo.svg"} 
+                alt="CcHUB" 
+                width={142}
+                height={40}
                 style={{
                   height: '40px',
                   width: 'auto',
@@ -72,7 +70,7 @@ const VerificationWrapper: React.FC<VerificationWrapperProps> = ({ children }) =
             fontFamily: 'DM Sans, sans-serif',
             lineHeight: '1.5'
           }}>
-            Please complete the verification below to access the Re-Learn platform
+            Please complete the verification below to access the Creative Economy Practice platform
           </p>
 
           {/* Verification Widget */}
@@ -88,7 +86,6 @@ const VerificationWrapper: React.FC<VerificationWrapperProps> = ({ children }) =
                 data-callback="onTurnstileSuccess"
                 data-theme="light"
                 ref={widgetRef}
-                style={{ minHeight: '65px' }}
               ></div>
             )}
             {!scriptLoaded && !scriptError && (
@@ -134,8 +131,6 @@ const VerificationWrapper: React.FC<VerificationWrapperProps> = ({ children }) =
                 ⚠️ Security verification is currently unavailable. Please contact the administrator.
               </div>
             )}
-            
-
           </div>
 
           {/* Footer */}
@@ -162,4 +157,4 @@ const VerificationWrapper: React.FC<VerificationWrapperProps> = ({ children }) =
   return <>{children}</>;
 };
 
-export default VerificationWrapper; 
+export default CloudflareTurnstileGate; 

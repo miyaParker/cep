@@ -1,3 +1,4 @@
+"use client"
 import { useEffect, useState } from 'react';
 
 const useCloudflareTurnstile = () => {
@@ -5,7 +6,7 @@ const useCloudflareTurnstile = () => {
   const [scriptLoaded, setScriptLoaded] = useState(false);
   const [scriptError, setScriptError] = useState(false);
 
-  const siteKey = process.env.NEXT_PUBLIC_CLOUDFLARE_TURNSTILE_SITE_KEY;
+  const siteKey = process.env.NEXT_PUBLIC_CLOUDFLARE_TURNSTILE_SITE_KEY ;
 
   // Check if we're in development mode (localhost)
   const isDevelopment = typeof window !== 'undefined' && (
@@ -16,14 +17,14 @@ const useCloudflareTurnstile = () => {
 
   useEffect(() => {
     // In development mode, skip verification entirely
-    if (isDevelopment) {
-      console.log('Development mode detected - skipping Cloudflare Turnstile verification');
-      setVerified(true);
-      return;
-    }
+    // if (isDevelopment) {
+    //   console.log('Development mode detected - skipping Cloudflare Turnstile verification');
+    //   setVerified(true);
+    //   return;
+    // }
 
     if (!siteKey) {
-      console.error('Cloudflare Turnstile site key not found. Please set NEXT_PUBLIC_CLOUDFLARE_TURNSTILE_SITE_KEY in your environment variables.');
+      console.error('Cloudflare Turnstile site key not found. Please set REACT_APP_CLOUDFLARE_TURNSTILE_SITE_KEY in your environment variables.');
       setScriptError(true);
       return;
     }
@@ -56,8 +57,8 @@ const useCloudflareTurnstile = () => {
     };
 
     return () => {
-      if (window.onTurnstileSuccess) {
-        window.onTurnstileSuccess = undefined as any;
+      if ((window as any).onTurnstileSuccess) {
+        delete (window as any).onTurnstileSuccess;
       }
     };
   }, [verified, isDevelopment, siteKey]);
