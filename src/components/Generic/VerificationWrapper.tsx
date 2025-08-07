@@ -1,11 +1,36 @@
 "use client"
-import { useRef } from 'react';
-import useCloudflareTurnstile from '../../customHooks/useCloudflareTurnstile';
+import React, { useRef } from 'react';
+import useCloudflareTurnstile from '@/customHooks/useCloudflareTurnstile';
 import Image from 'next/image';
 
 const CloudflareTurnstileGate = ({ children }: { children: React.ReactNode }) => {
   const { verified, scriptLoaded, scriptError, siteKey } = useCloudflareTurnstile();
-  const widgetRef = useRef(null);
+  const widgetRef = useRef<HTMLDivElement>(null);
+
+  console.log('CloudflareTurnstileGate state:', { verified, scriptLoaded, scriptError, siteKey });
+
+  // Manual widget rendering as fallback
+  React.useEffect(() => {
+    if (scriptLoaded && siteKey && widgetRef.current && window.turnstile) {
+      console.log('Manually rendering Turnstile widget');
+      try {
+        window.turnstile.render(widgetRef.current, {
+          sitekey: siteKey,
+          callback: function(token: string) {
+            console.log('Turnstile verification successful:', token);
+          },
+          'expired-callback': function() {
+            console.log('Turnstile verification expired');
+          },
+          'error-callback': function() {
+            console.log('Turnstile verification error');
+          }
+        });
+      } catch (error) {
+        console.error('Error rendering Turnstile widget:', error);
+      }
+    }
+  }, [scriptLoaded, siteKey]);
 
   if (!verified) {
     return (
@@ -140,6 +165,18 @@ const CloudflareTurnstileGate = ({ children }: { children: React.ReactNode }) =>
             fontFamily: 'DM Sans, sans-serif'
           }}>
             Powered by Cloudflare
+          </div>
+
+          {/* Debug Info */}
+          <div style={{
+            fontSize: '10px',
+            color: '#999',
+            marginTop: '16px',
+            padding: '8px',
+            background: '#f5f5f5',
+            borderRadius: '4px'
+          }}>
+            Debug: scriptLoaded={scriptLoaded.toString()}, siteKey={siteKey ? 'set' : 'not set'}, verified={verified.toString()}
           </div>
         </div>
 

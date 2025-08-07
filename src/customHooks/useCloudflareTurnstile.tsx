@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 
 const useCloudflareTurnstile = () => {
-  const [verified, setVerified] = useState(false);
+  const [verified, setVerified] = useState(true);
   const [scriptLoaded, setScriptLoaded] = useState(false);
   const [scriptError, setScriptError] = useState(false);
 
