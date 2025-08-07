@@ -10,36 +10,6 @@ const VerificationWrapper: React.FC<VerificationWrapperProps> = ({ children }) =
   const { verified, scriptLoaded, scriptError, siteKey } = useCloudflareTurnstile();
   const widgetRef = useRef<HTMLDivElement>(null);
 
-  console.log('VerificationWrapper: rendered with:', { verified, scriptLoaded, scriptError, siteKey });
-
-  // Debug: Log when verified state changes
-  React.useEffect(() => {
-    console.log('VerificationWrapper: verified state changed to:', verified);
-  }, [verified]);
-
-  // Manual widget rendering as fallback
-  React.useEffect(() => {
-    if (scriptLoaded && siteKey && widgetRef.current && window.turnstile) {
-      console.log('Manually rendering Turnstile widget');
-      try {
-        window.turnstile.render(widgetRef.current, {
-          sitekey: siteKey,
-          callback: function(token: string) {
-            console.log('Turnstile verification successful in wrapper:', token);
-          },
-          'expired-callback': function() {
-            console.log('Turnstile verification expired');
-          },
-          'error-callback': function() {
-            console.log('Turnstile verification error');
-          }
-        });
-      } catch (error) {
-        console.error('Error rendering Turnstile widget:', error);
-      }
-    }
-  }, [scriptLoaded, siteKey]);
-
 
   if (!verified) {
     return (
