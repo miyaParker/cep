@@ -1,41 +1,168 @@
 'use client';
-import React, { useState, useEffect } from 'react';
-import CloudflareVerification from './CloudflareVerification';
+import React, { useRef } from 'react';
+import useCloudflareTurnstile from '@/customHooks/useCloudflareTurnstile';
 
 interface VerificationWrapperProps {
   children: React.ReactNode;
 }
 
 const VerificationWrapper: React.FC<VerificationWrapperProps> = ({ children }) => {
-  const [isVerified, setIsVerified] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
+  const { verified, scriptLoaded, scriptError, siteKey } = useCloudflareTurnstile();
+  const widgetRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    // Always start with verification required
-    console.log('VerificationWrapper: Starting verification process');
-    setIsLoading(false);
-  }, []);
+  console.log('VerificationWrapper: rendered with:', { verified, scriptLoaded, scriptError, siteKey });
 
-  const handleVerificationComplete = () => {
-    console.log('VerificationWrapper: Verification completed');
-    setIsVerified(true);
-  };
+  // Debug: Log when verified state changes
+  React.useEffect(() => {
+    console.log('VerificationWrapper: verified state changed to:', verified);
+  }, [verified]);
 
-  if (isLoading) {
-    console.log('VerificationWrapper: Loading state');
+
+  if (!verified) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-50">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
+      <div style={{
+        minHeight: '100vh',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: '#FFFFFF',
+        fontFamily: 'Red Hat Display, DM Sans, sans-serif'
+      }}>
+        <div style={{
+          background: '#FFFFFF',
+          borderRadius: '16px',
+          padding: '48px',
+          boxShadow: '0px 8px 32px rgba(0, 0, 0, 0.08)',
+          border: '1px solid #EBEBFF',
+          maxWidth: '480px',
+          width: '90%',
+          textAlign: 'center'
+        }}>
+          {/* Logo */}
+          <div style={{ marginBottom: '32px' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+              <img 
+                src="/logo.svg" 
+                alt="Re-Learn" 
+                style={{
+                  height: '40px',
+                  width: 'auto',
+                  marginBottom: '16px'
+                }}
+              />
+              <div style={{
+                width: '142px', 
+                height: '4px',
+                background: 'linear-gradient(90deg, #7BC042 0%, #E36E1E 100%)',
+                borderRadius: '2px'
+              }}></div>
+            </div>
+          </div>
+
+          {/* Title */}
+          <h1 style={{
+            fontSize: '28px',
+            fontWeight: '700',
+            color: '#1F1F1F',
+            marginBottom: '12px',
+            fontFamily: 'Red Hat Display, sans-serif',
+            lineHeight: '1.2'
+          }}>
+            Security Verification
+          </h1>
+
+          {/* Subtitle */}
+          <p style={{
+            fontSize: '16px',
+            color: '#424242',
+            marginBottom: '32px',
+            fontFamily: 'DM Sans, sans-serif',
+            lineHeight: '1.5'
+          }}>
+            Please complete the verification below to access the Re-Learn platform
+          </p>
+
+          {/* Verification Widget */}
+          <div style={{
+            display: 'flex',
+            justifyContent: 'center',
+            marginBottom: '24px'
+          }}>
+            {scriptLoaded && siteKey && (
+              <div
+                className="cf-turnstile"
+                data-sitekey={siteKey}
+                data-callback="onTurnstileSuccess"
+                data-theme="light"
+                ref={widgetRef}
+              ></div>
+            )}
+            {!scriptLoaded && !scriptError && (
+              <div style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '12px',
+                color: '#424242',
+                fontSize: '14px'
+              }}>
+                <div style={{
+                  width: '20px',
+                  height: '20px',
+                  border: '2px solid #E36E1E',
+                  borderTop: '2px solid transparent',
+                  borderRadius: '50%',
+                  animation: 'spin 1s linear infinite'
+                }}></div>
+                Loading verification...
+              </div>
+            )}
+            {scriptError && (
+              <div style={{
+                color: '#E36E1E',
+                fontSize: '14px',
+                padding: '12px',
+                background: '#FFF5F0',
+                borderRadius: '8px',
+                border: '1px solid #FFE4D6'
+              }}>
+                ⚠️ Verification service temporarily unavailable. Loading site...
+              </div>
+            )}
+            {!siteKey && (
+              <div style={{
+                color: '#E36E1E',
+                fontSize: '14px',
+                padding: '12px',
+                background: '#FFF5F0',
+                borderRadius: '8px',
+                border: '1px solid #FFE4D6'
+              }}>
+                ⚠️ Security verification is currently unavailable. Please contact the administrator.
+              </div>
+            )}
+          </div>
+
+          {/* Footer */}
+          <div style={{
+            fontSize: '12px',
+            color: '#6B7280',
+            fontFamily: 'DM Sans, sans-serif'
+          }}>
+            Powered by Cloudflare
+          </div>
+        </div>
+
+        {/* CSS for spinner animation */}
+        <style jsx>{`
+          @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+          }
+        `}</style>
       </div>
     );
   }
 
-  if (!isVerified) {
-    console.log('VerificationWrapper: Showing verification component');
-    return <CloudflareVerification onVerificationComplete={handleVerificationComplete} />;
-  }
-
-  console.log('VerificationWrapper: Showing main content');
   return <>{children}</>;
 };
 

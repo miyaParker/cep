@@ -23,11 +23,11 @@ const useCloudflareTurnstile = () => {
 
   useEffect(() => {
     // In development mode, skip verification entirely
-    if (isDevelopment) {
-      console.log('Development mode detected - skipping Cloudflare Turnstile verification');
-      setVerified(true);
-      return;
-    }
+    // if (isDevelopment) {
+    //   console.log('Development mode detected - skipping Cloudflare Turnstile verification');
+    //   setVerified(true);
+    //   return;
+    // }
 
     if (!siteKey) {
       console.error('Cloudflare Turnstile site key not found. Please set NEXT_PUBLIC_CLOUDFLARE_TURNSTILE_SITE_KEY in your environment variables.');
@@ -69,7 +69,7 @@ const useCloudflareTurnstile = () => {
         window.onTurnstileSuccess = undefined as any;
       }
     };
-  }, [verified, siteKey]);
+  }, [siteKey]);
 
   return {
     verified,
